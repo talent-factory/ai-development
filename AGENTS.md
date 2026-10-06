@@ -17,14 +17,15 @@
 ## Running code
 
 - Python script: `uv run python <path>`
-- Streamlit app: `uv run streamlit run streamlit/<app>.py` (port 8501)
-- Some folders have their own `requirements.txt` (e.g., `streamlit/requirements.txt`, `scripts/rag-praxis/requirements.txt`). The root `uv` env usually covers them, but if a script fails on a missing package, install that folder's requirements.
+- Streamlit app: `uv run streamlit run course/modul-X/05-beispiele/<app>.py` (port 8501)
+- Some modules have their own `requirements.txt` inside the module folders (e.g., `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/rag-praxis/requirements.txt`). The root `uv` env usually covers them, but if a script fails on a missing package, install that folder's requirements.
 
 ## Package / import layout
 
 - `src/` becomes the package root only after `uv pip install -e .`. Top-level importable package currently: `utils`.
-- `src/pydantic/` and `src/rag/` are folders of standalone scripts **without `__init__.py`**; do not treat them as packages.
-- Beware: adding `__init__.py` to `src/pydantic/` would shadow the installed `pydantic` library.
+- `course/` contains the modular course content: six modules with `00-vorbereitung`, `01-praxis`, `02-uebungen`, `03-nachbearbeitung`, `04-materialien`, `05-beispiele` and a `README.md` each.
+- Standalone example scripts previously under `src/pydantic/`, `scripts/rag-praxis/`, `streamlit/` and `docs/solutions/` have been moved into the relevant `course/modul-X/05-beispiele/` directories.
+- Beware: adding `__init__.py` to a `src/pydantic/` style folder would shadow the installed `pydantic` library; the Pydantic AI examples now live in `course/modul-4-agentic-coding/05-beispiele/tool/`.
 
 ## Code style
 
@@ -37,8 +38,8 @@
 
 ## Tests & linting
 
-- There is **no root test suite**. `uv run pytest` is not configured and currently collects non-test files under `docs/solutions/`; do not treat it as a green check.
-- `ruff` is available on PATH but is **not a pinned project dependency** and has no project config. It flags files in `docs/` and `scripts/`. Use it only if you add project-level config and dev dependencies.
+- There is **no root test suite**. `uv run pytest` is not configured; do not treat it as a green check.
+- `ruff` is available on PATH but is **not a pinned project dependency** and has no project config. Use it only if you add project-level config and dev dependencies.
 
 ## Taskmaster / AI workflow
 
@@ -48,8 +49,9 @@
 
 ## Subprojects
 
-- `rag-system/` is a self-contained project with its own `pyproject.toml`, `.venv`, `AGENTS.md`, and Taskmaster setup. Use its instructions and commands there, not the root ones.
-- `streamlit/`, `scripts/rag-praxis/`, and `docs/solutions/` are collections of examples/solutions; each may have its own README or `requirements.txt`.
+- `rag-system/` is a self-contained project with its own `pyproject.toml`, `.venv`, `AGENTS.md`, and Taskmaster setup. Use its instructions and commands there, not the root ones. It is symlinked from `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/rag-system/`.
+- `replicate/` contains model-deployment examples and is symlinked from `course/modul-6-eigenes-projekt-abschluss/05-beispiele/replicate/`.
+- The modular course content lives in `course/`. Each module has its own examples, exercises and materials.
 
 ## Commits
 

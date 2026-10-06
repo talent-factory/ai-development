@@ -167,7 +167,7 @@ cython_debug/
 
 /doc/index.pdf
 /geschichte*
-/docs/chapters/pydantic-ai.html
+/course/**/pydantic-ai.html
 
 # Logs
 logs

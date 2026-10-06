@@ -1,10 +1,10 @@
 # CLAUDE.md - AI Development Project Guide
 
 ## Project Commands
-- Setup: `poetry install`
-- Run Python script: `poetry run python <script_path>`
-- Run Streamlit app: `poetry run streamlit run streamlit/<app_name>.py`
-- Create embeddings example: `poetry run streamlit run streamlit/embeddings.py`
+- Setup: `uv sync`
+- Run Python script: `uv run python <script_path>`
+- Run Streamlit app: `uv run streamlit run course/modul-X/05-beispiele/<app_name>.py`
+- Create embeddings example: `uv run streamlit run course/modul-5-fortgeschrittene-ki-integration/05-beispiele/embeddings.py`
 
 ## Code Style Guidelines
 - **Imports:** Standard lib first, then third-party, then local (grouped)
