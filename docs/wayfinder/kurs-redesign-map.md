@@ -45,13 +45,14 @@ Bestehende Materialien (Kapitel, Übungen, Lösungen, Scripts, Streamlit-Apps, F
 - [No-Code/Low-Code](./tickets/06-no-code-tools.md): Flowise/Langflow als No-Code-RAG-Option in Modul 5, n8n/Make als Ausblick in Modul 6 (Deployment/Automatisierung); Entscheidung ist review-fähig.
 - [READMEs Modul 2–6](./tickets/07-module-2-bis-6.md): Alle Modul-READMEs mit Lernzielen, Struktur und Material-Verweisen erstellt.
 - [Migration](./tickets/08-migration.md): Bestehende Materialien physisch in `course/modul-X/` verschoben, interne Verweise angepasst, `AGENTS.md` und `.windsurfrules` aktualisiert.
+- [Modul 1 Lektionen](./tickets/09-modul-1-lektionen.md): Vier Lektionen inkl. KI-Begriffswelt (Prompt, Command, Skill, Agent, Hook) und gemeinsamem Setup geplant; Lektionsplan erstellt.
 
 ---
 
 ## Not yet specified
 
 - Umgang mit den verbleibenden PowerPoint-Folien (`docs/slides/`)
-- Detaillierte Lernziele und Lektionen pro Modul (jenseits der README-Grobplanung)
+- Detaillierte Lektionen für Modul 2–6
 - Abschlussprojekt: Umfang, Bewertung, Vorlage
 
 ---
@@ -73,6 +74,7 @@ Bestehende Materialien (Kapitel, Übungen, Lösungen, Scripts, Streamlit-Apps, F
 | 3 | [Entscheide über No-Code/Low-Code-Integration](./tickets/06-no-code-tools.md) | grilling | closed | #1 |
 | 4 | [Erstelle READMEs für Modul 2–6](./tickets/07-module-2-bis-6.md) | task | closed | #2, #3 |
 | 5 | [Migriere bestehende Übungen, Scripts und Beispiele](./tickets/08-migration.md) | task | closed | #4 |
+| 6 | [Plane die Lektionen von Modul 1 neu](./tickets/09-modul-1-lektionen.md) | grilling | closed | #5 |
 
 ---
 

@@ -1,7 +1,9 @@
 # Modul 1: Programmier-Mindset & KI-Tools Setup
 
 **Dauer:** 1 Tag (4 Lektionen à 50 Minuten)  
-**Voraussetzung:** Keine Programmierkenntnisse nötig; grundlegendes technisches Verständnis und eigener Laptop empfohlen.
+**Voraussetzung:** Keine Programmierkenntnisse nötig; grundlegendes technisches Verständnis und eigener Laptop mit Admin-Rechten.
+
+> **Besonderheit:** Der Kurs beginnt heute. Das Setup wird daher gemeinsam im Unterricht durchgeführt.
 
 ---
 
@@ -10,11 +12,12 @@
 Nach diesem Modul können Sie:
 
 1. ✅ Erklären, was Programmieren im Kern bedeutet und wie KI den Entwicklungsprozess verändert.
-2. ✅ Sich in der technischen Begriffswelt von KI zurechtfinden (LLM, Prompt, Agent, RAG).
-3. ✅ Die eigene Arbeitsumgebung (VS Code, Python, Terminal, uv) einrichten und nutzen.
-4. ✅ Erste Python-Programme ausführen und verstehen.
-5. ✅ Mit KI-Tools gezielt unterstützende Fragen stellen und Antworten bewerten.
-6. ✅ Die rechtlichen und ethischen Grundregeln beim Einsatz von KI benennen.
+2. ✅ Sich in der technischen Begriffswelt von KI zurechtfinden: LLM, Prompt, Command, Skill, Agent, Hook, RAG.
+3. ✅ Die wichtigsten KI-Tools für Entwickler einordnen: ChatGPT, Claude, GitHub Copilot, Cursor, OpenCode.
+4. ✅ Die eigene Arbeitsumgebung (VS Code, Python, Terminal, uv, OpenCode) einrichten und nutzen.
+5. ✅ Erste Python-Programme ausführen und verstehen.
+6. ✅ Mit KI-Tools gezielt unterstützende Fragen stellen und Antworten bewerten.
+7. ✅ Die rechtlichen und ethischen Grundregeln beim Einsatz von KI benennen.
 
 ---
 
@@ -22,22 +25,19 @@ Nach diesem Modul können Sie:
 
 ### [00-vorbereitung/](./00-vorbereitung/)
 
-**Zeitaufwand:** 2–3 Stunden
+Da der Kurs heute beginnt, findet die Vorbereitung als gemeinsame Checkliste zu Beginn von Lektion 3 statt. Das Material dient als Referenz für nach dem Kurs.
 
-Bereiten Sie sich auf den Präsenztag vor.
-
-- Installation von VS Code, Python und uv
-- Erste Schritte mit dem Terminal
-- Leseauftrag: Was ist KI und wie funktioniert sie grundsätzlich?
+- Setup-Checkliste (VS Code, Python, uv, OpenCode)
+- Leseauftrag: Was ist KI? (nach dem Unterricht nachholbar)
 
 ### [01-praxis/](./01-praxis/)
 
 **Präsenzunterricht:** 4 Lektionen à 50 Minuten
 
 - **Lektion 1:** Was ist Programmieren? Klassisch und mit KI.
-- **Lektion 2:** KI-Begriffswelt und Einsatzmöglichkeiten.
-- **Lektion 3:** Entwicklungsumgebung einrichten (VS Code, Python, uv).
-- **Lektion 4:** Erste Python-Programme ausführen und mit KI erweitern.
+- **Lektion 2:** KI-Begriffswelt: Prompts, Commands, Skills, Agents, Hooks.
+- **Lektion 3:** Arbeitsumgebung gemeinsam einrichten (VS Code, Python, uv, OpenCode).
+- **Lektion 4:** Erste Python-Schritte mit KI als Erklär-Partner.
 
 > Vorhandenes Material: `01-praxis/01-introduction.adoc`, `04-materialien/software.adoc`, `01-praxis/uv.adoc`, `01-praxis/lesson-01-cli-setup.md`
 
@@ -45,9 +45,9 @@ Bereiten Sie sich auf den Präsenztag vor.
 
 **Übungen während der Präsenz**
 
-- Installation & Setup checken
-- Erstes Gespräch mit einem KI-Tool führen
-- Ein einfaches Python-Script ausführen und erklären lassen
+- Setup-Checkliste durchgehen
+- Erstes Gespräch mit einem KI-Chat-Tool führen
+- Ein einfaches Python-Script ausführen und mit KI erklären lassen
 
 > Vorhandenes Material: `02-uebungen/cli-installation.md`
 
@@ -62,12 +62,12 @@ Bereiten Sie sich auf den Präsenztag vor.
 
 **Handouts & Ressourcen**
 
-- Tooling-Übersicht
+- Tooling-Übersicht (VS Code, Python, uv, OpenCode, KI-Tools)
 - Begriffslexikon KI
 - VS Code-Shortcuts
 - Rechtliche & ethische Checkliste
 
-> Vorhandenes Material: `docs/slides/00 Einführung Basic.pdf`, `docs/slides/01 Einführung Development.pptx`
+> Vorhandenes Material: `04-materialien/00 Einführung Basic.pdf`, `04-materialien/01 Einführung Development.pptx`, `04-materialien/software.adoc`
 
 ### [05-beispiele/](./05-beispiele/)
 
@@ -85,10 +85,14 @@ Bereiten Sie sich auf den Präsenztag vor.
 
 | Phase | Aktivität | Dauer |
 |-------|-----------|-------|
-| **Vor Tag 1** | Installation + Leseauftrag | 2–3 Std |
-| **Tag 1** | 4 Lektionen Präsenzunterricht | 4 × 50 Min |
-| **Tag 1** | Pausen | 30 Min |
-| **Nach Tag 1** | Reflexion + Setup-Doku | 2–3 Std |
+| **18:00–18:50** | Lektion 1: Was ist Programmieren? | 50 Min |
+| **18:50–19:00** | Pause | 10 Min |
+| **19:00–19:50** | Lektion 2: KI-Begriffswelt | 50 Min |
+| **19:50–20:00** | Pause | 10 Min |
+| **20:00–20:50** | Lektion 3: Setup gemeinsam durchführen | 50 Min |
+| **20:50–21:00** | Pause | 10 Min |
+| **21:00–21:50** | Lektion 4: Erste Python-Schritte mit KI | 50 Min |
+| **Nach dem Kurs** | Setup-Doku + KI-Reflexion | 2–3 Std |
 
 ---
 
