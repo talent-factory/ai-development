@@ -1,50 +1,24 @@
 = KI Professional: Fachrichtung Development
-:author: Daniel Senften
-:email: daniel.senften@talent-factory.ch.ch
-:revnumber: 1.0
-:revdate: {localdate}
-:doctype: book
-include::locale/attributes-de.adoc[]
-:toc: left
-:sectnums:
-:imagesdir: images
-:sectnumlevels: 2
-:source-highlighter: highlight.js
-:icons: font
-:title-page:
-:pdf-theme: themes/pdf-theme.yml
-:title-page-background-image: image:title-image.png[top=0%, align=left, width=20%]
-:pdf-page-size: A4
 
-:quick-uri: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+Dieses Dokument war die zentrale Kompilation des bisherigen Kurses.
 
-// Hinzufügen aller Dokumente
-include::chapters/01-introduction.adoc[leveloffset=+1]
+**Die Kursstruktur wurde migriert.** Der aktuelle Kurs befindet sich nun modular aufgebaut unter:
 
-// Generative KI ohne Codierung
-include::chapters/02-no-code.adoc[leveloffset=+1]
+```
+course/
+├── README.md
+├── modul-1-programmier-mindset-ki-tools-setup/
+├── modul-2-python-grundlagen-mit-ki/
+├── modul-3-datenverarbeitung-dateien/
+├── modul-4-agentic-coding/
+├── modul-5-fortgeschrittene-ki-integration/
+└── modul-6-eigenes-projekt-abschluss/
+```
 
-// Verwenden von LangChain
-include::chapters/03-langchain.adoc[leveloffset=+1]
+Siehe auch:
 
-// Vector Stores und Embeddings
-include::chapters/04-vector-stores.adoc[leveloffset=+1]
-include::chapters/05-embeddings.adoc[leveloffset=+1]
+- link:../course/README.md[Kurs-README]
+- link:../docs/wayfinder/kurs-redesign-map.md[Wayfinder Map: Kurs-Redesign]
+- link:../docs/wayfinder/mapping-existing-materials.md[Mapping bestehender Materialien]
 
-// Platforms and Tools
-include::chapters/platforms.adoc[]
-include::chapters/streamlit.adoc[]
-
-// Letzter Abend, welche Themen sind auch noch wichtig?
-include:: chapters/rag.adoc[]
-
-include::chapters/transfer.adoc[]
-
-// Verwendete Software
-include::chapters/software.adoc[]
-
-// Aufgaben
-include::chapters/exercises.adoc[]
-
-[bibliography]
-include::chapters/references.adoc[]
+Die ursprünglichen Kapitel wurden in die Modulordner verschoben. Dieses `index.adoc` wird nicht mehr gepflegt.

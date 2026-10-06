@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/project/create-prd/best-practices.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/create-prd/best-practices.md

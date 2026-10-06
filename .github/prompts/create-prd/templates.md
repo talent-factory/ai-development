@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/project/create-prd/templates.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/create-prd/templates.md

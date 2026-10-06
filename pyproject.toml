@@ -5,28 +5,83 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13.1"
 dependencies = [
-    "anthropic>=0.72.0",
-    "chromadb>=1.1.1",
-    "faiss-cpu>=1.12.0",
+    "anthropic>=1.11.0",
+    "chromadb>=1.5.9",
+    "faiss-cpu>=1.15.1",
     "gensim>=4.4.0",
     "google-search-results>=2.4.2",
-    "langchain>=0.3.27",
-    "langchain-community>=0.3.31",
-    "langchain-ollama>=0.3.10",
-    "langchain-openai>=0.3.35",
+    "langchain>=1.4.3",
+    "langchain-community>=0.4.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-openai>=1.6.7",
     "langdetect>=1.0.9",
-    "matplotlib>=3.10.7",
-    "numpy>=2.3.3",
-    "pandas>=2.3.3",
-    "pypdf>=6.1.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.1",
+    "pandas>=3.0.6",
+    "pypdf>=6.19.0",
     "pypdf2>=3.0.1",
-    "python-dotenv>=1.1.1",
+    "python-dotenv>=1.2.4",
     "replicate>=1.0.7",
     "seaborn>=0.13.2",
-    "sentence-transformers>=5.1.1",
-    "serpapi>=0.1.5",
-    "streamlit>=1.50.0",
-    "tensorflow>=2.20.0",
-    "transformers>=4.57.1",
+    "sentence-transformers>=6.1.0",
+    "serpapi>=1.1.2",
+    "streamlit>=1.65.0",
+    "tensorflow>=2.21.0",
+    "transformers>=5.18.0",
     "watchdog>=6.0.0",
 ]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".opencode",
+    ".github",
+    "*.ipynb",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "C4", "SIM"]
+ignore = [
+    "BLE001",  # Blind except ist in Lernbeispielen akzeptabel
+    "DTZ005",  # Zeitzonen in Beispielen nicht zwingend
+    "EXE001",  # Shebang in Beispieldateien erlaubt
+    "N999",    # Dateinamen mit Bindestrichen in Beispielen
+    "B008",    # cog.Input als Default in Replicate-Predictors
+    "PLR1722", # exit() statt sys.exit() in Beispielen
+    "PLW1510", # subprocess.run ohne check in Beispielen
+    "E402",    # Imports nach sys.path-Anpassung sind beabsichtigt
+    "E501",    # Zeilenumbruch nicht zwingend in Lernmaterialien
+    "SIM108",  # Ternärer Operator ist nicht immer lehrreicher
+    "W291",    # Trailing whitespace in Beispielen tolerabel
+    "W293",    # Leerzeilen in Beispielen tolerabel
+]
+
+[tool.ruff.lint.per-file-ignores]
+"course/modul-5-fortgeschrittene-ki-integration/05-beispiele/aufgabe-5/test_simple.py" = ["F401"]
+
+[tool.mypy]
+exclude = [
+    "^course/",
+    "^replicate/",
+    "^LangChain/",
+    "^rag-system/",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "--ignore=course --ignore=replicate --ignore=LangChain"

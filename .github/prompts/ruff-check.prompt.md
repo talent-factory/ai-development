@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/ruff-check.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/ruff-check.md

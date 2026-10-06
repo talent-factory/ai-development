@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/project/create-prd/sections-guide.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/create-prd/sections-guide.md

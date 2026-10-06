@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/project/create-prd.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/create-prd.md

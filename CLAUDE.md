@@ -1,5 +1,22 @@
 # Task Master AI - Claude Code Integration Guide
 
+## Project Context
+
+This repository contains a modular AI/ML course under `course/`:
+
+```
+course/
+├── README.md
+├── modul-1-programmier-mindset-ki-tools-setup/
+├── modul-2-python-grundlagen-mit-ki/
+├── modul-3-datenverarbeitung-dateien/
+├── modul-4-agentic-coding/
+├── modul-5-fortgeschrittene-ki-integration/
+└── modul-6-eigenes-projekt-abschluss/
+```
+
+Each module follows the structure `00-vorbereitung/`, `01-praxis/`, `02-uebungen/`, `03-nachbearbeitung/`, `04-materialien/`, `05-beispiele/`. See `course/README.md` and `AGENTS.md` for details.
+
 ## Essential Commands
 
 ### Core Workflow Commands

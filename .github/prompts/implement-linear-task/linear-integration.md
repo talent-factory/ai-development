@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/implement-linear-task/linear-integration.md
+/Users/daniel/GitRepository/dotfiles/windsurf/workflows/develop/implement-linear-task/linear-integration.md

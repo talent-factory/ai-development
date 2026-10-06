@@ -1,8 +1,9 @@
 import os
+
 from dotenv import load_dotenv
+from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
-from langchain.chains import LLMChain
 
 # Lade Umgebungsvariaben aus der .env-Datei
 load_dotenv()
@@ -17,7 +18,7 @@ def main():
     llm = ChatOpenAI(
         model_name="gpt-3.5-turbo",
         temperature=0.7,  # Kreativität des Modells (0.0 - 1.0)
-        max_tokens=500  # Maximale Länge der generierten Antwort
+        max_tokens=500,  # Maximale Länge der generierten Antwort
     )
 
     # Erstelle ein Prompt-Template
@@ -32,16 +33,13 @@ def main():
     
     Geschichte:"""
 
-    prompt = PromptTemplate(
-        template=template,
-        input_variables=["name"]
-    )
+    prompt = PromptTemplate(template=template, input_variables=["name"])
 
     # Erstelle eine LLM-Chain
     story_chain = LLMChain(
         llm=llm,
         prompt=prompt,
-        verbose=True  # Zeigt zusätzliche Informationen an
+        verbose=True,  # Zeigt zusätzliche Informationen an
     )
 
     # Führe die Chain aus

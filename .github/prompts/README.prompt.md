@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/skills/README.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/README.md

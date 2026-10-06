@@ -167,7 +167,7 @@ cython_debug/
 
 /doc/index.pdf
 /geschichte*
-/docs/chapters/pydantic-ai.html
+/course/**/pydantic-ai.html
 
 # Logs
 logs
@@ -197,4 +197,7 @@ node_modules/
 .claude/settings.local.json
 
 # Demo Project
-rag-system
+rag-system/
+
+# Serena AI tooling
+.serena/

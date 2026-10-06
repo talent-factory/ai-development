@@ -1,4 +1,3 @@
-
 from dotenv import load_dotenv
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
@@ -21,7 +20,7 @@ class NewChain:
         return self.llm.invoke(formatted_prompt)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     template = "Schreibe eine kurze Geschichte über einen Helden namens {name}."
     prompt = PromptTemplate(template=template, input_variables=["name"])
     name = "Jürg"
