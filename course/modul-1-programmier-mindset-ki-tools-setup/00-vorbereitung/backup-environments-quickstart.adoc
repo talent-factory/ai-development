@@ -81,7 +81,6 @@ Falls gar nichts funktioniert:
 
 - [ ] **Nachbarn fragen** (Pair Programming)
 - [ ] **Kursleitung informieren**
-- [ ] **Demo-App verwenden:** https://ai-course-demo.streamlit.app/
 
 == 💡 Pro-Tipps
 
