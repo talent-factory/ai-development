@@ -4,6 +4,7 @@ Dieser Kurs vermittelt die Grundlagen moderner, KI-gestützter Softwareentwicklu
 
 Der Lehrgang integriert moderne Kerntechniken wie Refactoring, TDD, Code-Review, Embeddings, RAG und den Einsatz von AI Agents als aktive Entwicklungspartner. Sie entwickeln praxisnah Anwendungen, nutzen LLMs produktiv im Coding-Workflow und bauen KI-gestützte Informationssysteme. Das Gelernte fliesst in ein eigenes Abschlussprojekt ein.
 
+Ein neuer Abschnitt
 ---
 
 ## 📋 Kursübersicht
