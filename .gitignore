@@ -197,4 +197,7 @@ node_modules/
 .claude/settings.local.json
 
 # Demo Project
-rag-system.serena/
+rag-system/
+
+# Serena AI tooling
+.serena/
