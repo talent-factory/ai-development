@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/skills/QUICKSTART.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/QUICKSTART.md

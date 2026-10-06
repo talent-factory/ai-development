@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/commit/pre-commit-checks.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/commit/pre-commit-checks.md

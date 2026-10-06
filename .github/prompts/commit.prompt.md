@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/commit.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/commit.md

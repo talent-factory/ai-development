@@ -1,1 +1,0 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/project/create-plan-fs.md
