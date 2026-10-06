@@ -197,4 +197,4 @@ node_modules/
 .claude/settings.local.json
 
 # Demo Project
-rag-system
+rag-system.serena/
