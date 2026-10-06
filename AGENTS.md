@@ -9,7 +9,6 @@
 ## Setup
 
 - `uv sync` — install dependencies from `uv.lock`.
-  - The README mentions `uv pip install -r requirements.txt`, but there is **no root `requirements.txt`**.
 - `uv pip install -e .` — add `src/` to `PYTHONPATH` so local packages (`utils`, etc.) are importable.
   - Do **not** import `ai_development`; the distribution name in `pyproject.toml` is `ai-development`, but no top-level package with either name exists. Import the packages under `src/` directly.
 - Copy `.env.example` to `.env` and fill API keys. `src/utils/project_utils.load_environment()` loads from the project root.

@@ -10,9 +10,9 @@
 &nbsp;
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-KI-Anwendungen entwickeln, ohne nur eine Zeile Code zu schreiben? Ja, das ist möglich. Erfahren Sie, wie Sie KI-gesteuerte Apps mit No-Code-Tools erstellen und entwickeln Sie dabei ein umfangreiches Verständnis der dahinter liegenden maschinellen Lernprinzipien – damit Sie diese erfolgreich für Ihre Projekte umsetzen können.
+Python-Grundlagen mit KI-gestütztem Programmieren verbinden – das ist der rote Faden dieses Kurses. Sie lernen, Probleme sauber zu zerlegen, in einer professionellen Entwicklungsumgebung zu arbeiten und mittels effektivem Prompting hochwertige, KI-generierte Lösungen zu erstellen.
 
-Entdecken Sie Konzepte sowie Anwendungsfelder von Machine Learning (ML), Large Language Models (LLM), Vector Databases und Retrieval Augmented Generation (RAG). Verstehen Sie Low-Code-Entwicklung, Anwendungsfelder und die Integration in eigene Apps. Mit dem erworbenen Wissen wenden Sie die verschiedenen Tools an, um Ihre eigenen Ideen erfolgsbringend in eine Anwendung zu überführen – darunter Q&A-Systeme für eigene Daten, Chatbots und Agents sowie die Interaktion mit APIs. Die Zukunft der KI beginnt hier!
+Der Kurs vermittelt zentrale Python-Konzepte, Datenverarbeitung, APIs und Debugging direkt mit LLM-Unterstützung. Moderne Kerntechniken wie Refactoring, TDD, Code-Review, Embeddings, RAG und der Einsatz von AI Agents als aktive Entwicklungspartner werden praxisnah umgesetzt. Das Gelernte fliesst in ein eigenes Abschlussprojekt ein.
 
 ## 🚀 Projekt-Setup
 
@@ -29,19 +29,16 @@ Dieses Projekt verwendet `uv` als Paketmanager und Build-System. `uv` ist ein sc
 
 ### Installation
 
-1. Virtuelle Umgebung erstellen und aktivieren:
+1. Abhängigkeiten aus dem Lockfile installieren:
 
    ```bash
-   uv venv
-   source .venv/bin/activate  # Linux/macOS
-   # ODER
-   .\.venv\Scripts\activate  # Windows
+   uv sync
    ```
 
-2. Abhängigkeiten installieren:
+2. Lokale Pakete importierbar machen (optional, für `src/utils` etc.):
 
    ```bash
-   uv pip install -r requirements.txt
+   uv pip install -e .
    ```
 
 ### Entwicklung
@@ -49,19 +46,19 @@ Dieses Projekt verwendet `uv` als Paketmanager und Build-System. `uv` ist ein sc
 - **Neue Abhängigkeit hinzufügen**:
 
   ```bash
-  uv pip install <paketname>
-  ```
-
-- **Aktualisierte Abhängigkeiten speichern**:
-
-  ```bash
-  uv pip freeze > requirements.txt
+  uv add <paketname>
   ```
 
 - **Streamlit-App starten**:
 
   ```bash
-  uv run streamlit run streamlit/<app_name>.py
+  uv run streamlit run course/modul-X/05-beispiele/<app_name>.py
+  ```
+
+- **Python-Script ausführen**:
+
+  ```bash
+  uv run python <pfad_zum_script.py>
   ```
 
 ## LERNZIELE
@@ -70,53 +67,64 @@ Dieses Projekt verwendet `uv` als Paketmanager und Build-System. `uv` ist ein sc
 
 Am Ende dieses Lerngangs …
 
-- kennen Sie die Grundlagen der künstlichen Intelligenz (engl. Artificial Intelligence, AI).
-- beherrschen Sie die Terminologie im Bereich der KI.
-- verstehen Sie die ethischen, rechtlichen und Datenschutz-Aspekte im Kontext von KI.
-- sind Sie in der Lage, Nutzen und Gefahren der KI-Technologie zu erkennen sowie die Möglichkeiten und Grenzen zu verstehen.
-- verstehen Sie die KI-gesteuerte Programmierung und sind Sie in der Lage, KI-Tools zur Codeerstellung effizient zu nutzen.
-- können Sie Codes von KI-Systemen verstehen, dokumentieren und Fehler im Code mithilfe von KI beheben.
-- sind Sie in der Lage, die Vor- und Nachteile lokaler Sprachmodelle zu erörtern und können diese installieren sowie konfigurieren.
-- können Sie ein einfaches eigenes Machine-Learning-Modell erstellen, trainieren, überprüfen und exportieren.
-- erkennen Sie die vielfältigen Anwendungsfelder der Low-Code-Entwicklung mit LLM-basierten Anwendungen.
-- verstehen Sie die Systemarchitektur von [LangChain](https://www.langchain.com/) basierten Apps und sind vertraut mit Low- Code-Frameworks wie [FlowiseAI](https://flowiseai.com/) und [Langflow](https://www.langflow.org/) ([GitHub](https://github.com/logspace-ai/langflow)).
-- haben Sie eigene Anwendungen erstellt– darunter Q&A-Systeme für eigene Daten, Chatbots und Agents sowie die Interaktion mit APIs.
+- verstehen Sie, was KI ist und wie sie grundsätzlich funktioniert.
+- kennen Sie die wichtigsten KI-Begriffe und können mitreden.
+- wissen Sie, was Sie mit KI dürfen und was nicht – rechtlich, ethisch und beim Datenschutz.
+- erkennen Sie, wo KI hilft, wo sie schadet und wo ihre Grenzen liegen.
+- verstehen Sie, was Programmieren ist – klassisch und mit KI – und können grosse Aufgaben in kleine Schritte zerlegen.
+- richten Sie Ihre Arbeitsumgebung ein und finden sich darin zurecht.
+- schreiben Sie eigene Python-Programme mit den wichtigsten Bausteinen (Variablen, Schleifen, Funktionen).
+- lesen und verarbeiten Sie Daten aus verschiedenen Dateien und holen Informationen aus dem Internet – stabil und mit sauberer Fehlerbehandlung.
+- prüfen Sie Ihren Code automatisch auf Fehler, verbessern ihn Schritt für Schritt und dokumentieren ihn so, dass auch andere damit weiterarbeiten können.
+- nutzen Sie KI-Tools, um schneller und besser zu programmieren.
+- bauen Sie einfache KI-Helfer, die selbständig mehrere Schritte erledigen, und können sie testen und Fehler beheben.
+- planen und bauen Sie eine produktionsreife KI-Anwendung, die sicher ist, Daten schützt und fair mit allen Nutzern umgeht.
 
 ## INHALT
 
----
+Der Kurs ist modular in sechs aufeinanderaufbaumende Module strukturiert. Detaillierte Lektionspläne, Übungen und Materialien finden sich in [`course/README.md`](course/README.md).
 
-### Einführung in die KI-Basics
+### Modul 1: Programmier-Mindset & KI-Tools Setup
 
-- Grundlagen der künstlichen Intelligenz
-- Ethische, rechtliche und Datenschutzaspekte im Kontext von KI
-- Nutzen und Gefahren von KI, um fundierte Entscheidungen zu treffen
-- Möglichkeiten und Grenzen der KI-Technologie
-- Technologie und Funktionsweise von KI-Systemen
-- Wichtige Begriffe und Terminologien
+- Was ist Programmieren? Klassisch und mit KI.
+- KI-Begriffswelt: Prompt, Command, Skill, Agent, Hook, LLM, RAG.
+- Einrichten der Arbeitsumgebung: VS Code, Python, uv, OpenCode.
+- Erste Python-Schritte mit KI als Erklär-Partner.
 
-### Training von Machine-Learning-Modellen ohne Code
+### Modul 2: Python-Grundlagen mit KI verstehen
 
-- Möglichkeiten und Grenzen
-- Erstellung des eigenen Machine-Learning-Modells
-- Training, Überprüfung und Export des Machine-Learning-Modells
-- Integration Ihres Machine-Learning-Modells in eine Webseite
+- Variablen, Datentypen, Operatoren.
+- Bedingte Anweisungen und Schleifen.
+- Funktionen definieren und wiederverwenden.
+- KI gezielt für Code-Erklärung und Erweiterung nutzen.
 
-### Grundlagen LLM-basierter Applikationen
+### Modul 3: Datenverarbeitung & Dateien
 
-- Möglichkeiten und Grenzen
-- Kennenlernen und verwenden verschiedener Sprachmodelle lokal und in der Cloud
-- Anwendungsgesteuerte Kommunikation mit Sprachmodellen
-- Abrechnung und Kosten
-- Fine-Tuning und Embedding
+- Textdateien, CSV und JSON lesen und schreiben.
+- HTTP-APIs ansprechen und Daten verarbeiten.
+- Fehlerbehandlung und stabile Scripts.
+- Datenverarbeitung mit KI-Unterstützung.
 
-### Entwicklung von LLM-basierten Applikationen
+### Modul 4: Agentic Coding – KI als Entwicklungspartner
 
-- Low-Code-Entwicklung von LLM/RAG-basierten Anwendungen
-- Identifizierung von potenziellen Anwendungsfeldern und Use Cases
-- Verständnis der Systemarchitektur von LangChain basierten Apps
-- Nutzung von Low-Code-Frameworks wie FlowiseAI und Langflow
-- Praxistransfer und Erstellung eigener Anwendungen, darunter Q&A für eigene Daten, Chatbots, Agents und API-Interaktionen
+- KI-Tools im Coding-Workflow: Copilot, Chat, Commands, Agents.
+- Prompt Engineering für Entwickler.
+- Eigene Commands und Workflows bauen.
+- Einfache Tool-Agents mit Python.
+
+### Modul 5: Fortgeschrittene KI-Integration
+
+- LLM-APIs direkt aus Python nutzen.
+- Embeddings erzeugen und verstehen.
+- Vektordatenbanken und Ähnlichkeitssuche.
+- Einfache RAG-Systeme bauen (Code und No-Code-Optionen).
+
+### Modul 6: Eigenes Projekt & Abschluss
+
+- Projektidee planen und umsetzen.
+- Streamlit-App bauen.
+- Deployment-Grundlagen und -Optionen.
+- Ethik, Datenschutz und verantwortungsvolle KI.
 
 ## 🤝 Beiträge
 
