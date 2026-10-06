@@ -24,10 +24,7 @@
 
 **Anwendungsbeispiel:**
 ```python
-PromptTemplate(
-    input_variables=["topic"],
-    template="Erkläre mir {topic} in einfachen Worten."
-)
+PromptTemplate(input_variables=["topic"], template="Erkläre mir {topic} in einfachen Worten.")
 ```
 
 **Verbindungen:**

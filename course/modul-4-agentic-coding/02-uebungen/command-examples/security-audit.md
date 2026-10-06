@@ -84,7 +84,7 @@ API_KEY = "sk-1234567890abcdef"
 **Lösung:**
 ```python
 # ✅ SICHER
-API_KEY = os.getenv('API_KEY')
+API_KEY = os.getenv("API_KEY")
 if not API_KEY:
     raise ValueError("API_KEY environment variable required")
 ```

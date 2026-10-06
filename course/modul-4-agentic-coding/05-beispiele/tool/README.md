@@ -79,6 +79,7 @@ Das folgende Beispiel zeigt, wie einfach ein benutzerdefiniertes Tool in Pydanti
 def get_aktuelle_zeit(self):
     """Gib die aktuelle Zeit im Format '%H:%M:%S' zurück."""
     from datetime import datetime
+
     return datetime.now().strftime("%H:%M:%S")
 ```
 

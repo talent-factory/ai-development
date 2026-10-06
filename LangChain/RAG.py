@@ -9,8 +9,7 @@ from langchain.chains import RetrievalQA
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAI
-from langchain_openai import OpenAIEmbeddings
+from langchain_openai import OpenAI, OpenAIEmbeddings
 
 # Umgebungsvariablen laden (für OpenAI API Key)
 load_dotenv()
@@ -29,11 +28,8 @@ embeddings = OpenAIEmbeddings()
 vectorstore = Chroma.from_documents(texts, embeddings)
 
 # Schritt 6: Erstellen des RAG-Systems
-qa = RetrievalQA.from_chain_type(
-    llm=OpenAI(),
-    chain_type="stuff",
-    retriever=vectorstore.as_retriever()
-)
+qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=vectorstore.as_retriever())
+
 
 # Schritt 7: Abfragen des RAG-Systems
 def run_query(query_text):
@@ -41,6 +37,7 @@ def run_query(query_text):
     print(f"Frage: {query_text}")
     print(f"Antwort: {result['result']}")
     print("-" * 50)
+
 
 # Schritt 8: Erweiterung des Systems
 def extend_system():
@@ -50,14 +47,15 @@ def extend_system():
     new_texts = text_splitter.split_documents(new_documents)
     vectorstore.add_documents(new_texts)
     print("System mit Wirtschaftsinformationen erweitert.")
-    
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     # Beispiel-Abfragen
     run_query("Was ist die Hauptstadt der Schweiz?")
     run_query("Welche Sprachen werden in der Schweiz gesprochen?")
-    
+
     # System erweitern
     extend_system()
-    
+
     # Abfrage an das erweiterte System
     run_query("Wofür ist die Schweizer Wirtschaft bekannt?")

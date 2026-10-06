@@ -40,10 +40,9 @@ Das Skript ist in nummerierte Schritte gegliedert. Nutzen Sie die *Aufgabe*- und
 # ------------------
 # Drittanbieter-Bibliotheken werden hier gesammelt importiert.
 # Dies fördert Übersichtlichkeit und erleichtert späteres Refactoring.
+import matplotlib.pyplot as plt
 from gensim.models import Word2Vec
 from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
-
 
 # Schritt 1: Vorbereitung der Trainingsdaten
 # ------------------------------------------
@@ -70,10 +69,10 @@ sentences = [
 model = Word2Vec(
     sentences,
     vector_size=100,  # Grösse des Embeddings
-    window=5,         # Kontextfenster
-    min_count=1,      # Mindesthäufigkeit eines Tokens
-    workers=4,        # Anzahl CPU-Kerne
-    epochs=10         # Anzahl Trainings-Epochen
+    window=5,  # Kontextfenster
+    min_count=1,  # Mindesthäufigkeit eines Tokens
+    workers=4,  # Anzahl CPU-Kerne
+    epochs=10,  # Anzahl Trainings-Epochen
 )
 
 # Didaktischer Hinweis: Erhöhen Sie `epochs`, um Overfitting zu diskutieren.
@@ -85,7 +84,7 @@ model = Word2Vec(
 print(f"\nWortvektor für 'sonnig':\n{model.wv['sonnig']}")
 
 # 3b. Suche nach semantisch ähnlichen Wörtern
-similar_words = model.wv.most_similar('sonnig', topn=3)
+similar_words = model.wv.most_similar("sonnig", topn=3)
 print(f"\nTop 3 ähnliche Wörter zu 'sonnig': {similar_words}")
 
 # Aufgabe: Lassen Sie die Student:innen andere Zielwörter testen.
@@ -108,9 +107,9 @@ plt.scatter(result[:, 0], result[:, 1])
 for i, word in enumerate(words):
     plt.annotate(word, xy=(result[i, 0], result[i, 1]))
 
-plt.title('PCA von Word2Vec-Embeddings')
-plt.xlabel('PCA 1')
-plt.ylabel('PCA 2')
+plt.title("PCA von Word2Vec-Embeddings")
+plt.xlabel("PCA 1")
+plt.ylabel("PCA 2")
 plt.show()
 
 # Didaktischer Hinweis: Besprechen Sie Clusterbildung und Ausreisser.
@@ -121,7 +120,7 @@ plt.show()
 # Durch das `if __name__`-Konstrukt kann dieses Skript auch als Modul importiert
 # werden, ohne dass der Trainings- und Visualisierungsteil sofort ausgeführt
 # wird. Dies erleichtert z. B. automatisierte Tests.
-if __name__ == '__main__':
+if __name__ == "__main__":
     # In diesem einfachen Beispiel liegt die Programmlogik bereits auf
     # Modulebene. Bei komplexeren Projekten würde hier `main()` aufgerufen.
     pass

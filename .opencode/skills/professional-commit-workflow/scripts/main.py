@@ -13,14 +13,12 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 from typing import Any
-
 
 CONFIG_PATH = Path(__file__).parent.parent / "config.json"
 
@@ -197,7 +195,6 @@ def detect_commit_type(
     scores["fix"] = 0
     scores["refactor"] = 0
 
-    all_paths = [path for _, path in files]
     has_code_changes = False
     has_only_docs = True
     has_only_tests = True
@@ -337,7 +334,7 @@ def confirm(prompt: str, default: bool = True) -> bool:
     answer = prompt_user(prompt + suffix).lower()
     if not answer:
         return default
-    return answer.startswith("j") or answer.startswith("y")
+    return answer.startswith(("j", "y"))
 
 
 def sanitize_description(description: str) -> str:

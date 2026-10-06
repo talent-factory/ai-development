@@ -12,17 +12,13 @@ logging.set_verbosity_error()
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 # Page configuration
-st.set_page_config(
-    page_title="PDF Embeddings & Vector Store",
-    page_icon="📄",
-    layout="wide"
-)
+st.set_page_config(page_title="PDF Embeddings & Vector Store", page_icon="📄", layout="wide")
 
 
 # Load or create embedding model
 @st.cache_resource
 def load_model():
-    return SentenceTransformer('paraphrase-MiniLM-L6-v2')
+    return SentenceTransformer("paraphrase-MiniLM-L6-v2")
 
 
 # Extract text from PDF
@@ -72,8 +68,8 @@ def build_vector_store(embeddings, chunks):
     index = faiss.IndexFlatL2(dim)
     index.add(embeddings)
     vector_store = {
-        'index': index,
-        'chunks': chunks,
+        "index": index,
+        "chunks": chunks,
     }
     return vector_store
 
@@ -84,8 +80,8 @@ def answer_question(question, _vector_store, _model):
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", category=FutureWarning)
         question_embedding = _model.encode([question])
-    distances, indices = _vector_store['index'].search(question_embedding, k=3)
-    context_chunks = [_vector_store['chunks'][idx] for idx in indices[0]]
+    distances, indices = _vector_store["index"].search(question_embedding, k=3)
+    context_chunks = [_vector_store["chunks"][idx] for idx in indices[0]]
     return "\n\n".join(context_chunks)
 
 

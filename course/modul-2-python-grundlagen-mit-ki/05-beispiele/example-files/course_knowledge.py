@@ -114,6 +114,7 @@ Der AI Development Kurs umfasst 6 Abende mit je 4 Lektionen (50 Min + 10 Min Pau
 4. Kontext an LLM senden für Antwort
 """
 
+
 def get_system_prompt():
     """Erstellt den System-Prompt für den AI Assistenten"""
     return f"""Du bist ein hilfreicher AI-Assistent für den AI Development Kurs. 

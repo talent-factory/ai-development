@@ -1,6 +1,5 @@
-from cog import BasePredictor, Input
-
 import my_notebook
+from cog import BasePredictor, Input
 
 
 class Predictor(BasePredictor):

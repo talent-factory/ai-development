@@ -25,16 +25,14 @@ Diese Tabelle vergleicht unseren aktuellen AI Kurs-Assistenten mit einem hypothe
 ```python
 # Direkte API-Calls
 client = OpenAI(api_key=api_key)
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[{"role": "user", "content": prompt}]
-)
+response = client.chat.completions.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}])
 ```
 
 **LangChain-Ansatz:**
 ```python
 # Abstrahierte LLM-Calls
 from langchain.llms import OpenAI
+
 llm = OpenAI(temperature=0.7)
 response = llm("Was ist LangChain?")
 ```
@@ -58,11 +56,12 @@ Frage: {user_question}"""
 ```python
 # Template-System
 from langchain.prompts import PromptTemplate
+
 template = PromptTemplate(
     input_variables=["context", "question"],
     template="""Du bist ein AI-Assistent für den Kurs...
     Kontext: {context}
-    Frage: {question}"""
+    Frage: {question}""",
 )
 ```
 
@@ -76,7 +75,7 @@ template = PromptTemplate(
 **Aktueller Ansatz:**
 ```python
 # Streamlit Session State
-if 'messages' not in st.session_state:
+if "messages" not in st.session_state:
     st.session_state.messages = []
 ```
 
@@ -84,6 +83,7 @@ if 'messages' not in st.session_state:
 ```python
 # LangChain Memory
 from langchain.memory import ConversationBufferMemory
+
 memory = ConversationBufferMemory()
 ```
 

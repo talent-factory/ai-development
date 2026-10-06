@@ -6,15 +6,15 @@ project_root = Path(__file__).resolve().parent.parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Importe nach der Pfadanpassung
-from pydantic_ai import Agent  # noqa: E402
-from src.utils import load_environment  # noqa: E402
+from pydantic_ai import Agent
+
+from src.utils import load_environment
 
 # Lade .env Datei aus dem Projektstammverzeichnis
 load_environment()
 
 agent = Agent(
-    model="claude-3-7-sonnet-latest",
-    system_prompt="Fasse dich kurz und prägnant, antworte auf Deutsch in einem Satz."
+    model="claude-3-7-sonnet-latest", system_prompt="Fasse dich kurz und prägnant, antworte auf Deutsch in einem Satz."
 )
 
 user_message = "Hallo!"
@@ -29,10 +29,12 @@ print(result.output)
 # sehen wir, dass es komplexer geht 😉
 # https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview
 
+
 @agent.tool
 def get_aktuelle_zeit(self):
     """Gib die aktuelle Zeit im Format '%H:%M:%S' zurück."""
     from datetime import datetime
+
     return datetime.now().strftime("%H:%M:%S")
 
 

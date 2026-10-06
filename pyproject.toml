@@ -30,3 +30,58 @@ dependencies = [
     "transformers>=5.18.0",
     "watchdog>=6.0.0",
 ]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".opencode",
+    ".github",
+    "*.ipynb",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "C4", "SIM"]
+ignore = [
+    "BLE001",  # Blind except ist in Lernbeispielen akzeptabel
+    "DTZ005",  # Zeitzonen in Beispielen nicht zwingend
+    "EXE001",  # Shebang in Beispieldateien erlaubt
+    "N999",    # Dateinamen mit Bindestrichen in Beispielen
+    "B008",    # cog.Input als Default in Replicate-Predictors
+    "PLR1722", # exit() statt sys.exit() in Beispielen
+    "PLW1510", # subprocess.run ohne check in Beispielen
+    "E402",    # Imports nach sys.path-Anpassung sind beabsichtigt
+    "E501",    # Zeilenumbruch nicht zwingend in Lernmaterialien
+    "SIM108",  # Ternärer Operator ist nicht immer lehrreicher
+    "W291",    # Trailing whitespace in Beispielen tolerabel
+    "W293",    # Leerzeilen in Beispielen tolerabel
+]
+
+[tool.ruff.lint.per-file-ignores]
+"course/modul-5-fortgeschrittene-ki-integration/05-beispiele/aufgabe-5/test_simple.py" = ["F401"]
+
+[tool.mypy]
+exclude = [
+    "^course/",
+    "^replicate/",
+    "^LangChain/",
+    "^rag-system/",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "--ignore=course --ignore=replicate --ignore=LangChain"

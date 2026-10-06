@@ -49,11 +49,11 @@ dimension = 384
 index = faiss.IndexFlatL2(dimension)
 
 # Vektoren hinzufügen
-vectors = np.random.random((1000, dimension)).astype('float32')
+vectors = np.random.random((1000, dimension)).astype("float32")
 index.add(vectors)
 
 # Suche
-query = np.random.random((1, dimension)).astype('float32')
+query = np.random.random((1, dimension)).astype("float32")
 distances, indices = index.search(query, k=5)
 ```
 
@@ -98,14 +98,11 @@ collection = client.create_collection("my_collection")
 collection.add(
     documents=["Machine Learning ist spannend", "Python ist toll"],
     metadatas=[{"topic": "AI"}, {"topic": "Programming"}],
-    ids=["1", "2"]
+    ids=["1", "2"],
 )
 
 # Suche
-results = collection.query(
-    query_texts=["Künstliche Intelligenz"],
-    n_results=2
-)
+results = collection.query(query_texts=["Künstliche Intelligenz"], n_results=2)
 ```
 
 ---
@@ -179,22 +176,18 @@ client = weaviate.Client("http://localhost:8080")
 
 # Schema definieren
 schema = {
-    "classes": [{
-        "class": "Document",
-        "properties": [
-            {"name": "content", "dataType": ["text"]},
-            {"name": "category", "dataType": ["string"]}
-        ]
-    }]
+    "classes": [
+        {
+            "class": "Document",
+            "properties": [{"name": "content", "dataType": ["text"]}, {"name": "category", "dataType": ["string"]}],
+        }
+    ]
 }
 
 client.schema.create(schema)
 
 # Daten hinzufügen
-client.data_object.create({
-    "content": "Machine Learning Tutorial",
-    "category": "AI"
-}, "Document")
+client.data_object.create({"content": "Machine Learning Tutorial", "category": "AI"}, "Document")
 ```
 
 ---
@@ -235,16 +228,12 @@ client = QdrantClient("localhost", port=6333)
 
 # Collection erstellen
 client.create_collection(
-    collection_name="my_collection",
-    vectors_config=VectorParams(size=384, distance=Distance.COSINE)
+    collection_name="my_collection", vectors_config=VectorParams(size=384, distance=Distance.COSINE)
 )
 
 # Vektoren hinzufügen
 client.upsert(
-    collection_name="my_collection",
-    points=[
-        {"id": 1, "vector": [0.1, 0.2, ...], "payload": {"text": "Example"}}
-    ]
+    collection_name="my_collection", points=[{"id": 1, "vector": [0.1, 0.2, ...], "payload": {"text": "Example"}}]
 )
 ```
 

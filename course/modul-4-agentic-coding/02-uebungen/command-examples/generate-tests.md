@@ -28,27 +28,28 @@ import pytest
 from unittest.mock import Mock, patch
 from your_module import your_function
 
+
 class TestYourFunction:
     def setup_method(self):
         """Setup vor jedem Test"""
         pass
-    
+
     def test_happy_path(self):
         """Test normale Verwendung"""
         result = your_function(valid_input)
         assert result == expected_output
-    
+
     def test_edge_cases(self):
         """Test Grenzwerte"""
         assert your_function("") == ""
         assert your_function(None) is None
-    
+
     def test_error_handling(self):
         """Test Exception-Handling"""
         with pytest.raises(ValueError):
             your_function(invalid_input)
-    
-    @patch('your_module.external_dependency')
+
+    @patch("your_module.external_dependency")
     def test_with_mocking(self, mock_dependency):
         """Test mit gemockten Dependencies"""
         mock_dependency.return_value = "mocked_result"
@@ -102,20 +103,17 @@ def validate_password(password: str) -> dict:
     """Validiert ein Passwort nach Sicherheitskriterien"""
     if not password:
         raise ValueError("Password cannot be empty")
-    
-    result = {
-        'valid': True,
-        'errors': []
-    }
-    
+
+    result = {"valid": True, "errors": []}
+
     if len(password) < 8:
-        result['valid'] = False
-        result['errors'].append("Password must be at least 8 characters")
-    
+        result["valid"] = False
+        result["errors"].append("Password must be at least 8 characters")
+
     if not any(c.isupper() for c in password):
-        result['valid'] = False
-        result['errors'].append("Password must contain uppercase letter")
-    
+        result["valid"] = False
+        result["errors"].append("Password must contain uppercase letter")
+
     return result
 ```
 
@@ -124,48 +122,49 @@ def validate_password(password: str) -> dict:
 import pytest
 from password_validator import validate_password
 
+
 class TestValidatePassword:
     def test_valid_password(self):
         """Test mit gültigem Passwort"""
         result = validate_password("SecurePass123!")
-        assert result['valid'] is True
-        assert result['errors'] == []
-    
+        assert result["valid"] is True
+        assert result["errors"] == []
+
     def test_empty_password_raises_error(self):
         """Test leeres Passwort wirft ValueError"""
         with pytest.raises(ValueError, match="Password cannot be empty"):
             validate_password("")
-    
+
     def test_none_password_raises_error(self):
         """Test None Passwort wirft ValueError"""
         with pytest.raises(ValueError):
             validate_password(None)
-    
+
     def test_too_short_password(self):
         """Test zu kurzes Passwort"""
         result = validate_password("Short1!")
-        assert result['valid'] is False
-        assert "Password must be at least 8 characters" in result['errors']
-    
+        assert result["valid"] is False
+        assert "Password must be at least 8 characters" in result["errors"]
+
     def test_no_uppercase_letter(self):
         """Test Passwort ohne Grossbuchstaben"""
         result = validate_password("lowercase123!")
-        assert result['valid'] is False
-        assert "Password must contain uppercase letter" in result['errors']
-    
+        assert result["valid"] is False
+        assert "Password must contain uppercase letter" in result["errors"]
+
     def test_multiple_validation_errors(self):
         """Test Passwort mit mehreren Fehlern"""
         result = validate_password("short")
-        assert result['valid'] is False
-        assert len(result['errors']) == 2
-        assert "Password must be at least 8 characters" in result['errors']
-        assert "Password must contain uppercase letter" in result['errors']
-    
+        assert result["valid"] is False
+        assert len(result["errors"]) == 2
+        assert "Password must be at least 8 characters" in result["errors"]
+        assert "Password must contain uppercase letter" in result["errors"]
+
     def test_minimum_valid_password(self):
         """Test minimal gültiges Passwort"""
         result = validate_password("Password")
-        assert result['valid'] is True
-        assert result['errors'] == []
+        assert result["valid"] is True
+        assert result["errors"] == []
 ```
 
 ## Best Practices:
