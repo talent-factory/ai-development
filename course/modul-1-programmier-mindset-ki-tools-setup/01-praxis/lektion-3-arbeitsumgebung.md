@@ -81,10 +81,16 @@ opencode --version
 
 **Ziel:** OpenCode startet im Terminal.
 
-### 5. Git (optional für heute, wird später gebraucht)
+### 5. Git
+
+Wir brauchen Git bereits heute, damit du das Kurs-Repository klonen kannst.
 
 ```bash
+# Version prüfen
 git --version
+
+# Kurs-Repository klonen
+git clone https://github.com/talent-factory/ai-development.git
 ```
 
 ---
