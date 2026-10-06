@@ -165,7 +165,7 @@ Top-K Chunks → Kontext + Frage → LLM → Antwort
 
 ### Chunk-Strategie
 
-- **Chunk-Größe:** 500 Zeichen (konfigurierbar)
+- **Chunk-Grösse:** 500 Zeichen (konfigurierbar)
 - **Methode:** Absatz-basierte Aufteilung
 - **Overlap:** Keine (vereinfacht für Demo)
 
@@ -196,7 +196,7 @@ Top-K Chunks → Kontext + Frage → LLM → Antwort
 1. **Bessere Chunking-Strategien:**
    - Overlap zwischen Chunks
    - Semantik-basierte Aufteilung
-   - Adaptive Chunk-Größen
+   - Adaptive Chunk-Grössen
 
 2. **Erweiterte Retrieval-Methoden:**
    - Hybrid Search (Keyword + Semantic)

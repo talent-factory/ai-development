@@ -148,6 +148,6 @@ Gib mir nur den geänderten Code zurück.
 
 ## 🏠 Hausaufgabe (Nachbereitung)
 
-- Passe `hello-world.py` mit KI-Unterstützung so an, dass dein Name und ein persönlicher Gruß angezeigt werden.
+- Passe `hello-world.py` mit KI-Unterstützung so an, dass dein Name und ein persönlicher Gruss angezeigt werden.
 - Dokumentiere in 2–3 Sätzen, welche Prompts du verwendet hast und was gut bzw. schwierig war.
 - Lies den ethischen Hintergrund in `01-praxis/01-introduction.adoc` nach.

@@ -116,7 +116,7 @@ Dieses Projekt ist für Bildungszwecke erstellt und steht unter der MIT Lizenz.
 
 - **OpenAI** für die GPT API
 - **Anthropic** für Claude API  
-- **Streamlit** für das großartige Framework
+- **Streamlit** für das grossartige Framework
 - **Alle Kursteilnehmer** für das wertvolle Feedback
 
 ---

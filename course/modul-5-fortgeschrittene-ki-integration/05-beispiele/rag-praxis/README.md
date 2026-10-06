@@ -190,7 +190,7 @@ Nach dem Kurs können Sie:
 2. **Erweitern**: Fügen Sie PDF-Support und besseres Chunking hinzu
 3. **Integrieren**: Verbinden Sie mit OpenAI/Anthropic für echte Antworten  
 4. **Anwenden**: Identifizieren Sie einen konkreten Anwendungsfall
-5. **Skalieren**: Nutzen Sie Cloud Vector Stores für größere Projekte
+5. **Skalieren**: Nutzen Sie Cloud Vector Stores für grössere Projekte
 
 ## 📚 Weiterführende Ressourcen
 
