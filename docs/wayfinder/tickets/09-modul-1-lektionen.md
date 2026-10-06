@@ -18,6 +18,7 @@ Durch Grilling-Session am 2026-10-06 festgelegt:
 - **Lektion 4:** Erste Python-Schritte mit KI – `hello-world.py` ausführen, KI als Erklär-Partner nutzen, Ethik/Regeln.
 
 **Anpassungen gegenüber dem ursprünglichen Modul 1:**
+
 - Setup wird nicht als Vorarbeit, sondern als gemeinsame Lektion 3 behandelt.
 - OpenCode wird als zusätzliches CLI-Tool eingeführt.
 - Windsurf entfällt; KI-Tools: ChatGPT, Claude, GitHub Copilot, Cursor, OpenCode.

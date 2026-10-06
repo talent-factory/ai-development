@@ -67,15 +67,15 @@ Bestehende Materialien (Kapitel, Übungen, Lösungen, Scripts, Streamlit-Apps, F
 
 ## Tickets
 
-| # | Ticket | Type | Status | Blocked by |
-|---|--------|------|--------|------------|
-| 1 | [Inventarisiere Materialien und erstelle Modulstruktur + Mapping](./tickets/04-struktur-und-mapping.md) | task | closed | – |
-| 2 | [Erstelle Modul-README-Vorlage und Pilot-Modul 1](./tickets/05-pilot-modul.md) | prototype | closed | #1 |
-| 3 | [Entscheide über No-Code/Low-Code-Integration](./tickets/06-no-code-tools.md) | grilling | closed | #1 |
-| 4 | [Erstelle READMEs für Modul 2–6](./tickets/07-module-2-bis-6.md) | task | closed | #2, #3 |
-| 5 | [Migriere bestehende Übungen, Scripts und Beispiele](./tickets/08-migration.md) | task | closed | #4 |
-| 6 | [Plane die Lektionen von Modul 1 neu](./tickets/09-modul-1-lektionen.md) | grilling | closed | #5 |
+| #   | Ticket                                                                                                  | Type      | Status | Blocked by |
+| --- | ------------------------------------------------------------------------------------------------------- | --------- | ------ | ---------- |
+| 1   | [Inventarisiere Materialien und erstelle Modulstruktur + Mapping](./tickets/04-struktur-und-mapping.md) | task      | closed | –          |
+| 2   | [Erstelle Modul-README-Vorlage und Pilot-Modul 1](./tickets/05-pilot-modul.md)                          | prototype | closed | #1         |
+| 3   | [Entscheide über No-Code/Low-Code-Integration](./tickets/06-no-code-tools.md)                           | grilling  | closed | #1         |
+| 4   | [Erstelle READMEs für Modul 2–6](./tickets/07-module-2-bis-6.md)                                        | task      | closed | #2, #3     |
+| 5   | [Migriere bestehende Übungen, Scripts und Beispiele](./tickets/08-migration.md)                         | task      | closed | #4         |
+| 6   | [Plane die Lektionen von Modul 1 neu](./tickets/09-modul-1-lektionen.md)                                | grilling  | closed | #5         |
 
 ---
 
-*Letzte Aktualisierung: 2026-10-06*
+_Letzte Aktualisierung: 2026-10-06_

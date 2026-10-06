@@ -34,12 +34,12 @@ Da der Kurs heute beginnt, findet die Vorbereitung als gemeinsame Checkliste zu 
 
 **Präsenzunterricht:** 4 Lektionen à 50 Minuten
 
-- **Lektion 1:** Was ist Programmieren? Klassisch und mit KI.
-- **Lektion 2:** KI-Begriffswelt: Prompts, Commands, Skills, Agents, Hooks.
-- **Lektion 3:** Arbeitsumgebung gemeinsam einrichten (VS Code, Python, uv, OpenCode).
-- **Lektion 4:** Erste Python-Schritte mit KI als Erklär-Partner.
+- **[Lektion 1](./01-praxis/lektion-1-was-ist-programmieren.md):** Was ist Programmieren? Klassisch und mit KI.
+- **[Lektion 2](./01-praxis/lektion-2-ki-begriffswelt.md):** KI-Begriffswelt: Prompts, Commands, Skills, Agents, Hooks.
+- **[Lektion 3](./01-praxis/lektion-3-arbeitsumgebung.md):** Arbeitsumgebung gemeinsam einrichten (VS Code, Python, uv, OpenCode).
+- **[Lektion 4](./01-praxis/lektion-4-erste-python-schritte.md):** Erste Python-Schritte mit KI als Erklär-Partner.
 
-> Vorhandenes Material: `01-praxis/01-introduction.adoc`, `04-materialien/software.adoc`, `01-praxis/uv.adoc`, `01-praxis/lesson-01-cli-setup.md`
+> Unterstützende Materialien: `01-praxis/01-introduction.adoc`, `04-materialien/software.adoc`, `01-praxis/uv.adoc`, `01-praxis/lesson-01-cli-setup.md`
 
 ### [02-uebungen/](./02-uebungen/)
 
@@ -83,16 +83,16 @@ Da der Kurs heute beginnt, findet die Vorbereitung als gemeinsame Checkliste zu 
 
 ## ⏱️ Zeitplan
 
-| Phase | Aktivität | Dauer |
-|-------|-----------|-------|
-| **18:00–18:50** | Lektion 1: Was ist Programmieren? | 50 Min |
-| **18:50–19:00** | Pause | 10 Min |
-| **19:00–19:50** | Lektion 2: KI-Begriffswelt | 50 Min |
-| **19:50–20:00** | Pause | 10 Min |
-| **20:00–20:50** | Lektion 3: Setup gemeinsam durchführen | 50 Min |
-| **20:50–21:00** | Pause | 10 Min |
-| **21:00–21:50** | Lektion 4: Erste Python-Schritte mit KI | 50 Min |
-| **Nach dem Kurs** | Setup-Doku + KI-Reflexion | 2–3 Std |
+| Phase             | Aktivität                               | Dauer   |
+| ----------------- | --------------------------------------- | ------- |
+| **18:00–18:50**   | Lektion 1: Was ist Programmieren?       | 50 Min  |
+| **18:50–19:00**   | Pause                                   | 10 Min  |
+| **19:00–19:50**   | Lektion 2: KI-Begriffswelt              | 50 Min  |
+| **19:50–20:00**   | Pause                                   | 10 Min  |
+| **20:00–20:50**   | Lektion 3: Setup gemeinsam durchführen  | 50 Min  |
+| **20:50–21:00**   | Pause                                   | 10 Min  |
+| **21:00–21:50**   | Lektion 4: Erste Python-Schritte mit KI | 50 Min  |
+| **Nach dem Kurs** | Setup-Doku + KI-Reflexion               | 2–3 Std |
 
 ---
 

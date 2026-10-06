@@ -5,6 +5,7 @@
 ## 🔧 **Voraussetzungen prüfen**
 
 ### ✅ **System-Requirements**
+
 ```bash
 # Node.js Version prüfen (mindestens v16)
 node --version
@@ -20,6 +21,7 @@ ping google.com
 ```
 
 **Erwartete Ausgaben:**
+
 - Node.js: v18.0.0 oder höher
 - npm: v8.0.0 oder höher
 - Git: v2.30.0 oder höher
@@ -29,6 +31,7 @@ ping google.com
 ### **1. GitHub CLI (Copilot-Alternative)**
 
 #### Installation:
+
 ```bash
 # GitHub CLI installieren (falls noch nicht vorhanden)
 # macOS: brew install gh
@@ -37,6 +40,7 @@ ping google.com
 ```
 
 #### Setup:
+
 ```bash
 # GitHub CLI authentifizieren
 gh auth login
@@ -46,6 +50,7 @@ gh auth refresh -s copilot
 ```
 
 #### Test:
+
 ```bash
 gh --version
 gh repo list --limit 3
@@ -54,10 +59,12 @@ gh repo list --limit 3
 **Hinweis:** GitHub Copilot CLI hat derzeit Authentifizierungsprobleme. Wir nutzen GitHub CLI als stabile Alternative.
 
 #### ✅ **Erfolgskriterium:**
+
 - [ ] Version wird angezeigt
 - [ ] Suggestion wird generiert
 
 #### ❌ **Häufige Probleme:**
+
 ```
 Problem: "gh: command not found"
 Lösung: GitHub CLI installieren: https://cli.github.com/
@@ -74,26 +81,31 @@ Lösung: GitHub Copilot Subscription aktivieren
 ### **2. Claude Code CLI**
 
 #### Installation:
+
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
 #### Setup:
+
 ```bash
 claude auth login
 ```
 
 #### Test:
+
 ```bash
 claude --version
 claude "Hello, can you help me with Python?"
 ```
 
 #### ✅ **Erfolgskriterium:**
+
 - [ ] Version wird angezeigt
 - [ ] Chat-Response wird generiert
 
 #### ❌ **Häufige Probleme:**
+
 ```
 Problem: "API key required"
 Lösung: Anthropic API Key in .env oder claude config setzen
@@ -110,27 +122,32 @@ Lösung: Proxy-Einstellungen prüfen
 ### **3. Gemini CLI**
 
 #### Installation:
+
 ```bash
 npm install -g @google/gemini-cli
 ```
 
 #### Setup:
+
 ```bash
 # API Key setzen (aus Google AI Studio)
 gemini config set api-key YOUR_GEMINI_API_KEY
 ```
 
 #### Test:
+
 ```bash
 gemini --version
 gemini chat "What is machine learning?"
 ```
 
 #### ✅ **Erfolgskriterium:**
+
 - [ ] Version wird angezeigt
 - [ ] Chat funktioniert
 
 #### ❌ **Häufige Probleme:**
+
 ```
 Problem: "Invalid API key"
 Lösung: Neuen API Key aus Google AI Studio generieren
@@ -147,26 +164,31 @@ Lösung: API Limits in Google Cloud Console prüfen
 ### **4. Augment Code CLI**
 
 #### Installation:
+
 ```bash
 npm install -g @augmentcode/auggie
 ```
 
 #### Setup:
+
 ```bash
 auggie login
 ```
 
 #### Test:
+
 ```bash
 auggie --version
 auggie status
 ```
 
 #### ✅ **Erfolgskriterium:**
+
 - [ ] Version wird angezeigt
 - [ ] Status zeigt "authenticated"
 
 #### ❌ **Häufige Probleme:**
+
 ```
 Problem: "Login failed"
 Lösung: Augment Code Account erstellen/verifizieren
@@ -181,6 +203,7 @@ Lösung: sudo npm install -g (nur als letzter Ausweg)
 ## 🔍 **Finale Verifikation**
 
 ### **Alle Tools testen:**
+
 ```bash
 # Versions-Check
 echo "=== CLI Tools Versions ==="
@@ -191,6 +214,7 @@ auggie --version 2>/dev/null && echo "✅ Augment Code" || echo "❌ Augment Cod
 ```
 
 ### **Funktionalitäts-Test:**
+
 ```bash
 # Schneller Funktionstest
 gh repo list --limit 3  # GitHub CLI Test
@@ -204,6 +228,7 @@ auggie status | head -3
 ### **Allgemeine Probleme:**
 
 #### **npm Permission Errors:**
+
 ```bash
 # npm global Verzeichnis prüfen
 npm config get prefix
@@ -216,6 +241,7 @@ source ~/.bashrc
 ```
 
 #### **Network/Proxy Issues:**
+
 ```bash
 # npm Proxy konfigurieren (falls nötig)
 npm config set proxy http://proxy.company.com:8080
@@ -227,6 +253,7 @@ npm config delete https-proxy
 ```
 
 #### **API Key Management:**
+
 ```bash
 # .env Datei erstellen
 touch ~/.env
@@ -235,7 +262,9 @@ echo "GOOGLE_API_KEY=your_key_here" >> ~/.env
 ```
 
 ### **Backup-Plan:**
+
 Falls Installation fehlschlägt:
+
 1. **Web-Interfaces nutzen:** claude.ai, chat.openai.com
 2. **VS Code Extensions:** GitHub Copilot, Claude Dev
 3. **Alternative CLIs:** ollama, openai-cli

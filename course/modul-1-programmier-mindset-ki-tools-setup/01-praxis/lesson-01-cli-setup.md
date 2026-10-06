@@ -35,7 +35,7 @@ graph LR
     B --> C[Package Manager CLI]
     C --> D[AI-Enhanced CLI]
     D --> E[AI-Native CLI]
-    
+
     style D fill:#ffcc99
     style E fill:#99ff99
 ```
@@ -57,7 +57,6 @@ npm --version
 ```
 
 **[Node.js herunterladen](https://nodejs.org/)** (LTS-Version empfohlen)
-
 
 #### **Tool 1: GitHub Copilot CLI (5 Min)**
 
@@ -135,6 +134,7 @@ auggie status
 ```
 
 #### **dotfiles Repository Setup (8 Min)**
+
 ```bash
 # Repository klonen
 git clone https://github.com/talent-factory/dotfiles.git
