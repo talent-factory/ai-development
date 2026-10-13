@@ -44,7 +44,7 @@ Nach diesem Modul kannst du:
 | 4 | Funktionen – Definieren & Wiederverwenden | `lektion-4-funktionen.md` | `def`, Parameter/Defaults/`*args`/`**kwargs`, `return`/`None`, Typ-Hinweise, Google-Docstrings, KI-Code-Review, modulare Taschenrechner |
 
 > **Materialien:** `01-praxis/lektion-*.md`, `05-beispiele/0*-demo.py`, `02-uebungen/ex-*.adoc`
-> **Slash-Commands:** `/erklaere` (Lektion 1, 3), `/debug` (Lektion 3), `/review` (Lektion 4, Übung 3). Details im [LEKTIONSPLAN](./LEKTIONSPLAN.md#slash-commands-modul-2).
+> **Slash-Commands:** `/erklaere` (Lektion 1), `/debug` (Lektion 3), `/review` (Lektion 4, Übung 3). Details im [LEKTIONSPLAN](./LEKTIONSPLAN.md#slash-commands-modul-2).
 
 ---
 

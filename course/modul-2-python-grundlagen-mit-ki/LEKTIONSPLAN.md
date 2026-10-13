@@ -133,7 +133,7 @@ Drei Befehle, die die Prompts aus `04-materialien/prompting-guide.adoc` als Befe
 
 | Command | Lektion | Zweck |
 | ------- | ------- | ----- |
-| `/erklaere` | 1 (Demo), 3 | Code Zeile für Zeile erklären lassen |
+| `/erklaere` | 1 (Demo) | Code Zeile für Zeile erklären lassen |
 | `/debug` | 3 | Fehlermeldung und Code analysieren, ohne komplette Lösung |
 | `/review` | 4 (Pflicht) | Checkliste: Typ-Hinweise, Docstring, Edge-Cases, Lesbarkeit; drei Verbesserungen |
 

@@ -128,7 +128,7 @@ Die Templates A, C und D sind als Befehle im Repo hinterlegt. Die Befehle liegen
 
 | Befehl | Entspricht | Einsatz |
 |--------|------------|---------|
-| `/erklaere` | Template A | Code Zeile für Zeile erklären lassen (Lektion 1, 3) |
+| `/erklaere` | Template A | Code Zeile für Zeile erklären lassen (Lektion 1) |
 | `/debug` | Template C | Fehlermeldung und Code analysieren, ohne komplette Lösung (Lektion 3) |
 | `/review` | Template D | Checkliste abarbeiten, drei priorisierte Verbesserungen (Lektion 4, Übung 3) |
 
