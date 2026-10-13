@@ -61,7 +61,7 @@ profil(name="Alex", alter="25", ort="Zürich", hobby="Python")
 def flexibel(pflicht: str, default: int = 1, *args, key_only: str, **kwargs) -> None:
     print(f"pflicht={pflicht}, default={default}, args={args}, key_only={key_only}, kwargs={kwargs}")
 
-flexibel("muß", 2, "extra1", "extra2", key_only="nur_keyword", extra="value")
+flexibel("muss", 2, "extra1", "extra2", key_only="nur_keyword", extra="value")
 
 # =============================================================================
 # 3. Rückgabewerte

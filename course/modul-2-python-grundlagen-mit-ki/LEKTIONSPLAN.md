@@ -20,8 +20,8 @@
 
 ### Ziele
 - Teilnehmende verstehen: Variable = Name für einen Speicherplatz mit Wert.
-- Sie unterscheiden `int`, `float`, `str`, `bool` und wenden Grundrechenarten an.
-- Sie nutzen KI, um Fehlermeldungen zu verstehen und Alternativen zu vergleichen.
+- Du unterscheidest `int`, `float`, `str`, `bool` und wendest Grundrechenarten an.
+- Du nutzt KI, um Fehlermeldungen zu verstehen und Alternativen zu vergleichen.
 
 ### Ablauf
 
@@ -30,7 +30,7 @@
 | 0–5 | Rückblick Modul 1: Was hat geklappt? Was war unklar? | Kurzrunde |
 | 5–20 | **Live-Coding:** Variablen anlegen, `print()`, `type()`, Rechenoperatoren (`+`, `-`, `*`, `/`, `//`, `%`, `**`), Strings verketten (`+`, `f-Strings`) | Demo + Mitmachen |
 | 20–35 | **KI-Exploration:** Teilnehmende lassen sich von KI 3 Varianten für „Berechne Fläche eines Kreises“ zeigen, vergleichen und wählen die verständlichste. Dozent zeigt einmal, wie derselbe Prompt als Befehl `/erklaere` läuft (siehe Abschnitt Slash-Commands). | Paararbeit + KI |
-| 35–45 | **Mini-Übung:** Eigene Variablen für: Alter, Körpergröße, Lieblingsfarbe, Ist_Student – ausgeben mit `f-String`. | Einzelarbeit |
+| 35–45 | **Mini-Übung:** Eigene Variablen für: Alter, Körpergrösse, Lieblingsfarbe, Ist_Student – ausgeben mit `f-String`. | Einzelarbeit |
 | 45–50 | Reflexion: Was war neu? Wo half KI? | Plenum |
 
 ### Materialien
@@ -58,8 +58,8 @@
 | ---- | --------- | ------- |
 | 0–5 | Wiederholung: `type()`, f-Strings – Kurze Demo durch TN | Plenum |
 | 5–20 | **Live-Coding:** Eingabe → Umwandlung → Vergleich → Verzweigung. Beispiel: Altersprüfung, Notenbereich. | Demo + Mitmachen |
-| 20–35 | **KI-Pair-Programming:** TN formulieren Prompt: „Schreibe ein Programm, das zwei Zahlen einliest und die größere ausgibt – mit Fehlerbehandlung.“ Ergebnis testen, besprechen. Bewusst ohne Slash-Command: hier wird das freie Formulieren geübt. | Paararbeit + KI |
-| 35–45 | **Mini-Übung:** BMI-Rechner: Gewicht & Größe einlesen, BMI berechnen, Kategorie ausgeben (Untergewicht/Normal/Übergewicht). | Einzelarbeit |
+| 20–35 | **KI-Pair-Programming:** TN formulieren Prompt: „Schreibe ein Programm, das zwei Zahlen einliest und die grössere ausgibt – mit Fehlerbehandlung.“ Ergebnis testen, besprechen. Bewusst ohne Slash-Command: hier wird das freie Formulieren geübt. | Paararbeit + KI |
+| 35–45 | **Mini-Übung:** BMI-Rechner: Gewicht & Grösse einlesen, BMI berechnen, Kategorie ausgeben (Untergewicht/Normal/Übergewicht). | Einzelarbeit |
 | 45–50 | Sammlung: Typische Fehler (String vs. Int, Einrückung, `=` vs `==`) | Plenum |
 
 ### Materialien

@@ -2,9 +2,9 @@
 == Software
 
 === Lernziele
-* Sie kennen die wichtigsten Software-Tools für KI-Entwicklung.
-* Sie können die Einsatzbereiche von Python, Node.js & Co. erläutern.
-* Sie sind in der Lage, passende Tools für eigene Projekte auszuwählen.
+* Du kennst die wichtigsten Software-Tools für KI-Entwicklung.
+* Du kannst die Einsatzbereiche von Python, Node.js & Co. erläutern.
+* Du bist in der Lage, passende Tools für eigene Projekte auszuwählen.
 
 :python: https://www.python.org/
 :pypi: https://pypi.org/
@@ -58,20 +58,20 @@ behandeln.
 
 ==== Installation von Python
 
-Um mit Python zu beginnen, müssen Sie Python zunächst auf Ihrem Computer installieren.
+Um mit Python zu beginnen, musst du Python zunächst auf deinem Computer installieren.
 Hier sind die Schritte zur Installation von Python:
 
 1. *Herunterladen von Python*:
-    * Gehen Sie zur offiziellen Python-Website: {python}[python.org]
-    * Laden Sie die neueste Version von Python für Ihr Betriebssystem herunter.
+    * Geh zur offiziellen Python-Website: {python}[python.org]
+    * Lade die neueste Version von Python für dein Betriebssystem herunter.
 
 2. *Installation*:
-    * Führen Sie das Installationsprogramm aus und folgen Sie den Anweisungen.
-    * Stellen Sie sicher, dass die Option "Add Python to PATH" aktiviert ist.
+    * Führe das Installationsprogramm aus und folge den Anweisungen.
+    * Stell sicher, dass die Option "Add Python to PATH" aktiviert ist.
 
 3. Überprüfung der Installation:
-    * Öffnen Sie die Eingabeaufforderung (`cmd`) oder das Terminal.
-    * Geben Sie `python --version` ein, um zu überprüfen, ob Python korrekt installiert wurde.
+    * Öffne die Eingabeaufforderung (`cmd`) oder das Terminal.
+    * Gib `python --version` ein, um zu überprüfen, ob Python korrekt installiert wurde.
 
 
 Jupyter Notebooks sind insbesondere im Data Science-Umfeld und in Schulungen weit
@@ -81,22 +81,22 @@ verfügbar, falls dies benötigt wird.
 === PyPi und pip
 
 Der Python Package Index ({pypi}[PyPi]) ist ein _Repository_ von Software-Paketen für Python.
-Mit PyPi können Sie zusätzliche Module und Bibliotheken installieren, die nicht in der
+Mit PyPi kannst du zusätzliche Module und Bibliotheken installieren, die nicht in der
 Standardbibliothek enthalten sind. `pip` ist das Paketverwaltungswerkzeug von Python,
-mit dem Sie diese Pakete installieren und verwalten können.
+mit dem du diese Pakete installieren und verwalten kannst.
 
 ==== Installation von pip
 
-Falls `pip` nicht automatisch mit Python installiert wurde, können Sie es wie
+Falls `pip` nicht automatisch mit Python installiert wurde, kannst du es wie
 folgt installieren:
 
-* Öffnen Sie die Eingabeaufforderung oder das Terminal.
+* Öffne die Eingabeaufforderung oder das Terminal.
 
-* Geben Sie `python -m ensurepip --upgrade` ein, um pip zu installieren.
+* Gib `python -m ensurepip --upgrade` ein, um pip zu installieren.
 
 ==== Nutzung von pip
 
-Mit `pip` können Sie ganz einfach Module von PyPi installieren. Hier sind
+Mit `pip` kannst du ganz einfach Module von PyPi installieren. Hier sind
 einige grundlegende Befehle:
 
 * Installation eines Moduls:
@@ -126,16 +126,16 @@ pip list
 
 ==== Beispiel: Installation und Verwendung eines Moduls
 
-Nehmen wir an, Sie möchten das Modul `numpy` installieren, das häufig für numerische
+Nehmen wir an, du möchtest das Modul `numpy` installieren, das häufig für numerische
 Berechnungen in Python verwendet wird.
 
 1. *Installation von numpy*:
-    * Öffnen Sie die Eingabeaufforderung oder das Terminal.
-    * Geben Sie den folgenden Befehl ein: `pip install numpy`
+    * Öffne die Eingabeaufforderung oder das Terminal.
+    * Gib den folgenden Befehl ein: `pip install numpy`
 
 2. *Verwendung von `numpy`*:
-    * Erstellen Sie eine neue Python-Datei (z.B. `example.py`).
-    * Fügen Sie den folgenden Code ein, um numpy zu verwenden:
+    * Erstelle eine neue Python-Datei (z.B. `example.py`).
+    * Füge den folgenden Code ein, um numpy zu verwenden:
 +
 [,python]
 ----
@@ -143,9 +143,9 @@ import numpy as np
 ----
 
 3. Ausführen des Python-Skripts:
-    * Speichern Sie die Datei und öffnen Sie die Eingabeaufforderung oder das Terminal.
-    * Navigieren Sie zu dem Verzeichnis, in dem die Datei gespeichert ist.
-    * Geben Sie `python example.py` ein, um das Skript auszuführen.
+    * Speichere die Datei und öffne die Eingabeaufforderung oder das Terminal.
+    * Navigiere zu dem Verzeichnis, in dem die Datei gespeichert ist.
+    * Gib `python example.py` ein, um das Skript auszuführen.
 
 
 ==== Häufig verwendete Module
@@ -154,11 +154,11 @@ import numpy as np
 
 ==== Modernes Paketmanagement mit uv
 
-In der Praxis stoßen klassische Tools wie pip oder poetry bei großen Projekten oder in CI/CD-Pipelines oft an ihre Grenzen, insbesondere was Geschwindigkeit und Reproduzierbarkeit angeht. Das neue Tool *uv* bietet eine moderne, blitzschnelle und ressourcenschonende Alternative, die sowohl für Einsteiger als auch für Fortgeschrittene geeignet ist.
+In der Praxis stossen klassische Tools wie pip oder poetry bei grossen Projekten oder in CI/CD-Pipelines oft an ihre Grenzen, insbesondere was Geschwindigkeit und Reproduzierbarkeit angeht. Das neue Tool *uv* bietet eine moderne, blitzschnelle und ressourcenschonende Alternative, die sowohl für Einsteiger als auch für Fortgeschrittene geeignet ist.
 
 [NOTE]
 ====
-uv kann als Drop-in-Replacement für pip und poetry genutzt werden und ist besonders für große Projekte und Teams interessant.
+uv kann als Drop-in-Replacement für pip und poetry genutzt werden und ist besonders für grosse Projekte und Teams interessant.
 ====
 
 Im folgenden Kapitel lernst du uv im Detail kennen und kannst es direkt ausprobieren:
@@ -201,7 +201,7 @@ verschiedene Aufgaben nützlich sind:
 
 ==== LangChain
 
-{langchain}[LangChain] ist ein Framework zur Entwicklung von Anwendungen, die mit großen Sprachmodellen (LLMs) arbeiten. Es bietet Komponenten und Tools, um LLM-basierte Anwendungen zu erstellen, die:
+{langchain}[LangChain] ist ein Framework zur Entwicklung von Anwendungen, die mit grossen Sprachmodellen (LLMs) arbeiten. Es bietet Komponenten und Tools, um LLM-basierte Anwendungen zu erstellen, die:
 
 * Dokumente abrufen und verarbeiten können
 * Mit externen Datenquellen interagieren können
@@ -223,7 +223,7 @@ Hauptkomponenten:
 
 ==== Faiss (Facebook AI Similarity Search)
 
-{faiss}[Faiss] ist eine Bibliothek von Facebook AI Research, die effizientes Suchen und Clustering von dichten Vektoren ermöglicht. Sie ist besonders nützlich für Anwendungen, die semantische Ähnlichkeiten in großen Datenmengen finden müssen.
+{faiss}[Faiss] ist eine Bibliothek von Facebook AI Research, die effizientes Suchen und Clustering von dichten Vektoren ermöglicht. Sie ist besonders nützlich für Anwendungen, die semantische Ähnlichkeiten in grossen Datenmengen finden müssen.
 
 Installation:
 [source,sh]
@@ -234,7 +234,7 @@ pip install faiss-gpu  # Für GPU-Unterstützung
 ----
 
 Haupteigenschaften:
-* Hocheffiziente Ähnlichkeitssuche für große Mengen von Vektoren
+* Hocheffiziente Ähnlichkeitssuche für grosse Mengen von Vektoren
 * Unterstützung für verschiedene Metriken (L2, Kosinus-Ähnlichkeit, etc.)
 * Skalierbarkeit für Milliarden von Vektoren
 * Anwendbar in Bereichen wie Empfehlungssysteme, Bilderkennung und Sprachverarbeitung
@@ -257,7 +257,7 @@ Hauptmerkmale:
 
 === Flowise
 
-Erfahren Sie, wie Sie Flowise lokal einsetzen können. Bevor wir
+Erfahre, wie du Flowise lokal einsetzen kannst. Bevor wir
 beginnen können, müssen wir sicherstellen, dass {nodejs}[NodeJS]
 auf dem Computer installiert haben. Node `v18.15.0` oder `v20+` wird unterstützt.
 Mit dem {nvm}[Node Version Manager] kann, falls notwendig, die richtive Version

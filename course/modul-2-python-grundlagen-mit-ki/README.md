@@ -1,13 +1,13 @@
 # Modul 2: Python-Grundlagen mit KI verstehen
 
 **Dauer:** 1 Tag (4 Lektionen à 50 Minuten)  
-**Voraussetzung:** Modul 1 abgeschlossen (Setup funktionsfähig: VS Code, Python, uv, OpenCode)
+**Voraussetzung:** Modul 1 abgeschlossen (Setup funktionsfähig: VS Code, Python, uv, OpenCode, Claude Code)
 
 ---
 
 ## 🎯 Lernziele
 
-Nach diesem Modul können Sie:
+Nach diesem Modul kannst du:
 
 1. ✅ Variablen, Datentypen (`int`, `float`, `str`, `bool`) und Operatoren sicher nutzen.
 2. ✅ Eingaben entgegennehmen (`input()`), Typen umwandeln (`int()`, `float()`) und validieren (`try/except`).
@@ -44,6 +44,7 @@ Nach diesem Modul können Sie:
 | 4 | Funktionen – Definieren & Wiederverwenden | `lektion-4-funktionen.md` | `def`, Parameter/Defaults/`*args`/`**kwargs`, `return`/`None`, Typ-Hinweise, Google-Docstrings, KI-Code-Review, modulare Taschenrechner |
 
 > **Materialien:** `01-praxis/lektion-*.md`, `05-beispiele/0*-demo.py`, `02-uebungen/ex-*.adoc`
+> **Slash-Commands:** `/erklaere` (Lektion 1, 3), `/debug` (Lektion 3), `/review` (Lektion 4, Übung 3). Details im [LEKTIONSPLAN](./LEKTIONSPLAN.md#slash-commands-modul-2).
 
 ---
 

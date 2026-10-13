@@ -14,7 +14,7 @@ ifndef::imagesdir[:imagesdir: ../../../docs/images]
 
 == 🚨 Technische Probleme? Kein Problem!
 
-Falls Ihre lokale Python-Installation nicht funktioniert, haben wir **zwei Backup-Lösungen** vorbereitet:
+Falls deine lokale Python-Installation nicht funktioniert, haben wir **zwei Backup-Lösungen** vorbereitet:
 
 == Option 1: GitHub Codespaces ⚡
 
@@ -102,7 +102,7 @@ Falls gar nichts funktioniert:
 
 Die Branches `main` und `develop` sind **geschützt** und können nicht direkt bearbeitet werden.
 
-**Best Practice:** Erstellen Sie für Ihre Änderungen einen eigenen Feature-Branch.
+**Best Practice:** Erstelle für deine Änderungen einen eigenen Feature-Branch.
 
 === Schritt-für-Schritt Anleitung:
 
@@ -135,7 +135,7 @@ git push
 
 === 🔒 Branch-Namenskonventionen
 
-Verwenden Sie aussagekräftige Präfixe:
+Verwende aussagekräftige Präfixe:
 
 * `feature/ihr-name` - Für neue Features oder Übungen
 * `exercise/aufgabe-nr` - Für spezifische Kursaufgaben
@@ -146,25 +146,25 @@ Verwenden Sie aussagekräftige Präfixe:
 
 * **Niemals direkt auf `main` oder `develop` pushen** - Diese Branches sind geschützt
 * **Regelmässig committen** - So gehen keine Änderungen verloren
-* **Aussagekräftige Commit-Messages** - Folgen Sie dem Format: `type: Beschreibung`
+* **Aussagekräftige Commit-Messages** - Folge dem Format: `type: Beschreibung`
 * **Eigene Branches** - Jeder Studierende arbeitet auf seinem eigenen Branch
 
 === 💾 Änderungen sichern
 
-Ihre Arbeit bleibt in Codespaces/Gitpod erhalten, solange:
+Deine Arbeit bleibt in Codespaces/Gitpod erhalten, solange:
 
-* Sie **regelmässig committen**
-* Sie **auf Ihren eigenen Branch pushen**
+* du **committest regelmässig**
+* du **pushst auf deinen eigenen Branch**
 * Der Workspace **nicht gelöscht** wird
 
 [TIP]
 ====
-**Tipp:** Committen Sie nach jeder abgeschlossenen Teilaufgabe, nicht erst am Ende!
+**Tipp:** Committe nach jeder abgeschlossenen Teilaufgabe, nicht erst am Ende!
 ====
 
 == 🎯 Ziel erreicht!
 
-**Egal welche Option Sie wählen - Sie haben eine funktionierende Entwicklungsumgebung!**
+**Egal welche Option du wählst - du hast eine funktionierende Entwicklungsumgebung!**
 
 - ✅ Python installiert  
 - ✅ VS Code verfügbar  
@@ -172,4 +172,4 @@ Ihre Arbeit bleibt in Codespaces/Gitpod erhalten, solange:
 - ✅ Streamlit funktioniert  
 - ✅ Git konfiguriert  
 
-**Jetzt können Sie mit dem AI Kurs-Assistenten Tutorial fortfahren!** 🚀
+**Jetzt kannst du mit dem AI Kurs-Assistenten Tutorial fortfahren!** 🚀

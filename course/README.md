@@ -1,8 +1,8 @@
 # Python & KI: Vom Programmier-Mindset zum eigenen KI-Projekt
 
-Dieser Kurs vermittelt die Grundlagen moderner, KI-gestützter Softwareentwicklung mit Python. Sie lernen, Probleme sauber zu zerlegen, in einer professionellen Entwicklungsumgebung zu arbeiten und mittels effektivem Prompting hochwertige KI-generierte Lösungen zu erstellen. Zentrale Python-Konzepte, Datenverarbeitung, APIs und Debugging werden direkt mit LLM-Unterstützung umgesetzt.
+Dieser Kurs vermittelt die Grundlagen moderner, KI-gestützter Softwareentwicklung mit Python. Du lernst, Probleme sauber zu zerlegen, in einer professionellen Entwicklungsumgebung zu arbeiten und mittels effektivem Prompting hochwertige KI-generierte Lösungen zu erstellen. Zentrale Python-Konzepte, Datenverarbeitung, APIs und Debugging werden direkt mit LLM-Unterstützung umgesetzt.
 
-Der Lehrgang integriert moderne Kerntechniken wie Refactoring, TDD, Code-Review, Embeddings, RAG und den Einsatz von AI Agents als aktive Entwicklungspartner. Sie entwickeln praxisnah Anwendungen, nutzen LLMs produktiv im Coding-Workflow und bauen KI-gestützte Informationssysteme. Das Gelernte fliesst in ein eigenes Abschlussprojekt ein.
+Der Lehrgang integriert moderne Kerntechniken wie Refactoring, TDD, Code-Review, Embeddings, RAG und den Einsatz von AI Agents als aktive Entwicklungspartner. Du entwickelst praxisnah Anwendungen, nutzt LLMs produktiv im Coding-Workflow und baust KI-gestützte Informationssysteme. Das Gelernte fliesst in ein eigenes Abschlussprojekt ein.
 
 Ein neuer Abschnitt
 ---
@@ -22,18 +22,18 @@ Ein neuer Abschnitt
 
 ## 🎯 Lernziele des Kurses
 
-- Sie verstehen, was KI ist und wie sie grundsätzlich funktioniert.
-- Sie kennen die wichtigsten KI-Begriffe und können mitreden.
-- Sie wissen, was Sie mit KI dürfen und was nicht – rechtlich, ethisch und beim Datenschutz.
-- Sie erkennen, wo KI hilft, wo sie schadet und wo ihre Grenzen liegen.
-- Sie verstehen, was Programmieren ist – klassisch und mit KI – und können grosse Aufgaben in kleine Schritte zerlegen.
-- Sie richten Ihre Arbeitsumgebung ein und finden sich darin zurecht.
-- Sie schreiben eigene Python-Programme mit den wichtigsten Bausteinen (Variablen, Schleifen, Funktionen).
-- Sie lesen und verarbeiten Daten aus verschiedenen Dateien und holen Informationen aus dem Internet – stabil und mit sauberer Fehlerbehandlung.
-- Sie prüfen Ihren Code automatisch auf Fehler, verbessern ihn Schritt für Schritt und dokumentieren ihn so, dass auch andere damit weiterarbeiten können.
-- Sie nutzen KI-Tools, um schneller und besser zu programmieren.
-- Sie bauen einfache KI-Helfer, die selbständig mehrere Schritte erledigen, und können sie testen und Fehler beheben.
-- Sie planen und bauen eine produktionsreife KI-Anwendung, die sicher ist, Daten schützt und fair mit allen Nutzern umgeht.
+- Du verstehst, was KI ist und wie sie grundsätzlich funktioniert.
+- Du kennst die wichtigsten KI-Begriffe und kannst mitreden.
+- Du weisst, was du mit KI darfst und was nicht – rechtlich, ethisch und beim Datenschutz.
+- Du erkennst, wo KI hilft, wo sie schadet und wo ihre Grenzen liegen.
+- Du verstehst, was Programmieren ist – klassisch und mit KI – und kannst grosse Aufgaben in kleine Schritte zerlegen.
+- Du richtest deine Arbeitsumgebung ein und findest dich darin zurecht.
+- Du schreibst eigene Python-Programme mit den wichtigsten Bausteinen (Variablen, Schleifen, Funktionen).
+- Du liest und verarbeitest Daten aus verschiedenen Dateien und holen Informationen aus dem Internet – stabil und mit sauberer Fehlerbehandlung.
+- Du prüfst deinen Code automatisch auf Fehler, verbesserst ihn Schritt für Schritt und dokumentierst ihn so, dass auch andere damit weiterarbeiten können.
+- Du nutzt KI-Tools, um schneller und besser zu programmieren.
+- Du baust einfache KI-Helfer, die selbständig mehrere Schritte erledigen, und kannst sie testen und Fehler beheben.
+- Du planst und baust eine produktionsreife KI-Anwendung, die sicher ist, Daten schützt und fair mit allen Nutzern umgeht.
 
 ---
 

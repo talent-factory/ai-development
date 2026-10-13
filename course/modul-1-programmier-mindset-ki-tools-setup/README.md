@@ -9,12 +9,12 @@
 
 ## 🎯 Lernziele
 
-Nach diesem Modul können Sie:
+Nach diesem Modul kannst du:
 
 1. ✅ Erklären, was Programmieren im Kern bedeutet und wie KI den Entwicklungsprozess verändert.
 2. ✅ Sich in der technischen Begriffswelt von KI zurechtfinden: LLM, Prompt, Command, Skill, Agent, Hook, RAG.
 3. ✅ Die wichtigsten KI-Tools für Entwickler einordnen: ChatGPT, Claude, GitHub Copilot, Cursor, OpenCode.
-4. ✅ Die eigene Arbeitsumgebung (VS Code, Python, Terminal, uv, OpenCode) einrichten und nutzen.
+4. ✅ Die eigene Arbeitsumgebung (VS Code, Python, Terminal, uv, OpenCode, Claude Code) einrichten und nutzen.
 5. ✅ Erste Python-Programme ausführen und verstehen.
 6. ✅ Mit KI-Tools gezielt unterstützende Fragen stellen und Antworten bewerten.
 7. ✅ Die rechtlichen und ethischen Grundregeln beim Einsatz von KI benennen.
@@ -27,7 +27,7 @@ Nach diesem Modul können Sie:
 
 Da der Kurs heute beginnt, findet die Vorbereitung als gemeinsame Checkliste zu Beginn von Lektion 3 statt. Das Material dient als Referenz für nach dem Kurs.
 
-- Setup-Checkliste (VS Code, Python, uv, OpenCode)
+- Setup-Checkliste (VS Code, Python, uv, OpenCode, Claude Code)
 - Leseauftrag: Was ist KI? (nach dem Unterricht nachholbar)
 
 ### [01-praxis/](./01-praxis/)
@@ -36,7 +36,7 @@ Da der Kurs heute beginnt, findet die Vorbereitung als gemeinsame Checkliste zu 
 
 - **[Lektion 1](./01-praxis/lektion-1-was-ist-programmieren.md):** Was ist Programmieren? Klassisch und mit KI.
 - **[Lektion 2](./01-praxis/lektion-2-ki-begriffswelt.md):** KI-Begriffswelt: Prompts, Commands, Skills, Agents, Hooks.
-- **[Lektion 3](./01-praxis/lektion-3-arbeitsumgebung.md):** Arbeitsumgebung gemeinsam einrichten (VS Code, Python, uv, OpenCode).
+- **[Lektion 3](./01-praxis/lektion-3-arbeitsumgebung.md):** Arbeitsumgebung gemeinsam einrichten (VS Code, Python, uv, OpenCode, Claude Code).
 - **[Lektion 4](./01-praxis/lektion-4-erste-python-schritte.md):** Erste Python-Schritte mit KI als Erklär-Partner.
 
 > Unterstützende Materialien: `01-praxis/01-introduction.adoc`, `04-materialien/software.adoc`, `01-praxis/uv.adoc`, `01-praxis/lesson-01-cli-setup.md`

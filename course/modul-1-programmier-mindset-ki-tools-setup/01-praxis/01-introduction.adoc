@@ -19,9 +19,9 @@ ifndef::imagesdir[:imagesdir: ../../../docs/images]
 :quick-uri: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
 
 == Lernziele
-* Sie verstehen die Grundbegriffe der Künstlichen Intelligenz (KI).
-* Sie können die wichtigsten Teilbereiche und Begriffe von KI voneinander abgrenzen.
-* Sie erkennen die Bedeutung von KI in der Informatik und Gesellschaft.
+* Du verstehst die Grundbegriffe der Künstlichen Intelligenz (KI).
+* Du kannst die wichtigsten Teilbereiche und Begriffe von KI voneinander abgrenzen.
+* Du erkennst die Bedeutung von KI in der Informatik und Gesellschaft.
 
 :SimpleML: https://simplemlforsheets.com/
 :account: https://accounts.google.com/
@@ -84,9 +84,9 @@ image::ml_01.png[width=60%]
 [discrete]
 === Übungen
 
-. Erstellen Sie eine Mindmap zu den Begriffen der KI und ordnen Sie Beispiele zu.
-. Recherchieren Sie aktuelle Anwendungsbeispiele für KI in der Wirtschaft.
-. Diskutieren Sie in der Gruppe, welche Chancen und Risiken KI für die Gesellschaft mit sich bringt.
+. Erstelle eine Mindmap zu den Begriffen der KI und ordne Beispiele zu.
+. Recherchiere aktuelle Anwendungsbeispiele für KI in der Wirtschaft.
+. Diskutiere in der Gruppe, welche Chancen und Risiken KI für die Gesellschaft mit sich bringt.
 
 Kybernetik ist die Wissenschaft von der Steuerung und der Kommunikation in Organismen, Maschinen und Organisationen.
 Sie untersucht vor allem, wie Systeme sich selbst regulieren und Informationen verarbeiten, um ihre Ziele zu erreichen.

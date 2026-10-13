@@ -9,7 +9,7 @@
 
 Nach dieser Lektion können die Teilnehmenden:
 
-- VS Code, Python, uv und OpenCode installieren und starten.
+- VS Code, Python, uv, OpenCode und Claude Code installieren und starten.
 - Den Terminal in VS Code öffnen und grundlegende Befehle ausführen.
 - Die Versionen der installierten Tools prüfen.
 - Verstehen, warum eine reproduzierbare Umgebung wichtig ist.
@@ -81,7 +81,19 @@ opencode --version
 
 **Ziel:** OpenCode startet im Terminal.
 
-### 5. Git
+### 5. Claude Code
+
+```bash
+# Installation
+npm install -g @anthropic-ai/claude-code
+
+# Version prüfen
+claude --version
+```
+
+**Ziel:** Claude Code startet im Terminal. Die Anmeldung mit deinem Claude-Konto folgt in der Lektion (`claude auth login`).
+
+### 6. Git
 
 Wir brauchen Git bereits heute, damit du das Kurs-Repository klonen kannst.
 
@@ -103,6 +115,7 @@ Jede/r führt folgende Befehle im Terminal aus und dokumentiert die Ausgabe:
 python --version
 uv --version
 opencode --version
+claude --version
 git --version
 ```
 

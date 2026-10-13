@@ -6,7 +6,7 @@
 
 ## 1. Modul 1 wiederholen (30 Min)
 
-- [ ] Setup prüfen: `python --version`, `uv --version`, `opencode --version`
+- [ ] Setup prüfen: `python --version`, `uv --version`, `opencode --version`, `claude --version`
 - [ ] `hello-world.py` aus Modul 1 nochmals ausführen
 - [ ] Eine KI-Frage zu Python stellen, Antwort reflektieren (Was war hilfreich? Was ungenau?)
 
@@ -99,7 +99,7 @@ help(quadrat)
 | `python` nicht gefunden | Neuinstallation, "Add to PATH" prüfen, Terminal neu starten |
 | `uv` nicht gefunden | `curl -LsSf https://astral.sh/uv/install.sh \| sh` (Mac/Linux) oder `pip install uv` |
 | OpenCode startet nicht | `opencode auth login`, API-Key prüfen |
-| REPL schließt sofort | `python -i` oder `python -c "..."` nutzen |
+| REPL schliesst sofort | `python -i` oder `python -c "..."` nutzen |
 
 ---
 

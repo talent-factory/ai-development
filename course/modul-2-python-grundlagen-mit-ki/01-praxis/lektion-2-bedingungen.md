@@ -182,7 +182,7 @@ print(f"BMI: {bmi:.1f} – {kategorie}")
 
 | Prompt | Zweck |
 |--------|-------|
-| `"Schreibe ein Programm, das zwei Zahlen einliest und die größere ausgibt – mit Fehlerbehandlung für ungültige Eingaben."` | Vorlage generieren |
+| `"Schreibe ein Programm, das zwei Zahlen einliest und die grössere ausgibt – mit Fehlerbehandlung für ungültige Eingaben."` | Vorlage generieren |
 | `"Mein Code wirft ValueError bei Buchstaben. Wie fange ich das ab?"` | Debugging-Hilfe |
 | `"Vergleiche: `if x:` vs `if x == True:` – was ist besser?"` | Best Practice |
 | `"Erkläre mir den Unterschied zwischen `if`, `elif`, `else` an einem Alltagsbeispiel."` | Konzept vertiefen |
@@ -194,7 +194,7 @@ print(f"BMI: {bmi:.1f} – {kategorie}")
 Erweitere den BMI-Rechner:
 1. Frage auch nach **Alter**
 2. Für Unter-18-Jährige: Hinweis „BMI bei Jugendlichen anders interpretieren“
-3. Gib **Idealgewichts-Bereich** aus (BMI 18.5–25 → Gewicht = BMI × Größe²)
+3. Gib **Idealgewichts-Bereich** aus (BMI 18.5–25 → Gewicht = BMI × Grösse²)
 
 **KI-Prompt:** `"Ergänze den BMI-Rechner: Idealgewicht-Bereich berechnen und ausgeben."`
 

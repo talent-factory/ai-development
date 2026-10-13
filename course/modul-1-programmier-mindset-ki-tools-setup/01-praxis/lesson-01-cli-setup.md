@@ -1,6 +1,6 @@
-# 🔧 Lektion 1: CLI-Tools & Slash Commands Setup
+# 🔧 Hintergrund: CLI-Tools & Slash-Commands
 
-**Zeit:** 18:00 - 18:50 (50 Minuten)
+**Zeit:** Hintergrund zum Nachlesen (ca. 50 Minuten)
 **Ziel:** Installation und Grundverständnis moderner AI-CLI Tools
 
 ## 🎯 **Lernziele**
@@ -17,13 +17,13 @@ Nach dieser Lektion können die Teilnehmenden:
 ### 📚 **Phase 1: Aktivierung & Überblick (10 Min)**
 
 ```text
-18:00-18:05  Begrüssung & Rückblick RAG-Abend
-18:05-18:10  Moderne AI-CLI Landschaft Überblick
+Min 0–5  Begrüssung & Einstieg
+Min 5–10  Moderne AI-CLI Landschaft Überblick
 ```
 
 **Aktivierung Vorwissen:**
 
-- "Was haben wir letzten Abend mit RAG erreicht?"
+- "Welche KI-Tools habt ihr in Modul 1 bisher ausprobiert?"
 - "Welche AI-Tools nutzt ihr bereits täglich?"
 - "Was würde euch bei der täglichen Entwicklung am meisten helfen?"
 
@@ -43,7 +43,7 @@ graph LR
 ### 🚀 **Phase 2: Essential CLI-Tools Installation (25 Min)**
 
 ```text
-18:10-18:35  Live-Installation aller Tools
+Min 10–35  Live-Installation aller Tools
 ```
 
 #### **Voraussetzung: Node.js Installation (2 Min)**
@@ -130,7 +130,7 @@ auggie status
 ### 🎯 **Phase 3: dotfiles & Slash Commands Einführung (15 Min)**
 
 ```text
-18:35-18:50  dotfiles Installation + erste Commands
+Min 35–50  dotfiles Installation + erste Commands
 ```
 
 #### **dotfiles Repository Setup (8 Min)**
@@ -192,4 +192,4 @@ ls ~/.claude/commands/
 
 ---
 
-**Pause: 18:50 - 19:00 (10 Minuten)**
+**Pause: Min 50–60 (10 Minuten)**

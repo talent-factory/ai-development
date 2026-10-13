@@ -12,7 +12,7 @@
 | ------- | ---------------------------- | ----------------------------------------------------------------------------------------------------- |
 | 1       | Was ist Programmieren?       | Programmieren = Probleme zerlegen + Anweisungen präzise formulieren. KI ist ein Partner, kein Ersatz. |
 | 2       | KI-Begriffswelt              | Prompt, Command, Skill, Agent, Hook, LLM, RAG – Begriffe verstehen und unterscheiden.                 |
-| 3       | Setup gemeinsam              | VS Code, Python, uv, OpenCode installieren und startklar machen.                                      |
+| 3       | Setup gemeinsam              | VS Code, Python, uv, OpenCode und Claude Code installieren und startklar machen.                                      |
 | 4       | Erste Python-Schritte mit KI | Ein erstes Script ausführen, KI als Erklär-Partner nutzen, ethische Grundlagen.                       |
 
 ---
@@ -22,8 +22,8 @@
 ### Ziele
 
 - Teilnehmende verstehen, dass Programmieren primär Denken ist, nicht Tippen.
-- Sie können eine Alltagsaufgabe in kleine, eindeutige Schritte zerlegen.
-- Sie erkennen, wo KI hilft und wo menschliche Strukturierung nötig bleibt.
+- Du kannst eine Alltagsaufgabe in kleine, eindeutige Schritte zerlegen.
+- Du erkennst, wo KI hilft und wo menschliche Strukturierung nötig bleibt.
 
 ### Ablauf (50 Min)
 
@@ -50,7 +50,7 @@
 ### Ziele
 
 - Teilnehmende kennen die zentralen Begriffe der KI-gestützten Entwicklung.
-- Sie können Prompt, Command, Skill, Agent, Hook, LLM und RAG unterscheiden.
+- Du kannst Prompt, Command, Skill, Agent, Hook, LLM und RAG unterscheiden.
 
 ### Ablauf (50 Min)
 
@@ -65,7 +65,7 @@
 
 | Begriff     | Einfache Erklärung                                                           | Beispiel                                           |
 | ----------- | ---------------------------------------------------------------------------- | -------------------------------------------------- |
-| **LLM**     | Groses Sprachmodell, das Texte versteht und erzeugt.                         | ChatGPT, Claude                                    |
+| **LLM**     | Grosses Sprachmodell, das Texte versteht und erzeugt.                         | ChatGPT, Claude                                    |
 | **Prompt**  | Eine Anweisung in natürlicher Sprache an ein KI-Modell.                      | «Erkläre mir Python-Variablen wie einem Anfänger.» |
 | **Command** | Ein vordefinierter Befehl, der einen bestimmten Workflow auslöst.            | `/commit` in OpenCode                              |
 | **Skill**   | Ein wiederverwendbares Wissenspaket oder Verhaltensmuster für einen Agenten. | Ein Skill für Code-Reviews                         |
@@ -88,7 +88,7 @@
 
 ### Ziele
 
-- Alle Teilnehmenden haben VS Code, Python, uv und OpenCode installiert oder wissen, was noch fehlt.
+- Alle Teilnehmenden haben VS Code, Python, uv, OpenCode und Claude Code installiert oder wissen, was noch fehlt.
 - Der Terminal/Command-Palette ist keine Angstzone mehr.
 
 ### Ablauf (50 Min)
@@ -97,7 +97,7 @@
 | ----- | -------------------------------------------------------------------------------------------------------- | ------------- |
 | 0–5   | Warum Setup wichtig ist: Reproduzierbarkeit, professioneller Workflow                                    | Kurzvortrag   |
 | 5–35  | **Schritt-für-Schritt-Setup** anhand der Checkliste. Der Dozent führt vor, die Teilnehmenden machen mit. | Hands-On      |
-| 35–45 | **Check:** Python läuft? `uv --version`? OpenCode startet?                                               | Gruppen-Check |
+| 35–45 | **Check:** Python läuft? `uv --version`? OpenCode startet? Claude Code startet?                                               | Gruppen-Check |
 | 45–50 | Puffer für Probleme, erste Hilfestellungen                                                               | Individuell   |
 
 ### Setup-Checkliste
@@ -106,6 +106,7 @@
 - [ ] Python 3.12 oder 3.13 installiert (`python --version` bzw. `python3 --version`)
 - [ ] uv installiert (`uv --version`)
 - [ ] OpenCode installiert und eingerichtet (`opencode --version`)
+- [ ] Claude Code installiert (`claude --version`)
 - [ ] Terminal in VS Code funktioniert
 - [ ] Git ist installiert (für spätere Module)
 
@@ -123,8 +124,8 @@
 ### Ziele
 
 - Teilnehmende führen ein erstes Python-Script aus.
-- Sie nutzen KI, um Code zu erklären und kleine Änderungen vorzuschlagen.
-- Sie kennen die ersten ethischen Grundregeln.
+- Du nutzt KI, um Code zu erklären und kleine Änderungen vorzuschlagen.
+- Du kennst die ersten ethischen Grundregeln.
 
 ### Ablauf (50 Min)
 

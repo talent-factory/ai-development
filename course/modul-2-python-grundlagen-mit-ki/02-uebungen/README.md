@@ -10,11 +10,6 @@
 - [ex-02-zahlenraten.adoc](./ex-02-zahlenraten.adoc) – Zahlenraten mit Schleifen (Lektion 3)
 - [ex-03-funktionen.adoc](./ex-03-funktionen.adoc) – Modularer Taschenrechner mit Funktionen + KI-Review (Lektion 4)
 
-### Alte Dateien (Archiv)
-
-- [ex-01.adoc](./ex-01.adoc) – Python-Installation (veraltet, Setup in Modul 1)
-- [ex-02.adoc](./ex-02.adoc) – Flowise AI (veraltet, gehört in Modul 1/4)
-
 ---
 
 ## 🔗 Verknüpfungen
