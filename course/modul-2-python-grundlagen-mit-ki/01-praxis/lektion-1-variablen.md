@@ -118,6 +118,12 @@ print(type(zahl_int), zahl_int * 2)
 | `"Zeige mir 3 alternative Schreibweisen für diese Berechnung."` | Varianten vergleichen |
 | `"Warum gibt `7 / 2` einen float zurück, aber `7 // 2` einen int?"` | Konzepte vertiefen |
 
+### Als Befehl: `/erklaere`
+
+Der erste Prompt ist auch als Befehl verfügbar. Starte Claude Code oder OpenCode **aus dem Repo-Root**, tippe `/erklaere` und füge danach deinen Code ein. Der Befehl ergänzt den Prompt um Anfänger-Sprache und einen typischen Fehler zum Schluss.
+
+Ohne Abo kopierst du den Prompt aus der Tabelle oben in den Browser.
+
 ---
 
 ## 6. Mini-Übung (10 Min)

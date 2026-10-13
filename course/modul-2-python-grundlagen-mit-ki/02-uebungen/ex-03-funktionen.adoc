@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
 ==== KI-Code-Review (Pflichtteil)
 
-Kopiere deinen **fertigen Code** in den KI-Chat und nutze diesen Prompt:
+Starte mit deinem **fertigen Code** den Befehl `/review` (Claude Code oder OpenCode, aus dem Repo-Root). Er prüft die Punkte 1–4 unten. Ohne Abo kopierst du den Prompt unten in den KI-Chat:
 
 > `"Prüfe diesen Code auf:
 > 1. Vollständigkeit der Typ-Hinweise (Parameter & Return)
@@ -156,7 +156,7 @@ Kopiere deinen **fertigen Code** in den KI-Chat und nutze diesen Prompt:
 
 ==== Erweiterungen (freiwillig)
 
-1. **History:** Liste `verlauf = []` –每次计算后 append `(a, op, b, ergebnis)`. Menüpunkt 6: History anzeigen.
+1. **History:** Liste `verlauf = []` – nach jeder Berechnung `append((a, op, b, ergebnis))`. Menüpunkt 6: History anzeigen.
 2. **Potenz & Wurzel:** Funktionen `pow(a, b)` und `sqrt(a)` (import `math`).
 3. **Konstanten:** `PI = 3.14159` – Menüpunkt für Kreisberechnung.
 4. **Tests:** Schreibe 3 `assert`-Tests am Dateiende (z. B. `assert add(2, 3) == 5`).

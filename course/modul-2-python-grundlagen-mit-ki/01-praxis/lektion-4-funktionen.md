@@ -253,6 +253,12 @@ print(ergebnis)
 | `"Vergleiche: Früher Return vs. einzelne Return-Anweisung am Ende."` | Style-Diskussion |
 | `"Generiere 3 Testfälle für diese Funktion (Happy Path, Edge Case, Error)."` | Test-Ideen |
 
+### Als Befehl: `/review`
+
+Für den Pflicht-Review in Übung 3 gibt es den Befehl `/review`. Starte Claude Code oder OpenCode aus dem Repo-Root, tippe `/review` und füge deine Funktion ein. Der Befehl prüft die Checkliste (Typ-Hinweise, Docstring, Edge-Cases, Lesbarkeit) und nennt genau drei priorisierte Verbesserungen mit Code-Beispiel.
+
+Ohne Abo verwendest du den Prompt aus Übung 3.
+
 ---
 
 ## 9. Mini-Projekt: Taschenrechner mit Menü (20 Min)

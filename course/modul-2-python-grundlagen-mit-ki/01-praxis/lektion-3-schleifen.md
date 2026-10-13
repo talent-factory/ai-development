@@ -199,6 +199,10 @@ for i in range(1, 101):
 | `"Erkläre mir `enumerate()` an einem Beispiel."` | Neues Konzept |
 | `"Wie baue ich eine Countdown-Schleife von 10 bis 1?"` | `range` mit negativem Step |
 
+### Als Befehl: `/debug`
+
+Beim Debugging hilft der Befehl `/debug`. Starte Claude Code oder OpenCode aus dem Repo-Root, tippe `/debug` und füge die **vollständige Fehlermeldung** und den Code ein. Der Befehl erklärt zuerst den Fehler und gibt dann einen Hinweis, statt sofort die ganze Lösung zu schreiben. Ohne Abo verwendest du den Prompt aus dem Prompting-Guide.
+
 ---
 
 ## 8. Mini-Übung: FizzBuzz erweitern (10 Min)

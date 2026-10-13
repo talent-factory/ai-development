@@ -122,6 +122,20 @@ Gib konkrete Verbesserungsvorschläge mit Code.
 
 ---
 
+== Slash-Commands (Modul 2)
+
+Die Templates A, C und D sind als Befehle im Repo hinterlegt. Die Befehle liegen in `.claude/commands/` (Claude Code) und `.opencode/commands/` (OpenCode). Starte die CLI aus dem Repo-Root.
+
+| Befehl | Entspricht | Einsatz |
+|--------|------------|---------|
+| `/erklaere` | Template A | Code Zeile für Zeile erklären lassen (Lektion 1, 3) |
+| `/debug` | Template C | Fehlermeldung und Code analysieren, ohne komplette Lösung (Lektion 3) |
+| `/review` | Template D | Checkliste abarbeiten, drei priorisierte Verbesserungen (Lektion 4, Übung 3) |
+
+Der Befehl ersetzt den Prompt nicht, er enthält ihn. Ohne Abo oder ohne Claude Code verwendest du den Text des entsprechenden Templates aus diesem Guide.
+
+---
+
 == Anti-Patterns (Was NICHT funktioniert)
 
 | ❌ Schlecht | ✅ Besser |
