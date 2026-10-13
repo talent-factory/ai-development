@@ -1,0 +1,120 @@
+=== Übung 2: Zahlenraten mit Schleifen
+
+**Lektion:** 3 (Schleifen)  
+**Zeit:** 15–20 Minuten  
+**Ziel:** `while`-Schleife, `random`, Zähler, Benutzerführung.
+
+---
+
+==== Aufgabenstellung
+
+Schreibe ein Programm `zahlenraten.py`, das:
+
+1. Eine **geheime Zufallszahl** zwischen 1 und 100 generiert (`random.randint`)
+2. Den Benutzer wiederholt auffordert, eine Zahl zu raten
+3. Nach jedem Tipp Rückmeldung gibt:
+   - `"Zu klein!"` / `"Zu gross!"` / `"Richtig!"`
+4. Die **Anzahl Versuche** zählt und am Ende ausgibt
+5. **Optional:** Schwierigkeitsgrad wählen (leicht: 1–50, mittel: 1–100, schwer: 1–200)
+
+---
+
+==== Beispiel-Ausgabe
+
+```
+=== ZAHLENRATEN ===
+Schwierigkeit (1=leicht, 2=mittel, 3=schwer): 2
+Rate die Zahl zwischen 1 und 100!
+
+Versuch 1: 50
+Zu gross!
+
+Versuch 2: 25
+Zu klein!
+
+Versuch 3: 37
+Richtig! Du hast 3 Versuche gebraucht.
+```
+
+---
+
+==== Starthilfe (Gerüst)
+
+```python
+import random
+
+
+def main():
+    print("=== ZAHLENRATEN ===")
+    
+    # 1. Schwierigkeit wählen
+    print("Schwierigkeit (1=leicht 1-50, 2=mittel 1-100, 3=schwer 1-200): ")
+    stufe = input("Wahl: ")
+    
+    if stufe == "1":
+        max_zahl = 50
+    elif stufe == "3":
+        max_zahl = 200
+    else:
+        max_zahl = 100
+    
+    geheim = random.randint(1, max_zahl)
+    versuche = 0
+    geraten = False
+    
+    print(f"Rate die Zahl zwischen 1 und {max_zahl}!")
+    
+    # 2. While-Schleife
+    while not geraten:
+        versuche += 1
+        tipp_str = input(f"Versuch {versuche}: ")
+        
+        # 3. Eingabe validieren
+        try:
+            tipp = int(tipp_str)
+        except ValueError:
+            print("Bitte eine ganze Zahl eingeben!")
+            versuche -= 1  # Nicht als Versuch zählen
+            continue
+        
+        # 4. Prüfen
+        if tipp < geheim:
+            print("Zu klein!")
+        elif tipp > geheim:
+            print("Zu gross!")
+        else:
+            print(f"Richtig! Du hast {versuche} Versuche gebraucht.")
+            geraten = True
+
+
+if __name__ == "__main__":
+    main()
+```
+
+---
+
+==== Erweiterungen (freiwillig)
+
+1. **Highscore:** Bestenversuch in Datei speichern (`highscore.txt`) und beim Start anzeigen
+2. **Maximale Versuche:** Nach 7 Versuchen → `"Verloren! Die Zahl war {geheim}."`
+3. **Hinweis-Modus:** Bei `tipp == -1` → Tipp geben: `"Die Zahl ist {gerade/ungerade}"` (1 Versuch kostet)
+4. **KI-Prompt:** `"Füge einen Highscore hinzu, der in einer Datei gespeichert wird und beim Spielstart angezeigt wird."`
+
+---
+
+==== Abgabe
+
+- Datei: `zahlenraten.py` im Ordner `02-uebungen/`
+- Optional: Screenshot eines gewonnenen Spiels
+
+---
+
+==== Reflexion
+
+1. Warum `versuche -= 1` bei ungültiger Eingabe?
+2. Was passiert, wenn du `geraten = True` **vergisst**?
+3. Wie würdest du das Spiel für 2 Spieler umbauen (abwechselnd raten)?
+
+---
+
+*Datei: `02-uebungen/ex-02-zahlenraten.adoc`*

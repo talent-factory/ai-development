@@ -1,0 +1,183 @@
+=== Übung 3: Funktionen – Taschenrechner modulär
+
+**Lektion:** 4 (Funktionen)  
+**Zeit:** 20–25 Minuten  
+**Ziel:** Funktionen definieren, Typ-Hinweise, Docstrings, `main()`-Struktur, KI-Review.
+
+---
+
+==== Aufgabenstellung
+
+Schreibe ein Programm `taschenrechner_funktionen.py`, das den Taschenrechner aus Übung 1 **mit Funktionen** neu strukturiert:
+
+1. **Vier Rechenfunktionen** mit Typ-Hinweisen & Docstrings:
+   - `add(a: float, b: float) -> float`
+   - `sub(a: float, b: float) -> float`
+   - `mul(a: float, b: float) -> float`
+   - `div(a: float, b: float) -> float | None` (None bei Division durch 0)
+
+2. **Menü-Funktion** `zeige_menue() -> None`
+
+3. **Haupt-Funktion** `main() -> None` mit Schleife:
+   - Menü anzeigen
+   - Auswahl einlesen (1–5)
+   - Bei 1–4: zwei Zahlen einlesen, Funktion aufrufen, Ergebnis zeigen
+   - Bei 5: `"Auf Wiedersehen!"` und `break`
+   - Ungültige Eingabe abfangen
+
+4. **Einstiegspunkt** `if __name__ == "__main__": main()`
+
+---
+
+==== Beispiel-Menü
+
+```
+=== TASCHENRECHNER ===
+1. Addieren (+)
+2. Subtrahieren (-)
+3. Multiplizieren (*)
+4. Dividieren (/)
+5. Beenden
+
+Wahl: 1
+Zahl 1: 10
+Zahl 2: 5
+Ergebnis: 15.0
+
+Wahl: 5
+Auf Wiedersehen!
+```
+
+---
+
+==== Starthilfe (Gerüst)
+
+```python
+"""Modularer Taschenrechner mit Funktionen."""
+
+
+def add(a: float, b: float) -> float:
+    """Addiert zwei Zahlen."""
+    return a + b
+
+
+def sub(a: float, b: float) -> float:
+    """Subtrahiert b von a."""
+    return a - b
+
+
+def mul(a: float, b: float) -> float:
+    """Multipliziert zwei Zahlen."""
+    return a * b
+
+
+def div(a: float, b: float) -> float | None:
+    """Dividiert a durch b. Gibt None zurück bei Division durch 0."""
+    if b == 0:
+        print("Fehler: Division durch 0 nicht erlaubt.")
+        return None
+    return a / b
+
+
+def zeige_menue() -> None:
+    """Zeigt das Hauptmenü an."""
+    print("\n=== TASCHENRECHNER ===")
+    print("1. Addieren (+)")
+    print("2. Subtrahieren (-)")
+    print("3. Multiplizieren (*)")
+    print("4. Dividieren (/)")
+    print("5. Beenden")
+
+
+def zahl_einlesen(prompt: str) -> float | None:
+    """Liest eine Zahl ein, gibt None bei Fehler."""
+    try:
+        return float(input(prompt))
+    except ValueError:
+        print("Ungültige Eingabe – bitte eine Zahl.")
+        return None
+
+
+def main() -> None:
+    """Hauptprogramm-Schleife."""
+    operationen = {
+        "1": ("Addition", add),
+        "2": ("Subtraktion", sub),
+        "3": ("Multiplikation", mul),
+        "4": ("Division", div),
+    }
+    
+    while True:
+        zeige_menue()
+        wahl = input("Wahl (1-5): ").strip()
+        
+        if wahl == "5":
+            print("Auf Wiedersehen!")
+            break
+        
+        if wahl not in operationen:
+            print("Ungültige Wahl – bitte 1 bis 5.")
+            continue
+        
+        name, func = operationen[wahl]
+        
+        a = zahl_einlesen("Zahl 1: ")
+        if a is None:
+            continue
+        b = zahl_einlesen("Zahl 2: ")
+        if b is None:
+            continue
+        
+        ergebnis = func(a, b)
+        if ergebnis is not None:
+            print(f"Ergebnis ({name}): {ergebnis}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+---
+
+==== KI-Code-Review (Pflichtteil)
+
+Kopiere deinen **fertigen Code** in den KI-Chat und nutze diesen Prompt:
+
+> `"Prüfe diesen Code auf:
+> 1. Vollständigkeit der Typ-Hinweise (Parameter & Return)
+> 2. Qualität der Docstrings (Google-Style: Args, Returns, Raises, Example)
+> 3. Edge Cases: leere Eingabe, Buchstaben, Division durch 0, negative Zahlen
+> 4. Lesbarkeit: Namensgebung, Einrückung, Kommentare
+> 5. Verbesserungsvorschläge mit Code-Beispielen"`
+
+**Dokumentiere:** Welche 3 konkreten Verbesserungen hat die KI vorgeschlagen? Setze mindestens **eine** davon um.
+
+---
+
+==== Erweiterungen (freiwillig)
+
+1. **History:** Liste `verlauf = []` –每次计算后 append `(a, op, b, ergebnis)`. Menüpunkt 6: History anzeigen.
+2. **Potenz & Wurzel:** Funktionen `pow(a, b)` und `sqrt(a)` (import `math`).
+3. **Konstanten:** `PI = 3.14159` – Menüpunkt für Kreisberechnung.
+4. **Tests:** Schreibe 3 `assert`-Tests am Dateiende (z. B. `assert add(2, 3) == 5`).
+
+---
+
+==== Abgabe
+
+- Datei: `taschenrechner_funktionen.py` im Ordner `02-uebungen/`
+- **Zusätzlich:** Kurzes Markdown-File `ki-review.md` mit:
+  - 3 KI-Vorschläge (Zitat)
+  - Welche du umgesetzt hast (Code-Diff oder Beschreibung)
+
+---
+
+==== Reflexion
+
+1. Was war der Vorteil, den Code in Funktionen zu zerlegen?
+2. Wie hat der KI-Review deinen Code verändert – war er nützlich?
+3. Warum ist `if __name__ == "__main__":` wichtig?
+
+---
+
+*Datei: `02-uebungen/ex-03-funktionen.adoc`*

@@ -2,11 +2,6 @@
 == Aufgaben
 
 
-include::../exercises/ex-01.adoc[]
-include::../exercises/ex-02.adoc[]
-include::../exercises/platform-comparison-exercise.adoc[]
-include::../exercises/ai-course-assistant-deployment.adoc[]
-include::../exercises/homework-week-2-3.adoc[]
-include::../exercises/replicate-exercise.adoc[]
-include::../exercises/replicate-exercise-advanced.adoc[]
-
+include::../02-uebungen/ex-01-taschenrechner.adoc[]
+include::../02-uebungen/ex-02-zahlenraten.adoc[]
+include::../02-uebungen/ex-03-funktionen.adoc[]

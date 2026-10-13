@@ -1,0 +1,110 @@
+=== Übung 1: Taschenrechner mit Bedingungen
+
+**Lektion:** 2 (Bedingungen)  
+**Zeit:** 15–20 Minuten  
+**Ziel:** `input()`, Typumwandlung, `if`/`elif`/`else` anwenden.
+
+---
+
+==== Aufgabenstellung
+
+Schreibe ein Programm `taschenrechner.py`, das:
+
+1. Zwei Zahlen vom Benutzer einliest (`float`)
+2. Einen Operator einliest (`+`, `-`, `*`, `/`)
+3. Die Berechnung durchführt und das Ergebnis ausgibt
+4. **Fehler behandelt:**
+   - Ungültige Zahl → `"Bitte eine gültige Zahl eingeben."`
+   - Division durch 0 → `"Division durch 0 nicht erlaubt."`
+   - Unbekannter Operator → `"Operator nicht bekannt. Nutze +, -, * oder /."`
+
+---
+
+==== Beispiel-Ausgabe
+
+```
+Zahl 1: 10
+Operator: /
+Zahl 2: 0
+Division durch 0 nicht erlaubt.
+```
+
+```
+Zahl 1: 3.5
+Operator: *
+Zahl 2: 2
+Ergebnis: 7.0
+```
+
+---
+
+==== Starthilfe (Gerüst)
+
+```python
+def main():
+    # 1. Eingaben mit try/except
+    try:
+        a = float(input("Zahl 1: "))
+    except ValueError:
+        print("Bitte eine gültige Zahl eingeben.")
+        return
+
+    op = input("Operator (+, -, *, /): ")
+
+    try:
+        b = float(input("Zahl 2: "))
+    except ValueError:
+        print("Bitte eine gültige Zahl eingeben.")
+        return
+
+    # 2. Berechnung mit if/elif/else
+    if op == "+":
+        ergebnis = a + b
+    elif op == "-":
+        ergebnis = a - b
+    elif op == "*":
+        ergebnis = a * b
+    elif op == "/":
+        if b == 0:
+            print("Division durch 0 nicht erlaubt.")
+            return
+        ergebnis = a / b
+    else:
+        print("Operator nicht bekannt. Nutze +, -, * oder /.")
+        return
+
+    # 3. Ausgabe
+    print(f"Ergebnis: {ergebnis}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+---
+
+==== Erweiterungen (freiwillig)
+
+1. **Schleife:** Nach Ergebnis fragen: `"Noch eine Rechnung? (j/n): "` → bei `j` wiederholen
+2. **Potenz & Modulo:** Operatoren `**` und `%` hinzufügen
+3. **History:** Alle Rechnungen in einer Liste speichern, am Ende mit `"History:"` ausgeben
+4. **KI-Prompt:** `"Erweitere den Taschenrechner um eine History-Funktion und eine Schleife für mehrere Rechnungen."`
+
+---
+
+==== Abgabe
+
+- Datei: `taschenrechner.py` im Ordner `02-uebungen/`
+- Optional: Screenshot der Ausgabe mit 3 verschiedenen Rechnungen
+
+---
+
+==== Reflexion (für Nachbearbeitung)
+
+1. Wo war `try/except` nötig – warum nicht `if`?
+2. Was passiert, wenn du `b == 0` **nicht** vor der Division prüfst?
+3. Wie hat dir KI beim Strukturieren geholfen?
+
+---
+
+*Datei: `02-uebungen/ex-01-taschenrechner.adoc`*

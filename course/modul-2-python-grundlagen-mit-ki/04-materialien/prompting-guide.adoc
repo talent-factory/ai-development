@@ -1,0 +1,198 @@
+= Prompting-Guide: KI für Code-Erklärungen & -Entwicklung
+
+:toc: left
+:toclevels: 3
+:icons: font
+
+== Grundprinzipien
+
+| Prinzip | Beschreibung |
+|---------|-------------|
+| **Kontext geben** | Sprache, Level, Ziel, Constraints nennen |
+| **Code teilen** | Immer relevanten Code-Ausschnitt mitgeben |
+| **Iterativ arbeiten** | Erst Erklärung, dann Änderung, dann Test |
+| **Kritisch prüfen** | KI kann hallucinieren – selbst testen! |
+
+---
+
+== Prompt-Kategorien
+
+=== 1. Code erklären lassen
+
+| Prompt | Wann nutzen |
+|--------|-------------|
+| `"Erkläre mir diesen Code Zeile für Zeile wie einem Anfänger."` | Neuer Code, erstes Verständnis |
+| `"Was macht diese Funktion? Zusammenfassung in 3 Sätzen."` | Schnelles Überfliegen |
+| `"Warum wird hier `//` statt `/` verwendet?"` | Konkrete Detailfrage |
+| `"Was passiert bei diesem Input: `x = -5`?"` | Edge-Case prüfen |
+| `"Vergleiche diese zwei Varianten: [Code A] vs [Code B]. Welche ist lesbarer?"` | Code-Review |
+
+**Tipp:** Füge immer den **gesamten relevanten Code** bei, nicht nur Fragmente.
+
+=== 2. Code generieren (Pair Programming)
+
+| Prompt | Wann nutzen |
+|--------|-------------|
+| `"Schreibe eine Funktion, die [Beschreibung]. Typ-Hinweise, Docstring, Edge-Cases."` | Neue Funktion |
+| `"Erstelle ein Script für [Aufgabe]. Struktur: main(), Funktionen, if __name__."` | Ganzes Programm |
+| `"Vervollständige diesen Code: [unvollständiger Code]"` | Lücken füllen |
+| `"Refactoriere diese Funktion: kürzer, lesbarer, typsicher."` | Verbesserung |
+
+**Wichtig:** Beschreibe **Was** (Anforderung), nicht **Wie** (Implementierung).
+
+=== 3. Debugging & Fehlerbehebung
+
+| Prompt | Wann nutzen |
+|--------|-------------|
+| `"Mein Code wirft [Fehlermeldung]. Hier der Code: [Code]. Was ist die Ursache?"` | Exception verstehen |
+| `"Dieser Code läuft in eine Endlosschleife. Finde den Bug: [Code]"` | Logik-Fehler |
+| `"Die Ausgabe stimmt nicht. Erwartet: X, erhalten: Y. Code: [Code]"` | Falsches Ergebnis |
+| `"Warum ist `variable` hier `None`? [Code]"` | Unerwarteter Wert |
+
+**Tipp:** Fehlermeldung **exakt kopieren** (Traceback), Minimalbeispiel erstellen.
+
+=== 4. Code-Review & Qualität
+
+| Prompt | Wann nutzen |
+|--------|-------------|
+| `"Prüfe diesen Code auf: Typsicherheit, Docstring-Qualität, Edge-Cases, Lesbarkeit."` | Qualitäts-Check |
+| `"Schreibe einen Google-Style Docstring für diese Funktion."` | Dokumentation |
+| `"Generiere 5 pytest-Testfälle: Happy Path, Edge Cases, Error Cases."` | Tests |
+| `"Gibt es Security-Issues (Injection, Path Traversal, etc.) in diesem Code?"` | Security |
+
+=== 5. Lernen & Konzepte vertiefen
+
+| Prompt | Wann nutzen |
+|--------|-------------|
+| `"Erkläre mir den Unterschied zwischen `is` und `==` mit 3 Beispielen."` | Konzept-Klärung |
+| `"Was sind typische Anfängerfehler bei `if`-Bedingungen?"` | Fallstricke |
+| `"Zeige mir 3 Anwendungsfälle für `enumerate()`."` | Idiome lernen |
+| `"Warum sind mutable Default Arguments gefährlich? Code-Beispiel."` | Best Practice |
+
+---
+
+== Prompt-Templates (Copy-Paste)
+
+=== Template A: Code-Erklärung
+```
+Ich lerne Python (Level: Anfänger/Fortgeschritten).
+Erkläre mir folgenden Code:
+```python
+[CODE HIER EINFÜGEN]
+```
+Fokus: [Zeile-für-Zeile / Gesamtlogik / Bestimmte Zeile X / Warum Y verwendet wird]
+```
+
+=== Template B: Code-Generierung
+```
+Schreibe Python-Code für:
+- Ziel: [Was soll das Programm tun?]
+- Eingaben: [Was kommt rein?]
+- Ausgaben: [Was kommt raus?]
+- Constraints: [z.B. nur Stdlib, Python 3.10+, Typ-Hinweise, Docstrings]
+- Beispiel-Nutzung: [Input/Output-Beispiel]
+```
+
+=== Template C: Debugging
+```
+Fehler: [Fehlermeldung / Falsches Verhalten]
+Code:
+```python
+[CODE HIER EINFÜGEN]
+```
+Was ich schon probiert habe: [Beschreibung]
+Umgebung: Python [Version], OS [macOS/Linux/Windows]
+```
+
+=== Template D: Code-Review
+```
+Review bitte folgenden Code:
+```python
+[CODE HIER EINFÜGEN]
+```
+Checkliste:
+- [ ] Typ-Hinweise vollständig?
+- [ ] Docstring (Google-Style)?
+- [ ] Edge-Cases behandelt (None, 0, "", [], Exceptions)?
+- [ ] Lesbarkeit (Namensgebung, Einrückung, Komplexität)?
+- [ ] Performance (unnötige Loops, Speicher)?
+- [ ] Security (Input-Validierung, Secrets)?
+Gib konkrete Verbesserungsvorschläge mit Code.
+```
+
+---
+
+== Anti-Patterns (Was NICHT funktioniert)
+
+| ❌ Schlecht | ✅ Besser |
+|-------------|-----------|
+| `"Mach mal einen Taschenrechner."` | Template B nutzen |
+| `"Warum funktioniert mein Code nicht?"` (ohne Code) | Template C nutzen |
+| `"Erkläre mir Python."` | Spezifische Frage stellen |
+| `"Ist der Code gut?"` (ohne Kriterien) | Template D mit Checkliste |
+| Blindes Copy-Paste von KI-Code | **Immer selbst testen & verstehen!** |
+
+---
+
+== Workflow: KI-integrierte Entwicklung
+
+```mermaid
+flowchart TD
+    A[Idee / Aufgabe] --> B{Verstehe ich das Problem?}
+    B -- Nein --> C[KI: Problem zerlegen / Konzept erklären]
+    B -- Ja --> D[Selbst Code-Skizze schreiben]
+    D --> E[KI: Vervollständigen / Reviewen]
+    E --> F[Selbst testen (REPL / Script)]
+    F --> G{Funktioniert?}
+    G -- Nein --> H[KI: Debuggen]
+    H --> F
+    G -- Ja --> I[KI: Review / Refactoring / Tests]
+    I --> J[Fertig / Commit]
+```
+
+---
+
+== Prompts für jede Lektion Modul 2
+
+=== Lektion 1 (Variablen)
+- `"Erkläre mir `type()`, `int()`, `float()`, `str()` mit je 2 Beispielen."`
+- `"Was ist der Unterschied zwischen `7 / 2` und `7 // 2`?"`
+- `"Zeige mir 3 Wege, einen String und eine Zahl zu kombinieren."`
+
+=== Lektion 2 (Bedingungen)
+- `"Mein `if/elif/else` wird nicht ausgeführt wie erwartet. Code: [Code]"`
+- `"Was ist Truthiness in Python? Liste 5 Werte, die `False` sind."`
+- `"Wie fange ich `ValueError` bei `int(input())` ab?"`
+
+=== Lektion 3 (Schleifen)
+- `"Finde die Endlosschleife: [Code]"`
+- `"Was ist der Unterschied zwischen `range(10)` und `range(1, 11)`?"`
+- `"Erkläre `enumerate()` und `zip()` mit Beispielen."`
+
+=== Lektion 4 (Funktionen)
+- `"Prüfe meine Funktion auf Typ-Hinweise, Docstring, Edge-Cases: [Code]"`
+- `"Schreibe einen Google-Docstring für: [Funktion]"`
+- `"Generiere pytest-Tests für diese Funktion: [Code]"`
+
+---
+
+== Ethische & praktische Regeln
+
+1. **Keine Geheimnisse teilen:** Keine API-Keys, Passwörter, echten Daten in Prompts.
+2. **Urheberrecht:** KI-Code kann lizenzierte Inhalte enthalten – bei Produktion prüfen.
+3. **Verantwortung:** Du bist für den Code verantwortlich, nicht die KI.
+4. **Lerneffekt:** Nutze KI zum *Verstehen*, nicht zum *Abkürzen*.
+5. **Dokumentation:** Notiere, wo KI half (Reflexionsbogen).
+
+---
+
+== Weiterführende Ressourcen
+
+- [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+- [Anthropic Prompt Library](https://docs.anthropic.com/claude/prompt-library)
+- [Python Prompt Patterns (GitHub)](https://github.com/f/awesome-python-prompts)
+
+---
+
+*Datei: `04-materialien/prompting-guide.adoc`*  
+*Zurück zum Modul: [Modul 2: Python-Grundlagen mit KI verstehen](../README.md)*

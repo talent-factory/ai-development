@@ -1,0 +1,165 @@
+= Python-Cheatsheet: Schleifen & Iteration
+
+:toc: left
+:toclevels: 3
+:icons: font
+
+== while-Schleife
+
+```python
+# Grundstruktur
+initialisierung
+while bedingung:
+    koerper
+    aktualisierung  # WICHTIG: sonst Endlosschleife!
+
+# Beispiel: Countdown
+n = 10
+while n > 0:
+    print(n)
+    n -= 1
+print("Start!")
+```
+
+=== Wichtige Muster
+
+| Muster | Code |
+|--------|------|
+| Zählen bis N | `i = 1; while i <= n: ...; i += 1` |
+| Bis Sentinel-Wert | `while (eingabe := input()) != "quit": ...` (Walrus `:=` ab 3.8) |
+| Endlosschleife mit `break` | `while True: ...; if abbruch: break` |
+| Eingabe validieren | `while not valide(eingabe): eingabe = input("Neu: ")` |
+
+=== for-Schleife
+
+```python
+# Über range()
+for i in range(5):        # 0,1,2,3,4
+for i in range(1, 6):     # 1,2,3,4,5
+for i in range(0, 10, 2): # 0,2,4,6,8
+for i in range(5, 0, -1): # 5,4,3,2,1 (Countdown)
+
+# Über Sequenzen
+farben = ["rot", "grün", "blau"]
+for farbe in farben:
+    print(farbe)
+
+# Mit Index
+for idx, farbe in enumerate(farben):
+    print(f"{idx}: {farbe}")
+
+for idx, farbe in enumerate(farben, start=1):
+    print(f"{idx}. {farbe}")
+
+# Über String
+for buchstabe in "Python":
+    print(buchstabe)
+```
+
+=== range() Übersicht
+
+| Aufruf | Erzeugt | Liste |
+|--------|---------|-------|
+| `range(n)` | 0 bis n-1 | `list(range(3))` → `[0,1,2]` |
+| `range(a, b)` | a bis b-1 | `list(range(1,5))` → `[1,2,3,4]` |
+| `range(a, b, s)` | Schritt s | `list(range(0,10,2))` → `[0,2,4,6,8]` |
+| `range(b, a, -1)` | Rückwärts | `list(range(5,0,-1))` → `[5,4,3,2,1]` |
+
+=== break & continue
+
+```python
+# break: Schleife sofort verlassen
+for i in range(10):
+    if i == 5:
+        break
+    print(i)  # 0,1,2,3,4
+
+# continue: aktuellen Durchlauf abbrechen, nächsten starten
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)  # 1,3,5,7,9
+
+# else-Block: wird ausgeführt, WENN KEIN break
+for i in range(3):
+    print(i)
+else:
+    print("Fertig ohne break")  # Wird ausgegeben
+
+for i in range(3):
+    if i == 1:
+        break
+    print(i)
+else:
+    print("Fertig ohne break")  # NICHT ausgegeben
+```
+
+=== Verschachtelte Schleifen
+
+```python
+# Multiplikationstabelle
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(f"{i*j:3}", end="")
+    print()  # Zeilenumbruch
+
+# Ausgabe:
+#   1  2  3
+#   2  4  6
+#   3  6  9
+```
+
+=== while vs. for – Entscheidungsbaum
+
+```
+Ist die Anzahl Durchläufe VORHER bekannt?
+    │
+    ├─ JA → for + range() / Liste / String
+    │
+    └─ NEIN → while
+              │
+              ├─ Bis Bedingung eintritt (Eingabe, Event, Dateiende)
+              └─ Endlosschleife mit break
+```
+
+=== Häufige Iterables
+
+| Objekt | Iterable? | Beispiel |
+|--------|-----------|----------|
+| `list`, `tuple`, `str` | ✅ | `for x in [1,2,3]` |
+| `dict` | ✅ (Keys) | `for k in d:` / `for k,v in d.items():` |
+| `set` | ✅ | `for x in {1,2,3}:` |
+| `range` | ✅ | `for i in range(10):` |
+| `enumerate`, `zip`, `reversed` | ✅ | `for i,x in enumerate(xs):` |
+| `file` (Text) | ✅ | `for line in open("f.txt"):` |
+| `int`, `float`, `bool` | ❌ | `for i in 5:` → TypeError |
+
+=== List Comprehensions (Vorschau Modul 3)
+
+```python
+# Statt:
+quadrate = []
+for i in range(10):
+    quadrate.append(i ** 2)
+
+# Kurz:
+quadrate = [i ** 2 for i in range(10)]
+
+# Mit Bedingung:
+gerade_quadrate = [i ** 2 for i in range(10) if i % 2 == 0]
+
+# Dictionary Comprehension:
+quadrat_dict = {i: i ** 2 for i in range(5)}
+# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+=== KI-Prompts für Schleifen
+
+- `"Schreibe eine while-Schleife, die so lange würfelt, bis eine 6 kommt."`
+- `"Wie iteriere ich gleichzeitig über zwei Listen? (zip)"`
+- `"Erkläre mir den else-Block bei for-Schleifen."`
+- `"Mein Code hat eine Endlosschleife. Finde den Bug: [Code]"`
+
+---
+
+*Datei: `04-materialien/cheatsheet-schleifen.adoc`*
