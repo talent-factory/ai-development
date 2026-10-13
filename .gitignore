@@ -202,3 +202,7 @@ rag-system/
 
 # Serena AI tooling
 .serena/
+
+# Headroom (lokaler Tool-State)
+.headroom/
+.claude/.headroom_wrap_*
