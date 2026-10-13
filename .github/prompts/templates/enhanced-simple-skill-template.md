@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/skills/templates/enhanced-simple-skill-template.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/templates/enhanced-simple-skill-template.md

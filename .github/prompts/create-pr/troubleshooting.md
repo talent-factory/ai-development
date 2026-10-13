@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/create-pr/troubleshooting.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/create-pr/troubleshooting.md

@@ -1,0 +1,7 @@
+[#_exercises]
+== Aufgaben
+
+
+include::../02-uebungen/ex-01-taschenrechner.adoc[]
+include::../02-uebungen/ex-02-zahlenraten.adoc[]
+include::../02-uebungen/ex-03-funktionen.adoc[]

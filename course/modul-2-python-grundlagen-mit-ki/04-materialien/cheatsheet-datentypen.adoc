@@ -1,0 +1,155 @@
+= Python-Cheatsheet: Datentypen & Operatoren
+
+:toc: left
+:toclevels: 3
+:icons: font
+
+== Basis-Datentypen
+
+|===
+| Typ | Klasse | Beispiel | Beschreibung
+| `int` | `int` | `42`, `-7`, `0` | Ganze Zahlen (beliebig gross)
+| `float` | `float` | `3.14`, `-0.5`, `1e6` | Gleitkommazahlen (IEEE 754)
+| `str` | `str` | `"Text"`, `'Text'`, `"""Mehrzeilig"""` | Unicode-Text
+| `bool` | `bool` | `True`, `False` | Wahrheitswerte (Unterklasse von `int`)
+| `NoneType` | `NoneType` | `None` | Fehlender Wert
+|===
+
+=== Typ prüfen & umwandeln
+
+```python
+type(x)           # Typ anzeigen
+isinstance(x, int) # True/False (empfohlen für Prüfungen)
+
+int(x)    # → int (float: abschneiden, str: "42" OK, "3.14" Fehler)
+float(x)  # → float
+str(x)    # → "Repräsentation"
+bool(x)   # → False für: 0, 0.0, "", [], {}, None; sonst True
+```
+
+=== Rechenoperatoren
+
+|===
+| Op | Name | Beispiel | Ergebnis | Typ
+| `+` | Addition | `3 + 2` | `5` | `int`/`float`
+| `-` | Subtraktion | `5 - 3` | `2` | `int`/`float`
+| `*` | Multiplikation | `4 * 3` | `12` | `int`/`float`
+| `/` | Division | `7 / 2` | `3.5` | `float` (immer!)
+| `//` | Ganzzahldivision | `7 // 2` | `3` | `int`
+| `%` | Modulo (Rest) | `7 % 2` | `1` | `int`
+| `**` | Potenz | `2 ** 3` | `8` | `int`/`float`
+|===
+
+**Merke:** `/` liefert **immer** `float`, `//` liefert `int`.
+
+=== String-Operationen
+
+```python
+s = "Hallo"
+t = "Welt"
+
+s + " " + t        # Konkatenation: "Hallo Welt"
+f"{s} {t}!"        # f-String (empfohlen): "Hallo Welt!"
+"Ha " * 3          # Wiederholung: "Ha Ha Ha "
+s[0]               # Index: "H"
+s[-1]              # Letztes: "o"
+s[1:4]             # Slice: "all"
+len(s)             # Länge: 5
+s.upper()          # "HALLO"
+s.lower()          # "hallo"
+s.strip()          # Whitespace entfernen
+s.split()          # ["Hallo"] (Trenner: Whitespace)
+s.replace("l", "x") # "Hexxo"
+```
+
+=== Vergleichsoperatoren (→ `bool`)
+
+|===
+| Op | Bedeutung | Beispiel
+| `==` | gleich | `5 == 5` → `True`
+| `!=` | ungleich | `5 != 3` → `True`
+| `<` | kleiner | `3 < 5` → `True`
+| `>` | grösser | `5 > 3` → `True`
+| `<=` | kleiner/gleich | `5 <= 5` → `True`
+| `>=` | grösser/gleich | `5 >= 5` → `True`
+| `is` | Identität (Speicher) | `x is None`
+| `in` | Mitgliedschaft | `"a" in "Hallo"` → `True`
+|===
+
+**Wichtig:** `=` ist Zuweisung, `==` ist Vergleich!
+
+=== Logische Operatoren
+
+```python
+True and False   # False (kurzgeschlossen)
+True or False    # True (kurzgeschlossen)
+not True         # False
+
+# Kurzschluss: zweiter Teil wird nicht ausgewertet, wenn Ergebnis feststeht
+x = 5
+x > 0 and print("positiv")  # print wird ausgeführt
+x < 0 and print("negativ")  # print NICHT ausgeführt
+```
+
+=== Wahrheitswerte (Truthiness)
+
+|===
+| Wert | `bool(wert)` | In `if` |
+| `0`, `0.0` | `False` | `False`
+| `""`, `[]`, `{}`, `set()` | `False` | `False`
+| `None` | `False` | `False`
+| Alles andere | `True` | `True`
+|===
+
+=== Wichtige Built-ins
+
+```python
+print(*objekte, sep=" ", end="\n")  # Ausgabe
+input(prompt="")                     # Einlesen (→ str)
+len(seq)                             # Länge
+range(start, stop[, step])           # Zahlenfolge
+enumerate(iterable[, start=0])       # (Index, Wert)
+zip(*iterables)                      # Paarweise zusammenfassen
+min/max(iterable)                    # Minimum/Maximum
+sum(iterable[, start=0])             # Summe
+sorted(iterable)                     # Neue sortierte Liste
+reversed(seq)                        # Umgekehrter Iterator
+```
+
+=== f-String Formatierung
+
+```python
+wert = 3.14159
+f"{wert:.2f}"      # "3.14" (2 Nachkommastellen)
+f"{wert:>10.2f}"   # "     3.14" (rechtsbündig, Breite 10)
+f"{wert:0>10.2f}"  # "000003.14" (Null-Padding)
+f"{wert:%}"        # "314.16%" (Prozent)
+f"{1/3:.1%}"       # "33.3%" (Prozent mit 1 Nachkommastelle)
+
+name = "Alex"
+f"{name!r}"        # "'Alex'" (repr)
+f"{name!s}"        # "Alex" (str)
+```
+
+=== Typische Fehler
+
+|===
+| Fehler | Ursache | Lösung
+| `TypeError: unsupported operand + for str, int` | `"Alter: " + 25` | `f"Alter: {25}"` oder `str(25)`
+| `ValueError: invalid literal for int()` | `int("3.14")` | `float("3.14")` dann `int()`
+| `ZeroDivisionError` | `5 / 0` | `if b != 0:` prüfen
+| `IndentationError` | Falsche Einrückung | 4 Spaces, kein Tab-Mix
+| `NameError` | Variable nicht definiert | Erst zuweisen, dann lesen
+|===
+
+=== KI-Prompts für dieses Cheatsheet
+
+- `"Erkläre mir den Unterschied zwischen / und // mit Beispielen."`
+- `"Zeige mir 5 f-String-Formatierungen für Währungsbeträge."`
+- `"Was sind typische Truthiness-Fallen in Python?"`
+- `"Vergleiche `is` vs `==` an Beispielen."`
+
+---
+
+*Datei: `04-materialien/cheatsheet-datentypen.adoc`*  
+*Format: AsciiDoc – rendern mit VS Code Extension "AsciiDoc" oder online*

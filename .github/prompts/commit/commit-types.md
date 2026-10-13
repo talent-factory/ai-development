@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/commit/commit-types.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/commit/commit-types.md

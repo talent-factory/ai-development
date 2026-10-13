@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/create-pr/code-formatting.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/create-pr/code-formatting.md

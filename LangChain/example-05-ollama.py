@@ -1,8 +1,8 @@
 # LangChain supports many other chat models. Here, we're using Ollama
 # https://python.langchain.com/v0.1/docs/integrations/chat/ollama/
-from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_ollama import ChatOllama
 
 # supports many more optional parameters. Hover on your `ChatOllama(...)`
 # class to view the latest available supported parameters

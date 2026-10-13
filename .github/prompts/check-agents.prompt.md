@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/check-agents.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/check-agents.md

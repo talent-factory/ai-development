@@ -1,4 +1,5 @@
 .codebuddy/
+bibliography/
 
 ### Python template
 # Byte-compiled / optimized / DLL files
@@ -167,7 +168,7 @@ cython_debug/
 
 /doc/index.pdf
 /geschichte*
-/docs/chapters/pydantic-ai.html
+/course/**/pydantic-ai.html
 
 # Logs
 logs
@@ -197,4 +198,14 @@ node_modules/
 .claude/settings.local.json
 
 # Demo Project
-rag-system
+rag-system/
+
+# Serena AI tooling
+.serena/
+
+# Headroom (lokaler Tool-State)
+.headroom/
+.claude/.headroom_wrap_*
+
+# Symlink auf das lokale rag-system (Kurs-Modul 5)
+course/**/rag-system

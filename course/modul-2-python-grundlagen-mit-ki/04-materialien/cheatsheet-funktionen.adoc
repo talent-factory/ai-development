@@ -1,0 +1,239 @@
+= Python-Cheatsheet: Funktionen
+
+:toc: left
+:toclevels: 3
+:icons: font
+
+== Funktions-Definition
+
+```python
+def name(parameter: typ) -> rueckgabetyp:
+    """Docstring: Was macht die Funktion?
+    
+    Args:
+        parameter: Beschreibung.
+    
+    Returns:
+        Beschreibung des Rückgabewerts.
+    
+    Raises:
+        ExceptionType: Wann geworfen.
+    """
+    # Funktionskörper
+    return ergebnis
+```
+
+=== Parameter-Arten
+
+```python
+# 1. Positions-Parameter (Pflicht)
+def add(a, b):
+    return a + b
+
+# 2. Default-Parameter (Optional)
+def begruesse(name, gruesswort="Hallo"):
+    print(f"{gruesswort}, {name}!")
+
+begruesse("Alex")           # Hallo, Alex!
+begruesse("Sam", "Hi")      # Hi, Sam!
+
+# 3. Keyword-Only (ab Python 3, nach * oder *args)
+def func(a, *, b, c=10):    # b, c NUR als Keyword
+    pass
+func(1, b=2)                # OK
+func(1, 2)                  # TypeError
+
+# 4. *args (beliebig viele Positions-Argumente → Tuple)
+def summe(*zahlen):
+    return sum(zahlen)
+
+summe(1, 2, 3)              # 6
+
+# 5. **kwargs (beliebig viele Keyword-Argumente → Dict)
+def profil(**infos):
+    for k, v in infos.items():
+        print(f"{k}: {v}")
+
+profil(name="Alex", alter=25)
+
+# Kombiniert (Reihenfolge beachten!):
+def flexibel(pflicht, default=1, *args, key_only, **kwargs):
+    pass
+```
+
+=== Rückgabewerte
+
+```python
+# Ein Wert
+def quadrat(x):
+    return x * x
+
+# Mehrere Werte → Tupel
+def min_max(liste):
+    return min(liste), max(liste)
+
+klein, gross = min_max([3, 1, 4])
+
+# Kein return / return ohne Wert / return None → None
+def drucke(text):
+    print(text)
+
+ergebnis = drucke("Hi")  # None
+```
+
+=== Typ-Hinweise (Type Hints)
+
+```python
+from typing import List, Dict, Tuple, Optional, Union, Any
+
+# Basis
+def add(a: int, b: int) -> int: ...
+
+# Container
+def verarbeite(zahlen: List[int]) -> Dict[str, float]: ...
+
+# Optional (Union[X, None])
+def finde(wert: int) -> Optional[str]: ...
+
+# Union (Python 3.10+: X | Y)
+def parse(eingabe: str | int) -> float: ...
+
+# Callable
+from typing import Callable
+def wende_an(func: Callable[[int], int], wert: int) -> int:
+    return func(wert)
+```
+
+=== Docstring-Standards
+
+**Google-Style (empfohlen, lesbar):**
+```python
+def bmi(gewicht: float, groesse: float) -> float:
+    """Berechnet den Body-Mass-Index.
+    
+    Args:
+        gewicht: Gewicht in kg.
+        groesse: Grösse in m.
+    
+    Returns:
+        BMI-Wert.
+    
+    Raises:
+        ValueError: Wenn gewicht <= 0 oder groesse <= 0.
+    
+    Example:
+        >>> bmi(70, 1.75)
+        22.857...
+    """
+    if gewicht <= 0 or groesse <= 0:
+        raise ValueError("Positive Werte erwartet.")
+    return gewicht / (groesse ** 2)
+```
+
+**NumPy-Style (ausführlicher):**
+```python
+def bmi(gewicht, groesse):
+    """
+    Berechnet den Body-Mass-Index.
+    
+    Parameters
+    ----------
+    gewicht : float
+        Gewicht in kg.
+    groesse : float
+        Grösse in m.
+    
+    Returns
+    -------
+    float
+        BMI-Wert.
+    
+    Raises
+    ------
+    ValueError
+        Wenn gewicht <= 0 oder groesse <= 0.
+    """
+    ...
+```
+
+=== Scoping (Gültigkeitsbereiche)
+
+```python
+global_var = "global"
+
+def outer():
+    outer_var = "outer"
+    
+    def inner():
+        nonlocal outer_var  # Ändert outer_var in outer()
+        outer_var = "changed"
+        global global_var   # Ändert globales global_var
+        global_var = "also changed"
+    
+    inner()
+    print(outer_var)  # "changed"
+```
+
+| Schlüsselwort | Wirkung |
+|---------------|---------|
+| (keins) | Lokal in Funktion, Lesen von äusseren Scopes möglich |
+| `global` | Variable ist **Modul-global** (lesen & schreiben) |
+| `nonlocal` | Variable aus **nächstem äusseren Funktions-Scope** (lesen & schreiben) |
+
+=== Lambda-Funktionen (Anonym)
+
+```python
+# Kurzform für einfache Funktionen
+quadrat = lambda x: x * x
+add = lambda a, b: a + b
+
+# Typisch bei Higher-Order Functions
+zahlen = [1, 2, 3, 4, 5]
+quadrate = list(map(lambda x: x ** 2, zahlen))
+gerade = list(filter(lambda x: x % 2 == 0, zahlen))
+
+# Sortieren mit Key
+punkte = [("Alex", 10), ("Sam", 5), ("Pat", 15)]
+punkte.sort(key=lambda p: p[1])  # Nach Punkten
+```
+
+=== Decorators (Vorschau Modul 3/4)
+
+```python
+def timer(func):
+    import time
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} dauerte {time.perf_counter()-start:.4f}s")
+        return result
+    return wrapper
+
+@timer
+def langsam():
+    time.sleep(0.1)
+
+langsam()  # "langsam dauerte 0.1001s"
+```
+
+=== Best Practices
+
+| Regel | Begründung |
+|-------|------------|
+| Eine Funktion = eine Aufgabe | Lesbarkeit, Testbarkeit |
+| Max. 3–4 Parameter | Sonst Dataclass/Objekt nutzen |
+| Keine mutable Defaults (`[]`, `{}`) | Geteilter State → Bugs |
+| Typ-Hinweise + Docstring | KI-Kontext, IDE-Support, Wartbarkeit |
+| Frühzeitiger Return (Guard Clauses) | Vermeidet tiefe Einrückung |
+| `if __name__ == "__main__":` | Importierbar ohne Ausführung |
+
+=== KI-Prompts für Funktionen
+
+- `"Schreibe eine Funktion `wahrungsrechner(betrag, von, nach, kurse)` mit Typ-Hinweisen und Google-Docstring."`
+- `"Prüfe diese Funktion auf: Mutable Defaults, fehlende Typ-Hinweise, unvollständiger Docstring."`
+- `"Generiere 5 Testfälle (pytest) für diese Funktion: Happy Path, Edge Cases, Error Cases."`
+- `"Erkläre mir den Unterschied zwischen `*args` und `**kwargs` mit Beispielen."`
+
+---
+
+*Datei: `04-materialien/cheatsheet-funktionen.adoc`*

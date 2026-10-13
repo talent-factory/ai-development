@@ -1,12 +1,12 @@
 """
 Hilfsfunktionen für wiederkehrende Projektaufgaben.
 """
+
 import os
 from pathlib import Path
-from typing import Optional
 
 
-def find_project_root(start_path: Optional[str] = None, marker_files=None) -> Path:
+def find_project_root(start_path: str | None = None, marker_files=None) -> Path:
     """
     Findet das Projektstammverzeichnis anhand von Markierungsdateien.
 
@@ -19,14 +19,14 @@ def find_project_root(start_path: Optional[str] = None, marker_files=None) -> Pa
         Path: Das gefundene Projektstammverzeichnis.
     """
     if marker_files is None:
-        marker_files = ['.git', 'pyproject.toml']
+        marker_files = [".git", "pyproject.toml"]
 
     if start_path is None:
-        start_path = Path(__file__).resolve()
+        resolved_path = Path(__file__).resolve()
     else:
-        start_path = Path(start_path).resolve()
+        resolved_path = Path(start_path).resolve()
 
-    current_dir = start_path if start_path.is_dir() else start_path.parent
+    current_dir = resolved_path if resolved_path.is_dir() else resolved_path.parent
 
     for parent in [current_dir] + list(current_dir.parents):
         if any((parent / marker).exists() for marker in marker_files):
@@ -34,7 +34,7 @@ def find_project_root(start_path: Optional[str] = None, marker_files=None) -> Pa
     return current_dir  # Fallback to the current directory
 
 
-def load_environment(env_file: str = '.env', search_from: Optional[str] = None) -> bool:
+def load_environment(env_file: str = ".env", search_from: str | None = None) -> bool:
     """
     Lädt Umgebungsvariablen aus einer .env-Datei im Projektstammverzeichnis.
 

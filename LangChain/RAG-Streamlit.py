@@ -1,13 +1,11 @@
-
 import streamlit as st
-from PyPDF2 import PdfReader
-
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_community.chat_models import ChatOpenAI
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain_community.chat_models import ChatOpenAI
+from PyPDF2 import PdfReader
 
 
 # Funktion zum Extrahieren des Textes aus dem PDF
@@ -25,12 +23,7 @@ def get_pdf_text(pdf_docs):
 # Funktion zum Aufteilen des Textes in Chunks
 @st.cache_data
 def get_text_chunks(text):
-    text_splitter = CharacterTextSplitter(
-        separator="\n",
-        chunk_size=1000,
-        chunk_overlap=200,
-        length_function=len
-    )
+    text_splitter = CharacterTextSplitter(separator="\n", chunk_size=1000, chunk_overlap=200, length_function=len)
     chunks = text_splitter.split_text(text)
     return chunks
 
@@ -49,11 +42,9 @@ def get_vectorstore(text_chunks):
 def get_conversation_chain(vectorstore):
     with st.spinner("Erstelle Konversationsmodell..."):
         llm = ChatOpenAI()
-        memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+        memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
         conversation_chain = ConversationalRetrievalChain.from_llm(
-            llm=llm,
-            retriever=vectorstore.as_retriever(),
-            memory=memory
+            llm=llm, retriever=vectorstore.as_retriever(), memory=memory
         )
         return conversation_chain
 
@@ -86,5 +77,5 @@ def main():
             st.write(response["answer"])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

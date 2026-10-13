@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/develop/commit/best-practices.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/commit/best-practices.md

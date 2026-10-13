@@ -1,0 +1,115 @@
+{
+  "commit_types": {
+    "feat": {
+      "emoji": "✨",
+      "description": "Neue Funktionalität"
+    },
+    "fix": {
+      "emoji": "🐛",
+      "description": "Bugfix"
+    },
+    "docs": {
+      "emoji": "📚",
+      "description": "Dokumentation"
+    },
+    "style": {
+      "emoji": "💎",
+      "description": "Code-Formatierung"
+    },
+    "refactor": {
+      "emoji": "♻️",
+      "description": "Code-Restrukturierung"
+    },
+    "perf": {
+      "emoji": "⚡",
+      "description": "Performance-Verbesserung"
+    },
+    "test": {
+      "emoji": "🧪",
+      "description": "Tests hinzufügen oder fixen"
+    },
+    "chore": {
+      "emoji": "🔧",
+      "description": "Wartung, Tools, Konfiguration"
+    },
+    "ci": {
+      "emoji": "🚀",
+      "description": "CI/CD-Änderungen"
+    },
+    "security": {
+      "emoji": "🔒",
+      "description": "Sicherheitsrelevante Änderungen"
+    },
+    "remove": {
+      "emoji": "🗑️",
+      "description": "Code oder Dateien entfernen"
+    },
+    "build": {
+      "emoji": "🐎",
+      "description": "Build-System oder Abhängigkeiten"
+    }
+  },
+  "project_types": {
+    "python": {
+      "markers": ["pyproject.toml", "setup.py", "requirements.txt", "uv.lock", "Pipfile", "setup.cfg"],
+      "checks": {
+        "ruff": ["ruff", "check", "."],
+        "ruff_format": ["ruff", "format", "--check", "."],
+        "mypy": ["mypy", "."],
+        "pytest": ["pytest"]
+      },
+      "uv_prefix": ["uv", "run"]
+    },
+    "java": {
+      "markers": ["pom.xml", "build.gradle", "build.gradle.kts"],
+      "checks": {
+        "maven": ["./mvnw", "verify"],
+        "gradle": ["./gradlew", "check"]
+      }
+    },
+    "node": {
+      "markers": ["package.json"],
+      "checks": {
+        "lint": ["npm", "run", "lint"],
+        "typecheck": ["npm", "run", "typecheck"],
+        "test": ["npm", "run", "test"]
+      },
+      "package_managers": {
+        "npm": ["npm", "run"],
+        "pnpm": ["pnpm", "run"],
+        "yarn": ["yarn"]
+      }
+    },
+    "docs": {
+      "markers": ["README.md", "docs", "*.md", "*.tex", "*.adoc"]
+    }
+  },
+  "type_heuristics": {
+    "test": {
+      "file_patterns": ["test_*.py", "*_test.py", "*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx", "tests/", "__tests__/", "test/"]
+    },
+    "docs": {
+      "file_patterns": ["*.md", "*.rst", "*.tex", "*.adoc", "docs/", "README*"],
+      "exclude_code_extensions": [".py", ".js", ".ts", ".tsx", ".java", ".go", ".rs"]
+    },
+    "ci": {
+      "file_patterns": [".github/workflows/*", ".gitlab-ci.yml", "Jenkinsfile", ".circleci/*"]
+    },
+    "build": {
+      "file_patterns": ["pyproject.toml", "package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "Makefile", "Dockerfile", "docker-compose*"]
+    },
+    "chore": {
+      "file_patterns": [".gitignore", ".env.example", ".editorconfig", ".pre-commit-config.yaml"]
+    }
+  },
+  "commit_message": {
+    "max_header_length": 72,
+    "language": "de",
+    "imperative": true,
+    "forbidden_suffixes": [
+      "Generated with Claude Code",
+      "Co-Authored-By",
+      "generated-by"
+    ]
+  }
+}

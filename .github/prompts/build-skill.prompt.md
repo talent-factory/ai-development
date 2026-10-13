@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/skills/build-skill.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/build-skill.md

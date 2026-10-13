@@ -15,9 +15,9 @@ def find_imported_modules(project_path):
     for root, _, files in os.walk(project_path):
         for file in files:
             if file.endswith(".py"):
-                with open(os.path.join(root, file), "r") as f:
+                with open(os.path.join(root, file)) as f:
                     for line in f:
-                        match = re.match(r'^\s*(?:import|from) (\S+)', line)
+                        match = re.match(r"^\s*(?:import|from) (\S+)", line)
                         if match:
                             module_name = match.group(1).split(".")[0]
                             if not is_standard_lib(module_name):

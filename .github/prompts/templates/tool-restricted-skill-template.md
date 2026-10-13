@@ -1,1 +1,1 @@
-/Users/daniel/GitRepository/dotfiles/agents/_shared/commands/skills/templates/tool-restricted-skill-template.md
+/Users/daniel/GitRepository/dotfiles/agents/_shared/references/templates/tool-restricted-skill-template.md
