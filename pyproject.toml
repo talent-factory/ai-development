@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13.1"
 dependencies = [
-    "anthropic>=1.11.0",
+    "anthropic>=1.13.0",
     "chromadb>=1.5.9",
     "faiss-cpu>=1.15.1",
     "gensim>=4.4.0",
