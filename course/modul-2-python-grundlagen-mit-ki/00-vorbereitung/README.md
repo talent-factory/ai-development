@@ -75,7 +75,8 @@ help(quadrat)
 
 ## 4. KI-Vorbereitung (15 Min)
 
-- [ ] ChatGPT / Claude / OpenCode im Browser bereit haben
+- [ ] Claude (Browser oder Claude Code) und OpenCode bereit haben
+- [ ] Repo-Root im Terminal öffnen, `claude` starten und `/erklaere` testen (bzw. `opencode` mit `/erklaere`)
 - [ ] Teste Prompt: `"Ich lerne Python. Erkläre mir Variablen wie einem 12-Jährigen."`
 - [ ] Notiere: Was war gut? Was war zu komplex?
 
@@ -85,7 +86,7 @@ help(quadrat)
 
 - [ ] Laptop geladen
 - [ ] VS Code, Python, uv, OpenCode funktionieren
-- [ ] Browser-Tabs: ChatGPT, Claude, OpenCode-Docs
+- [ ] Browser-Tabs: Claude, OpenCode-Docs
 - [ ] Dieses Dokument (digital oder gedruckt) dabei
 - [ ] Fragen aus der Vorbereitung notiert
 
