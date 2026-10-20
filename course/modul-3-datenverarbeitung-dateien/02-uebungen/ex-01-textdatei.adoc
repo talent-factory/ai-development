@@ -1,0 +1,58 @@
+=== Übung 1: Textdatei auswerten – Wetter Zürich
+
+**Lektion:** 1 (Textdateien)
+**Zeit:** 15 Minuten
+**Ziel:** Eine Textdatei zeilenweise lesen, Werte umwandeln, auswerten und eine Zusammenfassung schreiben.
+
+---
+
+==== Aufgabenstellung
+
+Öffne `05-beispiele/lektion-1/start.py`. Es enthält Funktionsrümpfe mit `TODO`-Kommentaren. Ergänze sie so, dass das Programm `wetter_zuerich.txt` auswertet:
+
+1. **Einlesen** (`lese_tage`): Jede Zeile hat das Format `datum;stadt;tmin;tmax;niederschlag`. Gib eine Liste von Dictionaries zurück, mit `tmin`, `tmax` und `niederschlag` als `float`.
+2. **Zählen:** Wie viele Tage enthält die Datei?
+3. **Maximum** (`finde_heissesten_tag`): Finde den Tag mit der höchsten `tmax`. Gib Datum und Temperatur aus.
+4. **Regentage:** Zähle die Tage mit `niederschlag > 0`.
+5. **Schreiben** (`schreibe_zusammenfassung`): Schreibe drei Zeilen in `zusammenfassung.txt`:
++
+[source,text]
+----
+Anzahl Tage: …
+Heissester Tag: … mit … °C
+Regentage: …
+----
+
+---
+
+==== Kontrollwerte
+
+Wenn dein Programm richtig arbeitet, siehst du:
+
+* Anzahl Tage: *30*
+* Heissester Tag: *2026-09-30* mit *27.5 °C*
+* Regentage: *10*
+
+Stimmen deine Zahlen nicht? Prüfe zuerst, ob du `strip()` und `float()` verwendet hast.
+
+---
+
+==== Tipps (nur bei Bedarf)
+
+* Brauchst du einen Einstieg? Schau im Lektionstext bei «Alle Tage in eine Liste von Dictionaries».
+* Für das Maximum: Merke dir den bisher grössten Tag in einer Variablen und vergleiche in der Schleife.
+* `with open(pfad, "w", encoding="utf-8")` überschreibt die Datei. Das ist hier gewollt.
+
+---
+
+==== Erweiterung (freiwillig)
+
+Liste alle **Regentage mit Datum** auf (zum Beispiel `2026-10-01: 3.8 mm`) und schreibe sie unter die Zusammenfassung in `zusammenfassung.txt`.
+
+---
+
+==== Reflexion
+
+1. Warum ist ein Wert aus einer Textdatei zuerst ein `str`, auch wenn er wie eine Zahl aussieht?
+2. Was passiert mit der Ausgabedatei, wenn du sie zweimal mit `"w"` schreibst?
+3. Was hat dir die KI beim Erklären des `open()`-Snippets geliefert, und was hast du selbst geprüft?

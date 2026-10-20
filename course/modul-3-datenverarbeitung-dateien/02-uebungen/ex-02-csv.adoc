@@ -1,0 +1,51 @@
+=== Übung 2: CSV auswerten – Wetter von fünf Städten
+
+**Lektion:** 2 (CSV)
+**Zeit:** 20 Minuten
+**Ziel:** Eine CSV-Datei mit `DictReader` einlesen, nach Städten auswerten, filtern und das Ergebnis als CSV exportieren.
+
+---
+
+==== Aufgabenstellung
+
+Öffne `05-beispiele/lektion-2/start.py`. Ergänze die Funktionen so, dass das Programm `wetter_30tage.csv` auswertet:
+
+1. **Einlesen** (`lese_csv`): Gib eine Liste von Dictionaries zurück. `tmin`, `tmax` und `niederschlag_mm` müssen `float` sein.
+2. **Durchschnitt** (`durchschnitt_tmax_je_stadt`): Berechne den Durchschnitt von `tmax` je Stadt, auf eine Nachkommastelle gerundet.
+3. **Filtern** (`filtere_warme_tage`): Behalte alle Zeilen mit `tmax` über 20 °C.
+4. **Export** (`schreibe_csv`): Schreibe die gefilterten Zeilen mit Kopfzeile in `warme_tage.csv`.
+
+---
+
+==== Kontrollwerte
+
+Wenn dein Programm richtig arbeitet, siehst du:
+
+* Zeilen insgesamt: *150*
+* Durchschnitt `tmax`: Zürich *20.7*, Bern *19.9*, Genf *21.4*, Basel *21.6*, Lugano *21.8*
+* Tage über 20 °C insgesamt: *100*
+* `warme_tage.csv`: *101* Zeilen (100 Datenzeilen plus Kopfzeile)
+
+Stimmen deine Zahlen nicht? Prüfe zuerst, ob du `float()` verwendet hast und ob jede Stadt nur ihre eigenen Werte zählt.
+
+---
+
+==== Tipps (nur bei Bedarf)
+
+* Für den Durchschnitt sammelst du die Werte je Stadt in einem Dictionary, dessen Werte Listen sind. Siehe «Auswerten: Durchschnitt je Stadt» im Lektionstext.
+* `csv.DictWriter` braucht `fieldnames`. Nimm die Spaltennamen aus der Kopfzeile der Eingabedatei.
+* `open(..., "w", newline="", encoding="utf-8")` nicht vergessen.
+
+---
+
+==== Erweiterung (freiwillig)
+
+Frage mit `input()` nach einer Stadt und gib nur deren Tage über 20 °C aus. Behandle eine unbekannte Stadt mit einer freundlichen Meldung.
+
+---
+
+==== Reflexion
+
+1. Warum wandelst du die Zahlenfelder beim Einlesen um und nicht erst beim Rechnen?
+2. Was wäre bei `split(",")` schiefgegangen, wenn ein Stadtname ein Komma enthielte?
+3. Welche Fehler haben die KI-Testdaten gezeigt, und wie hast du sie erkannt?
