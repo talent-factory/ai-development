@@ -1,0 +1,291 @@
+[
+  {
+    "latitude": 47.376667,
+    "longitude": 8.543693,
+    "generationtime_ms": 0.5609989166259766,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Zurich",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 409.0,
+    "current_units": {
+      "time": "iso8601",
+      "interval": "seconds",
+      "temperature_2m": "°C",
+      "weather_code": "wmo code",
+      "wind_speed_10m": "km/h"
+    },
+    "current": {
+      "time": "2026-10-20T10:45",
+      "interval": 900,
+      "temperature_2m": 12.0,
+      "weather_code": 2,
+      "wind_speed_10m": 7.2
+    },
+    "daily_units": {
+      "time": "iso8601",
+      "temperature_2m_max": "°C",
+      "temperature_2m_min": "°C",
+      "precipitation_sum": "mm",
+      "weather_code": "wmo code"
+    },
+    "daily": {
+      "time": [
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22"
+      ],
+      "temperature_2m_max": [
+        16.8,
+        12.6,
+        14.0
+      ],
+      "temperature_2m_min": [
+        10.9,
+        9.0,
+        7.2
+      ],
+      "precipitation_sum": [
+        0.0,
+        15.7,
+        0.0
+      ],
+      "weather_code": [
+        3,
+        80,
+        80
+      ]
+    }
+  },
+  {
+    "latitude": 46.951378,
+    "longitude": 7.4586725,
+    "generationtime_ms": 0.6442070007324219,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Zurich",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 554.0,
+    "location_id": 1,
+    "current_units": {
+      "time": "iso8601",
+      "interval": "seconds",
+      "temperature_2m": "°C",
+      "weather_code": "wmo code",
+      "wind_speed_10m": "km/h"
+    },
+    "current": {
+      "time": "2026-10-20T10:45",
+      "interval": 900,
+      "temperature_2m": 10.8,
+      "weather_code": 3,
+      "wind_speed_10m": 3.3
+    },
+    "daily_units": {
+      "time": "iso8601",
+      "temperature_2m_max": "°C",
+      "temperature_2m_min": "°C",
+      "precipitation_sum": "mm",
+      "weather_code": "wmo code"
+    },
+    "daily": {
+      "time": [
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22"
+      ],
+      "temperature_2m_max": [
+        14.4,
+        13.5,
+        12.9
+      ],
+      "temperature_2m_min": [
+        9.5,
+        7.7,
+        4.8
+      ],
+      "precipitation_sum": [
+        0.2,
+        12.8,
+        0.0
+      ],
+      "weather_code": [
+        61,
+        80,
+        45
+      ]
+    }
+  },
+  {
+    "latitude": 46.203693,
+    "longitude": 6.145807,
+    "generationtime_ms": 0.7506608963012695,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Zurich",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 368.0,
+    "location_id": 2,
+    "current_units": {
+      "time": "iso8601",
+      "interval": "seconds",
+      "temperature_2m": "°C",
+      "weather_code": "wmo code",
+      "wind_speed_10m": "km/h"
+    },
+    "current": {
+      "time": "2026-10-20T10:45",
+      "interval": 900,
+      "temperature_2m": 13.2,
+      "weather_code": 3,
+      "wind_speed_10m": 4.9
+    },
+    "daily_units": {
+      "time": "iso8601",
+      "temperature_2m_max": "°C",
+      "temperature_2m_min": "°C",
+      "precipitation_sum": "mm",
+      "weather_code": "wmo code"
+    },
+    "daily": {
+      "time": [
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22"
+      ],
+      "temperature_2m_max": [
+        14.4,
+        14.1,
+        14.4
+      ],
+      "temperature_2m_min": [
+        12.2,
+        8.9,
+        7.0
+      ],
+      "precipitation_sum": [
+        10.7,
+        9.0,
+        0.0
+      ],
+      "weather_code": [
+        61,
+        80,
+        3
+      ]
+    }
+  },
+  {
+    "latitude": 47.562813,
+    "longitude": 7.589934,
+    "generationtime_ms": 0.6221532821655273,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Zurich",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 247.0,
+    "location_id": 3,
+    "current_units": {
+      "time": "iso8601",
+      "interval": "seconds",
+      "temperature_2m": "°C",
+      "weather_code": "wmo code",
+      "wind_speed_10m": "km/h"
+    },
+    "current": {
+      "time": "2026-10-20T10:45",
+      "interval": 900,
+      "temperature_2m": 13.3,
+      "weather_code": 3,
+      "wind_speed_10m": 6.2
+    },
+    "daily_units": {
+      "time": "iso8601",
+      "temperature_2m_max": "°C",
+      "temperature_2m_min": "°C",
+      "precipitation_sum": "mm",
+      "weather_code": "wmo code"
+    },
+    "daily": {
+      "time": [
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22"
+      ],
+      "temperature_2m_max": [
+        14.8,
+        13.7,
+        14.9
+      ],
+      "temperature_2m_min": [
+        10.9,
+        9.6,
+        6.7
+      ],
+      "precipitation_sum": [
+        0.6,
+        8.5,
+        0.0
+      ],
+      "weather_code": [
+        61,
+        61,
+        3
+      ]
+    }
+  },
+  {
+    "latitude": 45.99724,
+    "longitude": 8.945581,
+    "generationtime_ms": 0.5452632904052734,
+    "utc_offset_seconds": 7200,
+    "timezone": "Europe/Zurich",
+    "timezone_abbreviation": "GMT+2",
+    "elevation": 286.0,
+    "location_id": 4,
+    "current_units": {
+      "time": "iso8601",
+      "interval": "seconds",
+      "temperature_2m": "°C",
+      "weather_code": "wmo code",
+      "wind_speed_10m": "km/h"
+    },
+    "current": {
+      "time": "2026-10-20T10:45",
+      "interval": 900,
+      "temperature_2m": 14.8,
+      "weather_code": 61,
+      "wind_speed_10m": 2.9
+    },
+    "daily_units": {
+      "time": "iso8601",
+      "temperature_2m_max": "°C",
+      "temperature_2m_min": "°C",
+      "precipitation_sum": "mm",
+      "weather_code": "wmo code"
+    },
+    "daily": {
+      "time": [
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22"
+      ],
+      "temperature_2m_max": [
+        16.0,
+        17.2,
+        17.9
+      ],
+      "temperature_2m_min": [
+        11.9,
+        14.2,
+        7.6
+      ],
+      "precipitation_sum": [
+        19.3,
+        66.2,
+        0.0
+      ],
+      "weather_code": [
+        63,
+        65,
+        3
+      ]
+    }
+  }
+]
