@@ -209,3 +209,7 @@ rag-system/
 
 # Symlink auf das lokale rag-system (Kurs-Modul 5)
 course/**/rag-system
+
+# Wayfinder-Planungsmap (lokal) und Agent-Worktrees
+.wayfinder/
+.claude/worktrees/
