@@ -59,12 +59,17 @@ uv add --dev pytest
 
 **Option A: OpenCode**
 
-| System | Befehl |
-| ------ | ------ |
-| macOS / Linux | `curl -fsSL https://opencode.ai/install \| bash` |
-| Windows, macOS, Linux (mit Node.js) | `npm install -g opencode-ai` |
+Wir verwenden **OpenCode 2**. Installiere es mit Node.js (alle Systeme):
 
-Prüfen (nach einem Neustart des Terminals): `opencode --version`
+```bash
+npm install -g @opencode/cli
+```
+
+Unter macOS geht alternativ `brew install anomalyco/tap/opencode-v2`.
+
+> **Achtung:** Nimm **nicht** `npm install -g opencode-ai` und nicht das Installationsskript `curl … opencode.ai/install`. Beide installieren die alte Version 1, und die ist nicht getestet. Hast du OpenCode 1 schon, installiere die Version 2 wie oben (beide nutzen den Befehl `opencode`, deshalb vorher `npm uninstall -g opencode-ai`).
+
+Prüfen (nach einem Neustart des Terminals): `opencode --version` zeigt eine Version, die mit `2.` beginnt.
 
 **Option B: Claude Code**
 
@@ -76,7 +81,7 @@ Prüfen (nach einem Neustart des Terminals): `opencode --version`
 
 Prüfen (nach einem Neustart des Terminals): `claude --version`
 
-Gibt es `command not found` (macOS/Linux) oder «wird nicht erkannt» (Windows), ist der Installationsordner nicht im `PATH`. Schliesse alle Terminalfenster und öffne ein neues. Hilft das nicht, nimm den `npm`-Weg.
+Gibt es `command not found` (macOS/Linux) oder «wird nicht erkannt» (Windows), ist der Installationsordner nicht im `PATH`. Schliesse alle Terminalfenster und öffne ein neues. Hilft das nicht, installiere über `npm`.
 
 ### Schritt 4: Modell-Zugang einrichten (10 Min.)
 
@@ -167,7 +172,7 @@ Kommt eine sinnvolle Antwort, ist alles bereit. Beenden kannst du mit `/exit` (O
 | Problem | Lösung |
 | ------- | ------ |
 | `npx` oder `npm` läuft nicht | Node.js fehlt oder wurde nach der Installation nicht neu geladen. Terminal neu starten, `node --version` prüfen. |
-| `opencode` oder `claude` wird nicht gefunden | Terminal neu starten. Sonst mit `npm install -g opencode-ai` bzw. `npm install -g @anthropic-ai/claude-code` installieren. |
+| `opencode` oder `claude` wird nicht gefunden | Terminal neu starten. Sonst mit `npm install -g @opencode/cli` bzw. `npm install -g @anthropic-ai/claude-code` installieren. |
 | Der Check meldet fehlende Skills | OpenCode: Du bist nicht im Projektordner, führe Schritt 5 dort aus. Claude Code: Plugin-Installation wiederholen. |
 | Die KI antwortet nicht oder meldet «rate limit» | Eine Minute warten und es erneut versuchen. Bleibt es dabei, melde dich mit dem Wortlaut der Fehlermeldung. |
 | Etwas anderes | Melde dich **vor dem Kurstag** mit der Ausgabe von `check_setup.py` und deinem Betriebssystem. |

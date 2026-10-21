@@ -115,6 +115,10 @@ def main() -> None:
     ]
     if opencode:
         pruefe_programm("opencode", ["opencode", "--version"], "")
+        if not (ausfuehren(["opencode", "--version"]) or "").lstrip("opencode v").startswith("2"):
+            print(
+                "HINWEIS: Wir verwenden OpenCode 2. Installation:  npm install -g @opencode/cli  (Vorbereitung, Schritt 3)"
+            )
     if claude:
         pruefe_programm("claude", ["claude", "--version"], "")
     if not (opencode or claude):
