@@ -92,7 +92,13 @@ def pruefe_modell_zugang(opencode: bool, claude: bool) -> bool:
         if '"loggedIn": true' in ausgabe:
             print("OK: Claude Code ist angemeldet")
             return True
-    print("FEHLER: Noch kein Modell-Zugang. OpenCode:  opencode auth login   Claude Code:  claude  (dann /login)")
+    if opencode:
+        print(
+            "HINWEIS: Kein eigener Zugang gespeichert. OpenCode nutzt dann Gratis-Modelle (opencode/glm-5.3-flash-free)."
+        )
+        print("         Prüfe sie mit dem Probelauf in Schritt 7.")
+        return True
+    print("FEHLER: Claude Code ist nicht angemeldet. Starte  claude  und melde dich an (oder /login).")
     return False
 
 

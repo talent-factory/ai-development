@@ -84,16 +84,12 @@ Das Werkzeug braucht ein KI-Modell, das die Arbeit macht.
 
 **Option A: OpenCode**
 
-```bash
-opencode auth login
-```
+Du hast zwei Möglichkeiten:
 
-Wähle im Dialog einen Anbieter:
+- **Kostenlos, ohne Konto:** OpenCode bringt Gratis-Modelle mit (im Namen steht `-free`). Du musst nichts einrichten. Wir verwenden am Kurstag `opencode/glm-5.3-flash-free`. Wähle es in OpenCode mit `/models` oder starte direkt damit: `opencode -m opencode/glm-5.3-flash-free`.
+- **Eigener Zugang:** Hast du einen API-Key von Anthropic, OpenAI oder Google, richtest du ihn ein mit `opencode auth login`. Das ist optional, kann aber schnellere und stärkere Modelle bringen.
 
-- **Hast du bereits einen Zugang** (API-Key von Anthropic, OpenAI oder Google)? Wähle diesen Anbieter.
-- **Hast du keinen?** Wähle **OpenCode Zen** (Konto bei [opencode.ai](https://opencode.ai)). Dort gibt es kostenlose Modelle mit Nutzungslimits. Lege das Konto **jetzt** an und nicht am Kurstag.
-
-Prüfen: `opencode auth list` zeigt deinen Anbieter.
+Prüfen: Der Probelauf in Schritt 7 antwortet. (`opencode auth list` zeigt nur eigene Zugänge, bei den Gratis-Modellen bleibt die Liste leer.)
 
 **Option B: Claude Code**
 
@@ -154,7 +150,7 @@ Die Versionsnummern dürfen abweichen. Bei jeder Zeile mit `FEHLER` steht direkt
 
 ### Schritt 7: Probelauf mit der KI (5 Min.)
 
-Starte dein Werkzeug im Projektordner (`opencode` oder `claude`).
+Starte dein Werkzeug im Projektordner: `claude` oder, für OpenCode ohne eigenen Zugang, `opencode -m opencode/glm-5.3-flash-free`.
 
 Gib diesen Prompt ein:
 
