@@ -261,7 +261,7 @@ git commit -m "Regentag-Funktion mit Tests"
 
 ### Dein Wetterbericht
 
-Halte `wetter_bericht.py` aus der Nachbearbeitung von Modul 3 bereit und stelle sicher, dass er läuft. Hast du ihn nicht fertig, ist das kein Problem. Sag uns vorher Bescheid, dann bekommst du am Kurstag einen lauffähigen Startpunkt.
+Halte `wetter_bericht.py` aus der Nachbearbeitung von Modul 3 bereit und stelle sicher, dass er läuft. Hast du ihn nicht fertig, ist das kein Problem. Kopiere den Ordner `course/modul-4-agentic-coding/05-beispiele/wetter_bericht/` in dein Projekt. Er enthält einen lauffähigen Wetterbericht samt Daten. Starte ihn mit `uv run python course/modul-4-agentic-coding/05-beispiele/wetter_bericht/wetter_bericht.py`.
 
 ---
 
