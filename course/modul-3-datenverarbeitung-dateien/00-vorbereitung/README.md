@@ -114,7 +114,7 @@ zeile = "2026-09-20;Zürich;13.8;25.4;0.0"
 ```
 
 1. Was ergibt `temperaturen[2]`?
-2. Was ergibt `len(temperaturen)` nach `temperaturen.append(15.2)`?
+2. Was ergibt `len(temperaturen)` nach `temperaturen.append(15.2)`? (Ab Aufgabe 3 gilt wieder die ursprüngliche Liste mit vier Werten.)
 3. Wie viele Werte in `temperaturen` sind grösser als 15? (Schreibe eine `for`-Schleife mit Zähler.)
 4. Wie berechnest du den Durchschnitt von `temperaturen`?
 5. Was ergibt `tag["niederschlag"]`, und was passiert bei `tag["wind"]`?

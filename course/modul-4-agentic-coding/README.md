@@ -22,11 +22,10 @@ Nach diesem Modul können Sie:
 
 ### [00-vorbereitung/](./00-vorbereitung/)
 
-**Zeitaufwand:** 2–3 Stunden
+**Zeitaufwand:** ca. 60–75 Minuten
 
-- Wiederholung Dateien & APIs
-- Leseauftrag: Agentic Coding & Tool Use
-- KI-Tool-Setup prüfen
+- Pflicht-Setup: OpenCode oder Claude Code, Modell-Zugang, Skills, `check_setup.py`
+- Wiederholung: Funktionen, `pytest`, Git
 
 ### [01-praxis/](./01-praxis/)
 
@@ -85,7 +84,7 @@ Nach diesem Modul können Sie:
 
 | Phase | Aktivität | Dauer |
 |-------|-----------|-------|
-| **Vor Tag 4** | Leseauftrag + Tool-Setup | 2–3 Std |
+| **Vor Tag 4** | Vorbereitung: Setup + Wiederholung | 60–75 Min |
 | **Tag 4** | 4 Lektionen Präsenzunterricht | 4 × 50 Min |
 | **Tag 4** | Pausen | 30 Min |
 | **Nach Tag 4** | Refactoring + Agent-Doku | 3–4 Std |
