@@ -149,7 +149,7 @@ OK: OpenCode hat einen Modell-Zugang
 Alles bereit für Modul 4.
 ```
 
-Mit Claude Code stehen stattdessen `OK: claude …`, `OK: Claude-Code-Plugin mattpocock-skills` und `OK: Claude Code ist angemeldet` da. Hast du beide Werkzeuge installiert, genügt es, wenn eines vollständig bereit ist. Eine `FEHLER`-Zeile zum anderen darfst du dann ignorieren.
+Mit Claude Code stehen stattdessen `OK: claude …`, `OK: Claude-Code-Plugin mattpocock-skills` und `OK: Claude Code ist angemeldet` da. Hast du beide Werkzeuge installiert, genügt es, wenn eines vollständig bereit ist. Für das andere erscheint dann «nicht nötig».
 
 Die Versionsnummern dürfen abweichen. Bei jeder Zeile mit `FEHLER` steht direkt dabei, was zu tun ist. Starte das Skript im Projektordner, sonst findet es die Skills nicht.
 

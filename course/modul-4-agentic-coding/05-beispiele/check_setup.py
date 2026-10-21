@@ -58,26 +58,39 @@ def pruefe_git_identitaet() -> bool:
 
 def pruefe_skills(opencode: bool, claude: bool) -> bool:
     """Prüft die Skills (OpenCode: `.agents/skills/`, Claude Code: Plugin). Ein Werkzeug genügt."""
-    ergebnisse = []
+    # Pro Werkzeug: (Name, ok, Meldung bei Erfolg, Meldung bei Fehler)
+    werkzeuge = []
     if opencode:
         skills_ordner = Path.cwd() / ".agents" / "skills"
         fehlend = [s for s in PFLICHT_SKILLS if not (skills_ordner / s / "SKILL.md").is_file()]
-        if fehlend:
-            print(f"FEHLER: OpenCode-Skills fehlen in {skills_ordner}: {', '.join(fehlend)}")
-            print("        Starte das Skript im Projektordner und installiere die Skills (Vorbereitung, Schritt 5).")
-            ergebnisse.append(False)
-        else:
-            ergebnisse.append(True)
-            print(f"OK: OpenCode-Skills {', '.join(PFLICHT_SKILLS)}")
+        werkzeuge.append(
+            (
+                "OpenCode",
+                not fehlend,
+                f"OK: OpenCode-Skills {', '.join(PFLICHT_SKILLS)}",
+                f"OpenCode-Skills fehlen in {skills_ordner}: {', '.join(fehlend)}\n"
+                "        Starte das Skript im Projektordner und installiere die Skills (Vorbereitung, Schritt 5).",
+            )
+        )
     if claude:
         plugins = ausfuehren(["claude", "plugin", "list"]) or ""
-        if "mattpocock-skills" not in plugins:
-            print("FEHLER: Claude-Code-Plugin `mattpocock-skills` fehlt (Vorbereitung, Schritt 5).")
-            ergebnisse.append(False)
+        werkzeuge.append(
+            (
+                "Claude Code",
+                "mattpocock-skills" in plugins,
+                "OK: Claude-Code-Plugin mattpocock-skills",
+                "Claude-Code-Plugin `mattpocock-skills` fehlt (Vorbereitung, Schritt 5).",
+            )
+        )
+    bereit = any(ok for _, ok, _, _ in werkzeuge)
+    for name, ok, erfolg, fehler in werkzeuge:
+        if ok:
+            print(erfolg)
+        elif bereit:
+            print(f"OK: {name}-Skills nicht eingerichtet, aber nicht nötig (das andere Werkzeug ist bereit)")
         else:
-            ergebnisse.append(True)
-            print("OK: Claude-Code-Plugin mattpocock-skills")
-    return any(ergebnisse)
+            print(f"FEHLER: {fehler}")
+    return bereit
 
 
 def pruefe_modell_zugang(opencode: bool, claude: bool) -> bool:
