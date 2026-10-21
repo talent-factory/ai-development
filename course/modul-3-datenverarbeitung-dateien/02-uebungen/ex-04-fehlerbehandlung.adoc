@@ -1,0 +1,55 @@
+=== Übung 4: Fehlerbehandlung – defekte Daten und API-Fehler
+
+**Lektion:** 4 (Fehlerbehandlung)
+**Zeit:** 13 Minuten
+**Ziel:** Eine CSV mit kaputten Zeilen robust einlesen und API-Fehler gezielt abfangen, statt dass das Programm abstürzt.
+
+---
+
+==== Aufgabenstellung
+
+Öffne `05-beispiele/lektion-4/start.py`. Die Datei hat zwei Teile mit `TODO`-Kommentaren:
+
+*Teil 1 – Defekte CSV einlesen* (`lese_robust`)::
+`wetter_defekt.csv` hat 24 Datenzeilen, einige sind kaputt (fehlende Werte, `k.A.`, ein Komma statt Punkt, `n/a`). Wandle `tmin`, `tmax` und `niederschlag_mm` mit `float()` und `wettercode` mit `int()` um. Fange den `ValueError` ab, zähle die kaputte Zeile und mache mit der nächsten weiter. Gib die gültigen Zeilen und die Anzahl übersprungener Zeilen zurück.
+
+*Teil 2 – API-Fehler abfangen* (`hole_temperatur`, `lies_fehlergrund`)::
+Ergänze die `except`-Blöcke: `HTTPError` meldet den `reason` der API, `RequestException` meldet «Keine Verbindung». Achte auf die Reihenfolge. Mit `OFFLINE = True` liest du den Grund stattdessen aus `beispiel_fehler.json` (`lies_fehlergrund`).
+
+---
+
+==== Kontrollwerte
+
+*Teil 1:* Gültige Zeilen *19*, übersprungen *5*. Zusammen sind das die *24* Zeilen der Datei.
+
+*Teil 2:* Der Aufruf `hole_temperatur(999, 7.45)` gibt `None` zurück und druckt:
+
+[source,text]
+----
+Die API lehnt die Anfrage ab: Latitude must be in range of -90 to 90°. Given: 999.0.
+----
+
+Mit `OFFLINE = True` druckt das Programm `Grund aus Datei:` und denselben Text.
+
+---
+
+==== Tipps (nur bei Bedarf)
+
+* Brauchst du einen Einstieg? Schau im Lektionstext bei «`try` und `except`» und im Abschnitt zu `else`.
+* Setze `float()` und `int()` **innerhalb** des `try`. Hänge die Zeile erst im `else` an `gueltig` an, damit nur vollständig umgewandelte Zeilen drin landen.
+* Bei `HTTPError` liegt die Antwort in `fehler.response`. Daraus liest du mit `.json()["reason"]` den Grund.
+* Wer ein `except:` ohne Fehlerart schreibt, verschluckt auch Tippfehler im Code. Nenne die Fehlerart.
+
+---
+
+==== Erweiterung (freiwillig)
+
+Schreibe die übersprungenen Zeilen mit *Zeilennummer und Grund* in `uebersprungen.log`, zum Beispiel `Zeile 5: could not convert string to float: ''`. Tipp: `csv.DictReader` kennt `line_num`.
+
+---
+
+==== Reflexion
+
+1. Warum ist `except ValueError` besser als `except:` ohne Fehlerart?
+2. Was ist passiert, als du eine fehlende Temperatur durch `0.0` ersetzt hast (oder ersetzen würdest)? Wie würde sich der Durchschnitt verändern?
+3. Wo hat die KI in dieser Lektion geholfen, und wo hast du ihre Vorschläge geändert oder abgelehnt?

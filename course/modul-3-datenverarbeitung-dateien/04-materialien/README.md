@@ -1,13 +1,15 @@
 # Materialien: Modul 3: Datenverarbeitung & Dateien
 
-Handouts, Cheatsheets, Präsentationen und weitere Ressourcen.
+Handouts zum Nachschlagen (AsciiDoc, rendern mit der VS-Code-Erweiterung «AsciiDoc»).
 
 ## 📁 Inhalt
 
-### Dokumente
+- [cheatsheet-dateien.adoc](./cheatsheet-dateien.adoc) – TXT, CSV und JSON lesen und schreiben, `pathlib`, Stolpersteine
+- [cheatsheet-fehler-api.adoc](./cheatsheet-fehler-api.adoc) – `try/except`, `requests`, Fehlerarten, Open-Meteo-Überblick, Wettercodes
 
-- [homework-week-2-3-rubrik.adoc](./homework-week-2-3-rubrik.adoc)
-- [homework-week-2-3-zeitplan.adoc](./homework-week-2-3-zeitplan.adoc)
+### Archiv
+
+Bewertungsmaterial aus einer früheren Kursfassung: [`archive/`](./archive/).
 
 ---
 
