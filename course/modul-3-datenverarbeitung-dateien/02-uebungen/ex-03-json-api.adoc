@@ -1,0 +1,65 @@
+=== Übung 3: JSON und API – Wetter in Bern
+
+**Lektion:** 3 (JSON & API)
+**Zeit:** 15 Minuten
+**Ziel:** Ergebnisse als JSON speichern und laden, Wettercodes mit einem Dictionary übersetzen und die Wetterdaten von Bern abrufen.
+
+---
+
+==== Aufgabenstellung
+
+Öffne `05-beispiele/lektion-3/start.py`. Die Datei hat drei Teile mit `TODO`-Kommentaren:
+
+*Teil 1 – JSON speichern und laden* (`speichere_json`, `lade_json`)::
+Speichere `DURCHSCHNITT_TMAX` (das Ergebnis aus Lektion 2) in `zusammenfassung.json` und lade es wieder. Die Datei muss lesbar eingerückt sein und «Zürich» mit Umlaut enthalten.
+
+*Teil 2 – Wettercodes übersetzen* (`WETTERCODES`, `beschreibe_wetter`)::
+Baue ein eigenes Dictionary mit den Codes `0`, `3`, `45`, `61`, `80` und `95` und ihrem Klartext (siehe Lektionstext). `beschreibe_wetter(code)` gibt den Klartext zurück oder `"unbekannt"`, falls der Code fehlt.
+
+*Teil 3 – Wetter Bern abrufen* (`hole_wetter`, `main`)::
+Rufe die Wetterdaten für Bern ab (live oder, mit `OFFLINE = True`, aus `beispiel_antwort.json`). Gib die Anzahl Tage aus und danach eine Zeile `heute: <Klartext>, <tmax> °C`.
+
+Wirst du mit Teil 2 nicht fertig, nimm das fertige Dictionary `WETTERCODES_VOLL` aus `start.py`. Dann bist du trotzdem bei Teil 3.
+
+---
+
+==== Kontrollwerte
+
+*Teil 1:* `lade_json(...)` gibt dasselbe Dictionary zurück, das du gespeichert hast. In `zusammenfassung.json` steht `"Zürich": 20.7`, nicht `Zürich`.
+
+*Teil 3:* In der Antwort stehen *3* Tage (`forecast_days=3`).
+
+Mit `OFFLINE = True` siehst du ausserdem genau:
+
+[source,text]
+----
+Tage in der Antwort: 3
+heute: leichter Regen, 14.4 °C
+----
+
+Mit `OFFLINE = False` weichen Temperatur und Wetter ab, weil die Daten live sind. Prüfe dann nur: drei Tage, und die Zeile `heute: …` erscheint.
+
+---
+
+==== Tipps (nur bei Bedarf)
+
+* Für `json.dump` brauchst du `indent=2` und `ensure_ascii=False`.
+* `requests.get(...)` braucht `timeout=10`, danach `raise_for_status()` und `.json()`.
+* Die Werte für heute sind der Index `0` in den Listen unter `antwort["daily"]`.
+* Hängst du bei Teil 3? Setze `OFFLINE = True` und arbeite mit der gespeicherten Antwort weiter.
+
+---
+
+==== Erweiterung (freiwillig)
+
+Hole alle fünf Städte in *einem* Request (`latitude=47.3769,46.948,...` kommagetrennt). Die Antwort ist eine Liste, ein Dictionary pro Stadt. Gib für jede Stadt die Höchsttemperatur von heute aus.
+
+---
+
+==== Reflexion
+
+1. Warum gibst du bei `requests.get` immer ein `timeout` an?
+2. Was ist der Unterschied zwischen `json.load` und `json.loads`?
+3. Wie hat sich der KI-Aufruf gegen die Doku geschlagen? Welche Parameter stimmten nicht, und wie hast du es gemerkt (oder nicht)?
+
+Datenquelle: Weather data by Open-Meteo.com (CC BY 4.0).

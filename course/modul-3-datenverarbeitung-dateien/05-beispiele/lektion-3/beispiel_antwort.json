@@ -1,0 +1,57 @@
+{
+  "latitude": 46.951378,
+  "longitude": 7.4586725,
+  "generationtime_ms": 0.5840063095092773,
+  "utc_offset_seconds": 7200,
+  "timezone": "Europe/Zurich",
+  "timezone_abbreviation": "GMT+2",
+  "elevation": 554.0,
+  "current_units": {
+    "time": "iso8601",
+    "interval": "seconds",
+    "temperature_2m": "°C",
+    "weather_code": "wmo code",
+    "wind_speed_10m": "km/h"
+  },
+  "current": {
+    "time": "2026-10-20T10:45",
+    "interval": 900,
+    "temperature_2m": 10.8,
+    "weather_code": 3,
+    "wind_speed_10m": 3.3
+  },
+  "daily_units": {
+    "time": "iso8601",
+    "temperature_2m_max": "°C",
+    "temperature_2m_min": "°C",
+    "precipitation_sum": "mm",
+    "weather_code": "wmo code"
+  },
+  "daily": {
+    "time": [
+      "2026-10-20",
+      "2026-10-21",
+      "2026-10-22"
+    ],
+    "temperature_2m_max": [
+      14.4,
+      13.5,
+      12.9
+    ],
+    "temperature_2m_min": [
+      9.5,
+      7.7,
+      4.8
+    ],
+    "precipitation_sum": [
+      0.2,
+      12.8,
+      0.0
+    ],
+    "weather_code": [
+      61,
+      80,
+      45
+    ]
+  }
+}

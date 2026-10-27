@@ -1,7 +1,9 @@
 # Modul 3: Datenverarbeitung & Dateien
 
-**Dauer:** 1 Tag (4 Lektionen à 50 Minuten)  
-**Voraussetzung:** Modul 2 abgeschlossen (Variablen, Schleifen, Funktionen).
+**Dauer:** 1 Abend, 18:00–21:50 (4 Lektionen à 50 Minuten, 3 Pausen à 10 Minuten)  
+**Voraussetzung:** Modul 2 abgeschlossen (Variablen, Bedingungen, Schleifen, Funktionen) und die [Vorbereitung](./00-vorbereitung/README.md).
+
+**Lektionsplan für Dozierende:** [LEKTIONSPLAN.md](./LEKTIONSPLAN.md)
 
 ---
 
@@ -9,12 +11,20 @@
 
 Nach diesem Modul können Sie:
 
-1. ✅ Daten aus Textdateien lesen und schreiben.
-2. ✅ CSV-Dateien mit dem `csv`-Modul verarbeiten.
+1. ✅ Daten aus Textdateien lesen und schreiben (`with open(...)`).
+2. ✅ CSV-Dateien mit `csv.DictReader` und `csv.DictWriter` verarbeiten.
 3. ✅ JSON-Daten laden, strukturieren und speichern.
-4. ✅ Einfache HTTP-API-Anfragen mit Python senden und Antworten verarbeiten.
-5. ✅ Fehler robust behandeln (`try/except`).
-6. ✅ Mit KI-Unterstützung Datenverarbeitungsskripte erstellen und testen.
+4. ✅ Eine HTTP-API mit `requests` abrufen und die Antwort auswerten.
+5. ✅ Fehler gezielt mit `try/except` behandeln, ohne sie zu verschlucken.
+6. ✅ KI-Ergebnisse prüfen: «Vertrauen, aber prüfen».
+
+---
+
+## 🌦️ Das Szenario
+
+Wir arbeiten den ganzen Abend mit einem Datensatz: dem **Wetter von fünf Schweizer Städten** (Zürich, Bern, Genf, Basel, Lugano) vom 20. September bis 19. Oktober 2026. Datenquelle: Weather data by Open-Meteo.com (CC BY 4.0).
+
+Jede Lektion bringt ihren eigenen Startordner mit. So kann auch einsteigen, wer eine Lektion verpasst hat.
 
 ---
 
@@ -22,73 +32,73 @@ Nach diesem Modul können Sie:
 
 ### [00-vorbereitung/](./00-vorbereitung/)
 
-**Zeitaufwand:** 2–3 Stunden
+**Zeitaufwand:** ca. 30 Minuten
 
-- Wiederholung Funktionen und Schleifen
-- Leseauftrag: Dateiformate (TXT, CSV, JSON)
-- Beispieldaten herunterladen
+- `uv add requests` und `check_setup.py`
+- Leseauftrag Listen und Dictionaries mit Selbsttest
 
 ### [01-praxis/](./01-praxis/)
 
 **Präsenzunterricht:** 4 Lektionen à 50 Minuten
 
-- **Lektion 1:** Textdateien lesen und schreiben, `with`-Statement.
-- **Lektion 2:** CSV-Dateien importieren, filtern und exportieren.
-- **Lektion 3:** JSON-Daten verarbeiten, APIs kennenlernen.
-- **Lektion 4:** Fehlerbehandlung, stabile Scripts, Debugging.
-
-> Vorhandenes Material: `01-praxis/platforms.adoc`
+| Zeit | Lektion |
+| ---- | ------- |
+| 18:00–18:50 | [Lektion 1: Textdateien](./01-praxis/lektion-1-textdateien.md) |
+| 19:00–19:50 | [Lektion 2: CSV](./01-praxis/lektion-2-csv.md) |
+| 20:00–20:50 | [Lektion 3: JSON & API](./01-praxis/lektion-3-json-api.md) |
+| 21:00–21:50 | [Lektion 4: Fehlerbehandlung & Abschluss](./01-praxis/lektion-4-fehlerbehandlung.md) |
 
 ### [02-uebungen/](./02-uebungen/)
 
-**Übungen während der Präsenz**
+**Je Lektion eine Übung** (13–20 Minuten, mit Kontrollwerten, Gerüst als `start.py`)
 
-- Datei einlesen und auswerten
-- CSV-Daten filtern und zusammenfassen
-- API-Anfrage an eine öffentliche Schnittstelle
-- Fehlerbehandlung einbauen
-
-> Vorhandenes Material: `02-uebungen/aufgabe-2/`
+- [Übung 1: Textdatei auswerten](./02-uebungen/ex-01-textdatei.adoc)
+- [Übung 2: CSV auswerten](./02-uebungen/ex-02-csv.adoc)
+- [Übung 3: JSON und API](./02-uebungen/ex-03-json-api.adoc)
+- [Übung 4: Fehlerbehandlung](./02-uebungen/ex-04-fehlerbehandlung.adoc)
 
 ### [03-nachbearbeitung/](./03-nachbearbeitung/)
 
-**Hausaufgaben vor Modul 4**
+**Hausaufgabe vor Modul 4** (ca. 3–4 Stunden)
 
-- Ein kleines Datenanalyse-Script schreiben
-- API-Daten abrufen und speichern
-- Reflexion: Stabilität vs. Komplexität
-
-> Vorhandenes Material: `03-nachbearbeitung/homework-week-2-3.adoc`
+- Ein Skript `wetter_bericht.py`, das alle Techniken kombiniert
+- Reflexionsbogen
 
 ### [04-materialien/](./04-materialien/)
 
-**Handouts & Ressourcen**
+**Handouts**
 
-- Cheatsheet Dateioperationen
-- CSV/JSON Vergleich
-- API-Grundlagen
-- Fehlerbehandlung-Muster
-
-> Vorhandenes Material: `04-materialien/homework-week-2-3-zeitplan.adoc`, `04-materialien/homework-week-2-3-rubrik.adoc`
+- [Cheatsheet Dateien: TXT, CSV, JSON](./04-materialien/cheatsheet-dateien.adoc)
+- [Cheatsheet Fehlerbehandlung & HTTP-APIs](./04-materialien/cheatsheet-fehler-api.adoc)
 
 ### [05-beispiele/](./05-beispiele/)
 
-**Code-Beispiele vom Dozenten**
+**Daten, Gerüste und Musterlösungen**
 
-- Datei-Lese- und Schreibbeispiele
-- CSV-Parser
-- API-Client mit Fehlerbehandlung
+- `check_setup.py`
+- `lektion-1/` bis `lektion-4/`: Daten, `start.py` (Gerüst), `loesung.py` (Musterlösung)
 
 ---
 
 ## ⏱️ Zeitplan
 
-| Phase | Aktivität | Dauer |
-|-------|-----------|-------|
-| **Vor Tag 3** | Leseauftrag + Beispieldaten | 2–3 Std |
-| **Tag 3** | 4 Lektionen Präsenzunterricht | 4 × 50 Min |
-| **Tag 3** | Pausen | 30 Min |
-| **Nach Tag 3** | Daten-Script + Reflexion | 3–4 Std |
+| Zeit | Aktivität |
+| ---- | --------- |
+| **Vor dem Abend** | Vorbereitung (ca. 30 Min.) |
+| 18:00–18:50 | Lektion 1 |
+| 18:50–19:00 | Pause |
+| 19:00–19:50 | Lektion 2 |
+| 19:50–20:00 | Pause |
+| 20:00–20:50 | Lektion 3 |
+| 20:50–21:00 | Pause |
+| 21:00–21:50 | Lektion 4 mit Feedback-Runde |
+| **Danach** | Nachbearbeitung (3–4 Std.) |
+
+---
+
+## 🗄️ Archiv
+
+Material aus einer früheren Kursfassung (Replicate, LangChain/RAG) liegt in den `archive/`-Unterordnern der jeweiligen Abschnitte und gehört nicht mehr zu diesem Modul.
 
 ---
 

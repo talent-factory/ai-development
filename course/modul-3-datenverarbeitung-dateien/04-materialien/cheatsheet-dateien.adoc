@@ -1,0 +1,137 @@
+= Cheatsheet: Dateien lesen und schreiben (TXT, CSV, JSON)
+:toc:
+:icons: font
+
+Modul 3, Lektionen 1–3. Alle Beispiele nutzen `encoding="utf-8"` wegen der Umlaute.
+
+== Textdateien
+
+[source,python]
+----
+# Lesen: Zeile für Zeile
+with open("wetter_zuerich.txt", encoding="utf-8") as datei:
+    for zeile in datei:
+        teile = zeile.strip().split(";")      # ['2026-09-20', 'Zürich', '13.8', '25.4', '0.0']
+        tmax = float(teile[3])                 # Text -> Zahl
+
+# Lesen: alles auf einmal
+text = open("datei.txt", encoding="utf-8").read()          # ein String
+zeilen = open("datei.txt", encoding="utf-8").readlines()   # Liste von Zeilen
+
+# Schreiben
+with open("ergebnis.txt", "w", encoding="utf-8") as datei:
+    datei.write("Erste Zeile\n")                # \n selbst setzen!
+----
+
+=== Dateimodi
+
+[cols="1,4"]
+|===
+| Modus | Bedeutung
+
+| `"r"` | Lesen (Standard). Datei muss existieren.
+| `"w"` | Schreiben. *Überschreibt* eine vorhandene Datei.
+| `"a"` | Anhängen am Ende.
+|===
+
+=== Pfade mit pathlib
+
+[source,python]
+----
+from pathlib import Path
+
+DATEI = Path(__file__).parent / "wetter_zuerich.txt"   # relativ zum Skript
+DATEI.exists()                                          # True / False
+DATEI.read_text(encoding="utf-8")                       # ganzer Inhalt
+DATEI.write_text("Text\n", encoding="utf-8")            # ganze Datei schreiben
+----
+
+== CSV
+
+[source,python]
+----
+import csv
+
+# Lesen: jede Zeile ein Dictionary
+with open("wetter_30tage.csv", newline="", encoding="utf-8") as datei:
+    for zeile in csv.DictReader(datei):
+        tmax = float(zeile["tmax"])            # CSV liefert nur Text!
+
+# Schreiben
+with open("warme_tage.csv", "w", newline="", encoding="utf-8") as datei:
+    schreiber = csv.DictWriter(datei, fieldnames=["stadt", "datum", "tmax"])
+    schreiber.writeheader()
+    schreiber.writerows(zeilen)                # Liste von Dictionaries
+----
+
+NOTE: `newline=""` gehört bei `csv` immer dazu.
+
+=== Muster: Durchschnitt je Gruppe
+
+[source,python]
+----
+werte = {}                                          # Stadt -> Liste von Werten
+for zeile in zeilen:
+    werte.setdefault(zeile["stadt"], []).append(zeile["tmax"])
+
+schnitt = {stadt: round(sum(w) / len(w), 1) for stadt, w in werte.items()}
+----
+
+== JSON
+
+[source,python]
+----
+import json
+
+# Speichern
+with open("zusammenfassung.json", "w", encoding="utf-8") as datei:
+    json.dump(daten, datei, indent=2, ensure_ascii=False)
+
+# Laden
+with open("zusammenfassung.json", encoding="utf-8") as datei:
+    daten = json.load(datei)
+----
+
+[cols="1,1"]
+|===
+| Python | JSON
+
+| `dict` | Objekt `{...}`
+| `list` | Array `[...]`
+| `str`, `int`, `float` | Text, Zahl
+| `True` / `False` | `true` / `false`
+| `None` | `null`
+|===
+
+TIP: `dump` / `load` arbeiten mit *Dateien*, `dumps` / `loads` mit *Text*.
+
+== CSV oder JSON?
+
+[cols="1,2,2"]
+|===
+| | CSV | JSON
+
+| Struktur | flache Tabelle | verschachtelt
+| Typen | alles Text | Zahlen, Text, Listen, `null`
+| Typisch für | Exporte, Tabellenkalkulation | Web-APIs, Konfiguration
+|===
+
+== Häufige Stolpersteine
+
+[cols="2,3"]
+|===
+| Symptom | Ursache
+
+| `FileNotFoundError` | Pfad oder Dateiname falsch. Mit `pathlib` relativ zum Skript arbeiten.
+| `TypeError` beim Vergleich | Wert ist noch Text. `float(...)` vergessen.
+| Zahlen mit `\n` am Ende | `strip()` vergessen.
+| Datei plötzlich leer | Mit `"w"` geöffnet. `"a"` zum Anhängen.
+| Leere Zeilen in der CSV | `newline=""` fehlt.
+| `Zürich` in der JSON-Datei | `ensure_ascii=False` fehlt.
+|===
+
+== Quellen
+
+* https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files[Python-Tutorial: Dateien lesen und schreiben]
+* https://docs.python.org/3/library/csv.html[Modul csv]
+* https://docs.python.org/3/library/json.html[Modul json]
