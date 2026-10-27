@@ -1,0 +1,40 @@
+= Cheatsheet: Die fünf Skills
+:toc:
+:icons: font
+
+Modul 4. Skills sind kurze Anweisungen an die KI, die eine Arbeitsweise vorgeben. Wir nutzen sie aus `mattpocock/skills`. Die Skills sind englisch, wir geben die Anweisungen auf Deutsch.
+
+[cols="2,3,3",options="header"]
+|===
+| Skill | Wann einsetzen | Beispiel
+| `grilling` | Vor dem Bauen: Annahmen klären, Plan schärfen | «Nutze den Skill `grilling`. Befrage mich zu `vergleiche_staedte`.» Ergebnis: `plan.md`
+| `tdd` | Neue Funktion test-first bauen | «Nutze den Skill `tdd`. Baue `vergleiche_staedte` test-first nach `plan.md`.»
+| `code-review` | Änderung gegen Plan und Projektstandards prüfen | «Nutze den Skill `code-review`. Spec ist `plan.md`.» Braucht Subagenten und eine Spec-Datei, im Kurs als Demo
+| `diagnosing-bugs` | Fehler erst reproduzieren, dann beheben | «Nutze den Skill `diagnosing-bugs`. `berechne_kennzahlen([])` bricht ab.»
+| `domain-modeling` | Begriffe schärfen, Glossar pflegen | «Nutze den Skill `domain-modeling`. Erstelle `GLOSSARY.md`.» Kür in Lektion 4
+|===
+
+== Aufruf
+
+* *OpenCode:* im Prompt formulieren, z. B. «Nutze den Skill `tdd`.» OpenCode lädt ihn über das Skill-Tool.
+* *Claude Code:* `/mattpocock-skills:tdd` oder dieselbe Formulierung im Prompt.
+
+== Installation (aus der Vorbereitung)
+
+[source,bash]
+----
+# OpenCode, im Projektordner
+npx skills@latest add mattpocock/skills -a opencode -s grilling -s tdd -s code-review -s diagnosing-bugs -s domain-modeling --copy -y
+
+# Claude Code
+claude plugin install mattpocock-skills@claude-plugins-official
+----
+
+Die Dateien landen in `.agents/skills/`. Prüfen: `uv run python 05-beispiele/check_setup.py`.
+
+== Gut zu wissen
+
+* Es gibt keinen eigenen Refactoring-Skill. Wir verbessern in Kleinschritten und lassen nach jedem Schritt die Tests laufen.
+* `code-review` startet zwei Subagenten und stösst im Gratis-Modell schnell an das Limit.
+* Verlange die Rechtschreibung im Prompt («ss statt ß»), sonst schreibt die KI «ß».
+* Plugin und `skills`-Installer nicht für dasselbe Werkzeug mischen, sonst erscheint jeder Skill doppelt.

@@ -9,12 +9,12 @@
 
 Nach diesem Modul können Sie:
 
-1. ✅ KI-Tools (Copilot, Chat, Commands) produktiv im Coding-Workflow einsetzen.
-2. ✅ Effektive Prompts für Code-Generierung, Erklärung und Refactoring formulieren.
-3. ✅ Eigene Slash-Commands oder Agenten-Skripte erstellen.
-4. ✅ Code mit KI reviewen, testen und verbessern.
-5. ✅ Einfache Tool-Agents bauen, die mehrere Schritte selbständig erledigen.
-6. ✅ Zwischen menschlicher Kontrolle und KI-Autonomie abwägen.
+1. ✅ Mit einem Coding-Agenten (OpenCode oder Claude Code) arbeiten und eine Änderung zuerst planen (`plan.md`).
+2. ✅ Funktionen test-first mit dem Agenten entwickeln (TDD).
+3. ✅ KI-Code gegen Plan und Standards prüfen und in Kleinschritten verbessern.
+4. ✅ Fehler systematisch diagnostizieren statt raten.
+5. ✅ Den Durchlauf Plan → Test → Code → Review → Doku selbständig durchführen.
+6. ✅ Zwischen Vertrauen und Prüfen abwägen (3-Punkte-Check).
 
 ---
 
@@ -31,10 +31,10 @@ Nach diesem Modul können Sie:
 
 **Präsenzunterricht:** 4 Lektionen à 50 Minuten
 
-- **Lektion 1:** KI-Tools im Überblick: Copilot, Chat, Commands, Agents.
-- **Lektion 2:** Prompt Engineering für Entwickler: Kontext, Iteration, Constraints.
-- **Lektion 3:** Eigene Commands und Workflows bauen.
-- **Lektion 4:** Einfache Tool-Agents mit Python und Pydantic AI.
+- **Lektion 1:** Arbeitsweise und Planen: Code erklären lassen, mit `grilling` einen `plan.md` schreiben.
+- **Lektion 2:** TDD mit dem Agenten: Tests für den Ist-Stand, dann `vergleiche_staedte` test-first.
+- **Lektion 3:** Review, Refactoring und Diagnose: KI-Code gegen `plan.md` prüfen, `hole_live_wetter` entflechten, Fehler reproduzieren.
+- **Lektion 4:** Dokumentation und Durchlauf: Doku, dann `finde_kaeltesten_tag` durch Plan → Test → Code → Review → Doku.
 
 > Altmaterial (archiviert): `01-praxis/archive/`
 
@@ -42,10 +42,10 @@ Nach diesem Modul können Sie:
 
 **Übungen während der Präsenz**
 
-- KI-generierten Code reviewen und korrigieren
-- Eigene Commands erstellen
-- Tool-Agent für eine konkrete Aufgabe bauen
-- Pair-Programming mit KI
+- ex-01 Plan: `plan.md` für `vergleiche_staedte`
+- ex-02 TDD: Tests für den Ist-Stand und `vergleiche_staedte` test-first
+- ex-03 Review, Refactoring, Diagnose
+- ex-04 Mini-Durchlauf mit `finde_kaeltesten_tag`
 
 > Altmaterial (archiviert): `02-uebungen/archive/command-examples/`
 
@@ -53,28 +53,23 @@ Nach diesem Modul können Sie:
 
 **Hausaufgaben vor Modul 5**
 
-- Ein bestehendes Script mit KI refactoren
-- Eigenen Command oder Mini-Agent dokumentieren
-- Reflexion: Wann Agent, wann einfacher Prompt?
+- Eigener Durchlauf an einem kleinen Feature (`plan.md`, Tests, Code, `README.md`, `review-notiz.md`)
+- Reflexionsbogen
 
 ### [04-materialien/](./04-materialien/)
 
 **Handouts & Ressourcen**
 
-- Prompt-Patterns für Entwickler
-- Command-Template
-- Tool-Agent-Checkliste
-- Vergleich CLI-Tools
+- `cheatsheet-prompts.adoc` und `cheatsheet-skills.adoc`
+- `weitere-frameworks.md`
+- `cli-comparison.md` (älterer Vergleich, ohne OpenCode)
 
-> Vorhandenes Material: `04-materialien/cli-comparison.md`
 
 ### [05-beispiele/](./05-beispiele/)
 
 **Code-Beispiele vom Dozenten**
 
-- Einfache Tool-Agents (01–05)
-- Refactoring-Beispiele
-- Command-Beispiele
+- Startpunkt `wetter_bericht/` und je Lektion eine Musterlösung `lektion-N/loesung/`
 
 > Vorhandenes Material: `05-beispiele/wetter_bericht/` (Startpunkt), `05-beispiele/check_setup.py`. Altmaterial (archiviert): `05-beispiele/archive/tool/`
 
@@ -87,7 +82,7 @@ Nach diesem Modul können Sie:
 | **Vor Tag 4** | Vorbereitung: Setup + Wiederholung | 60–75 Min |
 | **Tag 4** | 4 Lektionen Präsenzunterricht | 4 × 50 Min |
 | **Tag 4** | Pausen | 30 Min |
-| **Nach Tag 4** | Refactoring + Agent-Doku | 3–4 Std |
+| **Nach Tag 4** | Eigener Durchlauf + Reflexion | 2–3 Std |
 
 ---
 

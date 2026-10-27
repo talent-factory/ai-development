@@ -1,0 +1,154 @@
+= Cheatsheet: Prompts für den Durchlauf
+:toc:
+:icons: font
+
+Modul 4, Lektionen 1–4. Die Prompts sind kopierfertig. Passe nur Namen und Pfade an.
+
+== Aufbau
+
+Jeder Prompt hat drei Teile und endet immer mit derselben Schlusszeile:
+
+[source,text]
+----
+Kontext:  Woran arbeite ich, welche Datei, welcher Plan?
+Aufgabe:  Was genau soll die KI tun (und was ausdrücklich nicht)?
+Format:   Wie soll die Antwort aussehen?
+
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+== Skill aufrufen
+
+* OpenCode: im Prompt schreiben «Nutze den Skill `grilling`.»
+* Claude Code: `/mattpocock-skills:grilling` (oder dieselbe Formulierung im Prompt)
+
+== Der 3-Punkte-Check
+
+Nach jedem KI-Schritt, bevor du weitermachst («Vertrauen, aber prüfen»):
+
+. *Läuft es?* Tests und Programm ausführen, nicht der KI glauben.
+. *Passt es zu `plan.md`?* Signatur, Rückgabe, Randfälle.
+. *Wurde etwas Ungefragtes geändert?* Diff ansehen.
+
+== Lektion 1: Arbeitsweise, Planen
+
+.Code erklären lassen
+[source,text]
+----
+Kontext: Ich arbeite im Projekt `wetter_bericht.py` (Wetterbericht für Schweizer Städte, CSV und Open-Meteo).
+Aufgabe: Erkläre mir den Aufbau der Datei: Welche Funktionen gibt es, wer ruft wen auf, was ist reine Berechnung und was Ein-/Ausgabe? Ändere nichts.
+Format: Liste mit einem Satz pro Funktion.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Planen mit `grilling`
+[source,text]
+----
+Nutze den Skill `grilling`.
+Kontext: Ich will `wetter_bericht.py` um `vergleiche_staedte(zeilen_a, zeilen_b)` erweitern (Temperaturdifferenz, nässere Stadt).
+Aufgabe: Befrage mich, bis jede Annahme geklärt ist. Stelle die Fragen runde um Runde, ändere nichts am Code.
+Format: nummerierte Fragen, je mit deiner empfohlenen Antwort.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Plan festhalten
+[source,text]
+----
+Kontext: Wir haben `vergleiche_staedte` besprochen.
+Aufgabe: Fasse das Ergebnis in `plan.md` zusammen: Ziel, Signatur, Rückgabe-Schlüssel, Definition von «nässer», Randfälle, was nicht zum Feature gehört. Ändere keinen Code.
+Format: Markdown mit kurzen Abschnitten.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+_Während die KI arbeitet:_ Lies mit und sage voraus, welche Frage als Nächstes kommt.
+
+== Lektion 2: TDD
+
+.Tests ohne Skill (zum Vergleich)
+[source,text]
+----
+Kontext: Projekt `wetter_bericht.py`, Datei `test_wetter_bericht.py` (pytest).
+Aufgabe: Schreibe Tests für `berechne_kennzahlen`.
+Format: eine Testdatei, nur der Code.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Ist-Verhalten festhalten
+[source,text]
+----
+Kontext: Projekt `wetter_bericht.py`, Datei `test_wetter_bericht.py`.
+Aufgabe: Schreibe Tests, die das heutige Verhalten von `beschreibe_wetter` festhalten, auch bei unbekannten Codes (heute «unbekannt»). Ändere den Code nicht.
+Format: ein Test pro Fall, kurze Namen auf Deutsch.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Test-first mit `tdd`
+[source,text]
+----
+Nutze den Skill `tdd`.
+Kontext: Plan in `plan.md`, Funktion `vergleiche_staedte` gibt es noch nicht.
+Aufgabe: Baue sie test-first, ein Test nach dem anderen: Test schreiben, rot zeigen, minimalen Code schreiben, grün zeigen. Ändere keine anderen Funktionen.
+Format: nach jedem Schritt die Ausgabe von `pytest`.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+_Während die KI arbeitet:_ Sage voraus, ob der nächste Test rot oder grün wird.
+
+== Lektion 3: Review, Refactoring, Diagnose
+
+.Review gegen den Plan (Demo)
+[source,text]
+----
+Nutze den Skill `code-review`.
+Kontext: Spec ist `plan.md`, geprüft wird `vergleiche_staedte`.
+Aufgabe: Prüfe gegen den Plan und gegen die Standards des Projekts.
+Format: Funde nach Schwere, je Fund mit Datei und Zeile.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Refactoring in einem Schritt
+[source,text]
+----
+Kontext: `hole_live_wetter` ruft die API ab und bereitet die Antwort auf.
+Aufgabe: Löse nur die reine Aufbereitung in eine neue Funktion `bereite_live_wetter_auf(antwort)` heraus. Der Parameter ist das Dictionary aus `antwort.json()`, kein `requests.Response`. Nur dieser eine Schritt, keine anderen Änderungen. Führe danach `pytest` aus.
+Format: Diff und Ausgabe von `pytest`.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Diagnose: erst reproduzieren
+[source,text]
+----
+Nutze den Skill `diagnosing-bugs`.
+Kontext: `berechne_kennzahlen([])` bricht ab (leere Stadt).
+Aufgabe: Baue zuerst einen Test, der den Fehler reproduziert und rot ist. Ändere noch keinen Code. Nenne danach die Ursache mit Beleg.
+Format: Test, Hypothese, Beleg.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+_Während die KI arbeitet:_ Lies den Diff mit und halte jeden Fund fest: bestätigt, Scheinfund oder übersehen.
+
+== Lektion 4: Doku, Durchlauf
+
+.Doku, die nur beschreibt, was der Code tut
+[source,text]
+----
+Kontext: Funktion `vergleiche_staedte` in `wetter_bericht.py`.
+Aufgabe: Schreibe einen Docstring (Zweck, Parameter, Rückgabe, Randfälle) und einen Abschnitt in `README.md`. Beschreibe nur, was der Code wirklich tut, nichts Geplantes oder Erfundenes.
+Format: Docstring und Markdown-Abschnitt.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+.Kür: Glossar
+[source,text]
+----
+Nutze den Skill `domain-modeling`.
+Kontext: Projekt Wetterbericht.
+Aufgabe: Erstelle `GLOSSARY.md` mit den Begriffen des Projekts (Stadt, Wettercode, Regentag, …) und frage nach, wo Begriffe unscharf sind.
+Format: Glossar im Format der Vorlage.
+Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
+----
+
+== Wenn die KI nicht liefert
+
+* *Rate-Limit:* Ab dem zweiten Limit-Fehler arbeiten zwei Personen an einem Rechner.
+* *Antwort kommt nicht:* Nimm die bereitgestellte Beispielausgabe der Lektion und mache mit dem 3-Punkte-Check weiter.
