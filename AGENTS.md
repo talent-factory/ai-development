@@ -37,8 +37,9 @@
 
 ## Tests & linting
 
-- There is **no root test suite**. `uv run pytest` is not configured; do not treat it as a green check.
-- `ruff` is available on PATH but is **not a pinned project dependency** and has no project config. Use it only if you add project-level config and dev dependencies.
+- `uv run pytest` is configured in `pyproject.toml` (`testpaths = ["tests"]`, `--ignore=course --ignore=replicate --ignore=LangChain`). The root suite is small (`tests/`); it does **not** cover `course/`, so a green run says nothing about the course examples.
+- Course examples with their own tests are run by path, e.g. `uv run pytest course/modul-4-agentic-coding/05-beispiele/wetter_bericht`. For coverage add `--cov=<pfad>`; the project threshold is 90 % (`[tool.coverage.report] fail_under`, branch coverage on).
+- `ruff`, `mypy`, `pytest` and `pytest-cov` are pinned dev dependencies (`uv sync` installs them). Ruff is configured in `pyproject.toml` (line length 120, rules E/F/I/W/UP/C4/SIM): `uv run ruff check <pfad>` and `uv run ruff format --check <pfad>`. `mypy` excludes `course/`.
 
 ## Taskmaster / AI workflow
 
