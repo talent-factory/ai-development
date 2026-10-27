@@ -38,7 +38,7 @@
 ## Tests & linting
 
 - `uv run pytest` is configured in `pyproject.toml` (`testpaths = ["tests"]`, `--ignore=course --ignore=replicate --ignore=LangChain`). The root suite is small (`tests/`); it does **not** cover `course/`, so a green run says nothing about the course examples.
-- Course examples with their own tests are run by path, e.g. `uv run pytest course/modul-4-agentic-coding/05-beispiele/wetter_bericht`. For coverage add `--cov=<pfad>`; the project threshold is 90 % (`[tool.coverage.report] fail_under`, branch coverage on).
+- Course examples with their own tests are run by path, e.g. `uv run pytest course/modul-4-agentic-coding/05-beispiele/wetter_bericht`. Run each example folder on its own, never `uv run pytest course/modul-4-agentic-coding` as a whole: several folders (`lektion-*/loesung`, `wetter_bericht`) contain a `test_wetter_bericht.py` with the same basename and no `__init__.py`, so a combined run aborts with "import file mismatch" and executes no tests. For coverage add `--cov=<pfad>`; the project threshold is 90 % (`[tool.coverage.report] fail_under`, branch coverage on).
 - `ruff`, `mypy`, `pytest` and `pytest-cov` are pinned dev dependencies (`uv sync` installs them). Ruff is configured in `pyproject.toml` (line length 120, rules E/F/I/W/UP/C4/SIM): `uv run ruff check <pfad>` and `uv run ruff format --check <pfad>`. `mypy` excludes `course/`.
 
 ## Taskmaster / AI workflow
