@@ -46,7 +46,7 @@ uv run pytest
 
 Wir testen nur **reine Funktionen** (`berechne_kennzahlen`, `beschreibe_wetter`, `vergleiche_staedte`). Datei-, Bildschirm- und Live-Abruf-Code bleibt ungetestet.
 
-**Demo:** Wir bauen die ersten beiden Tests für `vergleiche_staedte` mit dem Skill `tdd`:
+**Demo:** Der Dozent zeigt die ersten Tests für `vergleiche_staedte` mit dem Skill `tdd` an einer eigenen Kopie. Du beginnst in der Übung mit dem frischen Startstand und baust selbst.
 
 ```text
 Nutze den Skill `tdd`.

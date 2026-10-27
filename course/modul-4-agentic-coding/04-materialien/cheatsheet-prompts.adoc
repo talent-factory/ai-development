@@ -106,6 +106,8 @@ Format: Funde nach Schwere, je Fund mit Datei und Zeile.
 Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
 ----
 
+_Während die KI arbeitet:_ Schreibe dir vorab auf, was du selbst finden würdest.
+
 .Refactoring in einem Schritt
 [source,text]
 ----
@@ -114,6 +116,8 @@ Aufgabe: Löse nur die reine Aufbereitung in eine neue Funktion `bereite_live_we
 Format: Diff und Ausgabe von `pytest`.
 Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
 ----
+
+_Während die KI arbeitet:_ Lies den Diff mit. Wird er länger als erwartet?
 
 .Diagnose: erst reproduzieren
 [source,text]
@@ -125,7 +129,7 @@ Format: Test, Hypothese, Beleg.
 Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
 ----
 
-_Während die KI arbeitet:_ Lies den Diff mit und halte jeden Fund fest: bestätigt, Scheinfund oder übersehen.
+_Während die KI arbeitet:_ Sage voraus, ob der Test schon rot ist, bevor die KI ihn ausführt.
 
 == Lektion 4: Doku, Durchlauf
 
@@ -133,7 +137,7 @@ _Während die KI arbeitet:_ Lies den Diff mit und halte jeden Fund fest: bestät
 [source,text]
 ----
 Kontext: Funktion `vergleiche_staedte` in `wetter_bericht.py`.
-Aufgabe: Schreibe einen Docstring (Zweck, Parameter, Rückgabe, Randfälle) und einen Abschnitt in `README.md`. Beschreibe nur, was der Code wirklich tut, nichts Geplantes oder Erfundenes.
+Aufgabe: Schreibe einen Docstring (Zweck, Parameter, Rückgabe, Randfälle) und einen Abschnitt in `README.md` (lege die Datei an, falls sie fehlt). Beschreibe nur, was der Code wirklich tut, nichts Geplantes oder Erfundenes.
 Format: Docstring und Markdown-Abschnitt.
 Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
 ----

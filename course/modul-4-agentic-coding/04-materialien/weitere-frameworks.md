@@ -14,7 +14,6 @@ Vor dem Einsatz bedenken: Der Ablauf ist verbindlich und kann bei kleinen Aufgab
 ## Und sonst?
 
 - [`cli-comparison.md`](./cli-comparison.md): ein älterer Vergleich von vier Coding-CLIs (ohne OpenCode, nur zur Orientierung).
-- Die Recherche mit Quellen und Wortzahlen liegt in `.wayfinder/modul-4/research/framework-recherche.md`.
 
 ## Faustregel
 

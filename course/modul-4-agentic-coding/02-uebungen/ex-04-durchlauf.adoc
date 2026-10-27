@@ -30,7 +30,7 @@ Sie gibt Datum und `tmin` des kältesten Tages einer Stadt zurück: `{"datum": "
 . *Test:* Schreibe zuerst einen Test. Er muss rot sein.
 . *Code:* Minimaler Code, bis grün.
 . *Review:* 3-Punkte-Check. Läuft alles, passt es zum Plan, wurde etwas Ungefragtes geändert?
-. *Doku:* Docstring und ein Abschnitt in `README.md`. Prüfe jede Aussage gegen den Code.
+. *Doku:* Docstring und ein Abschnitt in `README.md` (lege die Datei an, falls sie fehlt). Prüfe jede Aussage gegen den Code.
 
 [TIP]
 ====
