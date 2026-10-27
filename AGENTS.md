@@ -24,7 +24,7 @@
 - `src/` becomes the package root only after `uv pip install -e .`. Top-level importable package currently: `utils`.
 - `course/` contains the modular course content: six modules with `00-vorbereitung`, `01-praxis`, `02-uebungen`, `03-nachbearbeitung`, `04-materialien`, `05-beispiele` and a `README.md` each.
 - Standalone example scripts previously under `src/pydantic/`, `scripts/rag-praxis/`, `streamlit/` and `docs/solutions/` have been moved into the relevant `course/modul-X/05-beispiele/` directories.
-- Beware: adding `__init__.py` to a `src/pydantic/` style folder would shadow the installed `pydantic` library; the Pydantic AI examples now live in `course/modul-4-agentic-coding/05-beispiele/tool/`.
+- Beware: adding `__init__.py` to a `src/pydantic/` style folder would shadow the installed `pydantic` library; the Pydantic AI examples now live in `course/modul-4-agentic-coding/05-beispiele/archive/tool/` (archiviert, Thema von Modul 5).
 
 ## Code style
 

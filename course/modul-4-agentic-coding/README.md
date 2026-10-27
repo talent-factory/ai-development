@@ -36,7 +36,7 @@ Nach diesem Modul können Sie:
 - **Lektion 3:** Eigene Commands und Workflows bauen.
 - **Lektion 4:** Einfache Tool-Agents mit Python und Pydantic AI.
 
-> Vorhandenes Material: `01-praxis/07-slash-commands-workflows.md`, `01-praxis/lesson-02-tools-action.md`, `01-praxis/lesson-03-new-trends.md`, `01-praxis/lesson-04-own-commands.md`, `01-praxis/pydantic-ai.adoc`
+> Altmaterial (archiviert): `01-praxis/archive/`
 
 ### [02-uebungen/](./02-uebungen/)
 
@@ -47,7 +47,7 @@ Nach diesem Modul können Sie:
 - Tool-Agent für eine konkrete Aufgabe bauen
 - Pair-Programming mit KI
 
-> Vorhandenes Material: `02-uebungen/command-examples/`
+> Altmaterial (archiviert): `02-uebungen/archive/command-examples/`
 
 ### [03-nachbearbeitung/](./03-nachbearbeitung/)
 
@@ -66,7 +66,7 @@ Nach diesem Modul können Sie:
 - Tool-Agent-Checkliste
 - Vergleich CLI-Tools
 
-> Vorhandenes Material: `04-materialien/cli-comparison.md`, `05-beispiele/tool/README.md`
+> Vorhandenes Material: `04-materialien/cli-comparison.md`
 
 ### [05-beispiele/](./05-beispiele/)
 
@@ -76,7 +76,7 @@ Nach diesem Modul können Sie:
 - Refactoring-Beispiele
 - Command-Beispiele
 
-> Vorhandenes Material: `05-beispiele/tool/01-05_simple_tool_agent.py`
+> Vorhandenes Material: `05-beispiele/wetter_bericht/` (Startpunkt), `05-beispiele/check_setup.py`. Altmaterial (archiviert): `05-beispiele/archive/tool/`
 
 ---
 

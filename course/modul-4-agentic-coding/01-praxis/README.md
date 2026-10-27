@@ -4,13 +4,11 @@ Präsenzunterricht mit Theorie, Live-Coding und ersten Übungen.
 
 ## 📁 Inhalt
 
-### Dokumente
+_In diesem Ordner befinden sich noch keine Lektionsunterlagen. Sie entstehen als `lektion-N-<thema>.md`, sobald das Minutenraster steht._
 
-- [07-slash-commands-workflows.md](./07-slash-commands-workflows.md)
-- [lesson-02-tools-action.md](./lesson-02-tools-action.md)
-- [lesson-03-new-trends.md](./lesson-03-new-trends.md)
-- [lesson-04-own-commands.md](./lesson-04-own-commands.md)
-- [pydantic-ai.adoc](./pydantic-ai.adoc)
+### Archiv
+
+Das Material des früheren Programms (Slash-Commands, Pydantic AI) liegt in [archive/](./archive/).
 
 ---
 

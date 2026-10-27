@@ -4,9 +4,11 @@
 
 ## 📁 Inhalt
 
-### Sonstige
+_In diesem Ordner befinden sich noch keine Übungen. Sie entstehen als `ex-0N-<thema>.adoc`, sobald das Übungsdesign steht._
 
-- [command-examples/](./command-examples/)
+### Archiv
+
+Die Beispiel-Commands des früheren Programms liegen in [archive/](./archive/).
 
 ---
 
