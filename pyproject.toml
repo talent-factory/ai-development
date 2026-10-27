@@ -36,6 +36,7 @@ dependencies = [
 dev = [
     "mypy>=2.4.0",
     "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
     "ruff>=0.16.10",
 ]
 
@@ -87,3 +88,10 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
 addopts = "--ignore=course --ignore=replicate --ignore=LangChain"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true

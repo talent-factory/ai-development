@@ -59,6 +59,34 @@ def berechne_kennzahlen(zeilen: list[dict]) -> dict:
     }
 
 
+def vergleiche_staedte(zeilen_a: list[dict], zeilen_b: list[dict]) -> dict:
+    """Vergleicht zwei Städte: Differenz der Ø tmax (A minus B) und die nässere Stadt.
+
+    `naessere_stadt` ist die Stadt mit dem grösseren Gesamtniederschlag (auf 0.1 mm gerundet),
+    bei Gleichstand None. Wirft ValueError, wenn eine der beiden Listen leer ist.
+    """
+    if not zeilen_a or not zeilen_b:
+        raise ValueError("Keine Wetterdaten vorhanden.")
+    stadt_a = zeilen_a[0]["stadt"]
+    stadt_b = zeilen_b[0]["stadt"]
+    kennzahlen_a = berechne_kennzahlen(zeilen_a)
+    kennzahlen_b = berechne_kennzahlen(zeilen_b)
+    niederschlag_a = kennzahlen_a["niederschlag_gesamt_mm"]
+    niederschlag_b = kennzahlen_b["niederschlag_gesamt_mm"]
+    if niederschlag_a > niederschlag_b:
+        naessere_stadt = stadt_a
+    elif niederschlag_b > niederschlag_a:
+        naessere_stadt = stadt_b
+    else:
+        naessere_stadt = None
+    return {
+        "stadt_a": stadt_a,
+        "stadt_b": stadt_b,
+        "tmax_differenz": round(kennzahlen_a["tmax_durchschnitt"] - kennzahlen_b["tmax_durchschnitt"], 1),
+        "naessere_stadt": naessere_stadt,
+    }
+
+
 def beschreibe_wetter(code: int) -> str:
     """Übersetzt einen Wettercode in Klartext ('unbekannt', falls der Code fehlt)."""
     return WETTERCODES.get(code, "unbekannt")
