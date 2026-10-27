@@ -1,0 +1,64 @@
+= Übung 2: Tests und `vergleiche_staedte` test-first
+:icons: font
+
+Lektion 2, 20 Minuten.
+
+[IMPORTANT]
+====
+*Mindestziel:* Die Tests für `beschreibe_wetter` laufen grün (`uv run pytest`).
+====
+
+== Startstand
+
+`05-beispiele/lektion-1/loesung/` kopieren (Code, Daten, `plan.md`).
+
+== Aufgabe
+
+=== Teil 1: Ist-Verhalten festhalten (ca. 8 Min)
+
+Schreibe in `test_wetter_bericht.py` Tests für `berechne_kennzahlen` und `beschreibe_wetter`. Sie halten fest, was der Code *heute* tut, auch wenn es nicht schön ist:
+
+* `beschreibe_wetter(0)` ergibt `"klar"`.
+* `beschreibe_wetter(1)` ergibt `"unbekannt"` (der Code hat keinen Klartext dafür; in Lektion 3 ändern wir das).
+* `berechne_kennzahlen` mit zwei kleinen, selbst gebauten Zeilen: Durchschnitte, heissester Tag, Regentage, Gesamtniederschlag.
+
+Nutze keine CSV-Datei und keinen Live-Abruf, nur kleine Dictionaries.
+
+=== Teil 2: `vergleiche_staedte` test-first (ca. 12 Min)
+
+Baue die Funktion nach `plan.md` mit dem Skill `tdd`, *ein Test nach dem anderen*: Test schreiben, rot, minimaler Code, grün.
+
+Mindestens diese Tests:
+
+. Temperaturdifferenz (A minus B)
+. Namen `stadt_a` und `stadt_b`
+. nässere Stadt (in beide Richtungen)
+. Gleichstand ergibt `None`
+. leere Liste ergibt `ValueError`
+
+Nach jedem Schritt: 3-Punkte-Check.
+
+=== Kür
+
+Schreibe einen Test für den Randfall `berechne_kennzahlen([])`. Er erwartet einen `ValueError`.
+
+Oder mache die *Mutationsprobe* mit deinen Tests: Ändere in `berechne_kennzahlen` bei den Regentagen `> 0` zu `>= 0`. Wird mindestens ein Test rot? Wenn nicht, fehlt ein Test. Danach die Änderung zurücknehmen.
+
+== Kontrollwerte (echte CSV-Daten)
+
+Rufst du die Funktion mit den Zeilen aus `lese_stadt(CSV_DATEI, …)` auf, kommt heraus:
+
+[cols="2,1,2",options="header"]
+|===
+| Vergleich | `tmax_differenz` | `naessere_stadt`
+| Zürich – Bern | 0.8 | Zürich
+| Basel – Genf | 0.2 | Basel
+| Zürich – Lugano | -1.2 | Zürich
+| Bern – Lugano | -1.9 | Lugano
+|===
+
+Gerundet wird *einmal am Ende*: Die Differenz der exakten Durchschnitte, dann runden (bei Zürich – Lugano ergäbe «erst runden, dann subtrahieren» fälschlich -1.1). Deine Tests selbst nutzen kleine Beispieldaten. Die Kontrollwerte prüfst du *einmal von Hand* in einer Python-Sitzung gegen die echte CSV.
+
+== Musterlösung
+
+Erst nach deinem Versuch ansehen: `05-beispiele/lektion-2/loesung/` (13 Tests).

@@ -1,0 +1,60 @@
+= Übung 3: Review, Refactoring und Diagnose
+:icons: font
+
+Lektion 3, 25 Minuten (Teil A 15 Min, Teil B 10 Min).
+
+[IMPORTANT]
+====
+*Mindestziel:* `bereite_live_wetter_auf(antwort)` ist herausgelöst, hat einen Test, und `uv run pytest` ist grün.
+====
+
+== Startstand
+
+`05-beispiele/lektion-2/loesung/` kopieren.
+
+== Teil A: Review und Refactoring
+
+. *Review.* Lege `vergleiche_staedte` neben `plan.md` und prüfe selbst: Signatur, Schlüssel der Rückgabe, Definition «nässer», Gleichstand, leere Liste. Notiere die Funde, auch die der Dozentendemo.
+. *Refactoring in Kleinschritten.* Nach jedem Schritt `uv run pytest`:
+.. Löse aus `hole_live_wetter` die reine Aufbereitung in `bereite_live_wetter_auf(antwort)` heraus.
+.. Schreibe einen Test dafür, mit einer kleinen Beispiel-Antwort:
++
+[source,python]
+----
+antwort = {"current": {"temperature_2m": 14.2, "weather_code": 61}}
+# erwartet: {"temperatur": 14.2, "beschreibung": "leichter Regen"}
+----
+.. `hole_live_wetter` ruft nur noch ab und übergibt die Antwort an die neue Funktion.
+
+Ändere nichts anderes. Der 3-Punkte-Check gilt auch hier.
+
+=== Kür
+
+Führe `code-review` selbst aus (nur wenn dein Setup dafür reicht): Spec ist `plan.md`.
+
+== Teil B: Diagnose
+
+Erst *reproduzieren*, dann ändern. Nutze den Skill `diagnosing-bugs`.
+
+. *Leere Stadt:* Schreibe einen Test, der zeigt, dass `berechne_kennzahlen([])` mit einer unklaren Meldung abbricht (rot, weil du eine klare Meldung wie `Keine Wetterdaten vorhanden.` verlangst). Behebe es, bis der Test grün ist. Lass `main` den Fehler abfangen.
+. *Unbekannte Codes:* Mehrere Wettercodes aus der CSV haben keinen Klartext. Schreibe Tests, die den Klartext verlangen, und ergänze `WETTERCODES`:
++
+[cols="1,3",options="header"]
+|===
+| Code | Klartext
+| 1 | überwiegend klar
+| 2 | teilweise bewölkt
+| 63 | mässiger Regen
+| 96 | Gewitter mit Hagel
+|===
++
+Dein Test aus Lektion 2 für `beschreibe_wetter(1)` ändert seine Erwartung, weil sich das Verhalten bewusst ändert.
+
+== Kontrollwerte
+
+* Von 150 Zeilen hatten 21 einen Code ohne Klartext; danach sind es 0.
+* `beschreibe_wetter(999)` ergibt weiterhin `"unbekannt"`.
+
+== Musterlösung
+
+Erst nach deinem Versuch ansehen: `05-beispiele/lektion-3/loesung/` (17 Tests).

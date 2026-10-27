@@ -4,7 +4,10 @@
 
 ## 📁 Inhalt
 
-_In diesem Ordner befinden sich noch keine Übungen. Sie entstehen als `ex-0N-<thema>.adoc`, sobald das Übungsdesign steht._
+- [ex-01-plan.adoc](./ex-01-plan.adoc)
+- [ex-02-tdd.adoc](./ex-02-tdd.adoc)
+- [ex-03-review-refactoring-diagnose.adoc](./ex-03-review-refactoring-diagnose.adoc)
+- [ex-04-durchlauf.adoc](./ex-04-durchlauf.adoc)
 
 ### Archiv
 

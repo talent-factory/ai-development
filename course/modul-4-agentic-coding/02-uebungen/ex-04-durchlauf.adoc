@@ -1,0 +1,58 @@
+= Übung 4: Mini-Durchlauf `finde_kaeltesten_tag`
+:icons: font
+
+Lektion 4, 20 Minuten.
+
+[IMPORTANT]
+====
+*Mindestziel:* `plan.md` ergänzt, ein roter Test, der durch Code grün wird.
+====
+
+== Startstand
+
+`05-beispiele/lektion-3/loesung/` kopieren.
+
+== Aufgabe
+
+Führe den ganzen Durchlauf *allein* für eine neue Funktion aus:
+
+[source,python]
+----
+def finde_kaeltesten_tag(zeilen: list[dict]) -> dict:
+    ...
+----
+
+Sie gibt Datum und `tmin` des kältesten Tages einer Stadt zurück: `{"datum": "...", "tmin": ...}`. Bei Gleichstand gilt der erste Tag. Bei einer leeren Liste: `ValueError`.
+
+=== Pflicht
+
+. *Plan:* Ergänze `plan.md` mit `grilling` (Signatur, Rückgabe, Randfälle).
+. *Test:* Schreibe zuerst einen Test. Er muss rot sein.
+. *Code:* Minimaler Code, bis grün.
+. *Review:* 3-Punkte-Check. Läuft alles, passt es zum Plan, wurde etwas Ungefragtes geändert?
+. *Doku:* Docstring und ein Abschnitt in `README.md`. Prüfe jede Aussage gegen den Code.
+
+[TIP]
+====
+Die KI schlägt gern vor, den Plan oder die Doku wegzulassen («nicht nötig»). Der Durchlauf besteht aber aus allen fünf Schritten: Verlange `plan.md` und den README-Abschnitt ausdrücklich, und lehne unbestellte Zusätze ab (zum Beispiel einen Abschnitt «Tests» im Plan).
+====
+
+=== Kür
+
+Erstelle mit `domain-modeling` ein `GLOSSARY.md`. Oder schicke ein eigenes Feature durch den Durchlauf.
+
+== Kontrollwerte (echte CSV-Daten)
+
+[cols="1,1,1",options="header"]
+|===
+| Stadt | `datum` | `tmin`
+| Zürich | 2026-10-13 | 5.8
+| Bern | 2026-10-12 | 4.2
+| Genf | 2026-10-12 | 5.1
+| Basel | 2026-10-12 | 6.0
+| Lugano | 2026-10-11 | 10.0
+|===
+
+== Musterlösung
+
+Erst nach deinem Versuch ansehen: `05-beispiele/lektion-4/loesung/` (20 Tests, mit `README.md`).

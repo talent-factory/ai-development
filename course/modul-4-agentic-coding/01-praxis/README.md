@@ -4,7 +4,10 @@ Präsenzunterricht mit Theorie, Live-Coding und ersten Übungen.
 
 ## 📁 Inhalt
 
-_In diesem Ordner befinden sich noch keine Lektionsunterlagen. Sie entstehen als `lektion-N-<thema>.md`, sobald das Minutenraster steht._
+- [Lektion 1: Arbeitsweise und Planen](./lektion-1-arbeitsweise-planen.md)
+- [Lektion 2: Test-Driven Development mit dem Agenten](./lektion-2-tdd.md)
+- [Lektion 3: Review, Refactoring und Diagnose](./lektion-3-review-refactoring-diagnose.md)
+- [Lektion 4: Dokumentation und Durchlauf](./lektion-4-doku-durchlauf.md)
 
 ### Archiv
 
