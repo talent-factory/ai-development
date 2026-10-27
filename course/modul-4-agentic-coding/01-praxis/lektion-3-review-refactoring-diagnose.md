@@ -40,7 +40,7 @@ Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
 
 **Danach prüfst du selbst:** Lege deine Funktion neben `plan.md` und hake ab: Signatur, Schlüssel der Rückgabe, Definition «nässer», Gleichstand, leere Liste. Halte Funde der KI und deine eigenen in einer Liste fest. Sie werden in Abschnitt 5 eingeordnet.
 
-> Wer ein funktionierendes Setup hat, darf den Skill in der Kür selbst ausprobieren.
+> Wer ein funktionierendes Setup hat, probiert den Skill im Puffer oder zu Hause selbst aus.
 
 ---
 
@@ -71,7 +71,7 @@ Nach jedem Schritt: `uv run pytest`, dann der 3-Punkte-Check. Kommst du bis hier
 
 ## 4. Teil B: Diagnose mit `diagnosing-bugs` (10 Minuten)
 
-Zwei Schwächen stecken im Startpunkt:
+Zwei Schwächen stecken im Startstand:
 
 1. `berechne_kennzahlen([])` bricht für eine leere Stadt mit einer unklaren Meldung ab.
 2. 21 von 150 CSV-Zeilen haben Wettercodes, die in `WETTERCODES` fehlen (`1`, `2`, `63`, `96`) und als «unbekannt» erscheinen.
