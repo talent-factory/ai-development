@@ -1,5 +1,7 @@
 # 🔧 CLI-Tools Vergleichsmatrix
 
+> **Hinweis:** Dieser Vergleich stammt aus der Zeit vor der Neuaufbereitung von Modul 4. Er behandelt Copilot CLI, Claude Code, Gemini CLI und Augment Code, **ohne OpenCode**, und dient nur zur Orientierung. Für den Kurs gelten OpenCode und Claude Code, siehe [weitere-frameworks.md](./weitere-frameworks.md).
+
 **Ziel:** Objektiver Vergleich der 4 wichtigsten AI-CLI Tools für Entwickler
 
 ## 📊 **Übersichtstabelle**

@@ -4,9 +4,14 @@
 
 ## 📁 Inhalt
 
-### Sonstige
+- [ex-01-plan.adoc](./ex-01-plan.adoc)
+- [ex-02-tdd.adoc](./ex-02-tdd.adoc)
+- [ex-03-review-refactoring-diagnose.adoc](./ex-03-review-refactoring-diagnose.adoc)
+- [ex-04-durchlauf.adoc](./ex-04-durchlauf.adoc)
 
-- [command-examples/](./command-examples/)
+### Archiv
+
+Die Beispiel-Commands des früheren Programms liegen in [archive/](./archive/).
 
 ---
 

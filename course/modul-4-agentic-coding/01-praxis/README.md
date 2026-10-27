@@ -4,13 +4,14 @@ Präsenzunterricht mit Theorie, Live-Coding und ersten Übungen.
 
 ## 📁 Inhalt
 
-### Dokumente
+- [Lektion 1: Arbeitsweise und Planen](./lektion-1-arbeitsweise-planen.md)
+- [Lektion 2: Test-Driven Development mit dem Agenten](./lektion-2-tdd.md)
+- [Lektion 3: Review, Refactoring und Diagnose](./lektion-3-review-refactoring-diagnose.md)
+- [Lektion 4: Dokumentation und Durchlauf](./lektion-4-doku-durchlauf.md)
 
-- [07-slash-commands-workflows.md](./07-slash-commands-workflows.md)
-- [lesson-02-tools-action.md](./lesson-02-tools-action.md)
-- [lesson-03-new-trends.md](./lesson-03-new-trends.md)
-- [lesson-04-own-commands.md](./lesson-04-own-commands.md)
-- [pydantic-ai.adoc](./pydantic-ai.adoc)
+### Archiv
+
+Das Material des früheren Programms (Slash-Commands, Pydantic AI) liegt in [archive/](./archive/).
 
 ---
 

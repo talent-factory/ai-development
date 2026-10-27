@@ -1,0 +1,38 @@
+= Übung 1: Plan für den Städtevergleich
+:icons: font
+
+Lektion 1, 15 Minuten.
+
+[IMPORTANT]
+====
+*Mindestziel:* Es gibt eine `plan.md`, in der Signatur, Rückgabe-Schlüssel und die Definition von «nässer» stehen.
+====
+
+== Aufgabe
+
+Du willst `wetter_bericht.py` um `vergleiche_staedte(zeilen_a, zeilen_b)` erweitern. Bevor die KI Code schreibt, klärst du mit dem Skill `grilling` alle Annahmen und hältst das Ergebnis in `plan.md` fest. *Ändere keinen Code.*
+
+=== Pflicht
+
+. Starte `grilling` mit dem Prompt aus der Lektion und beantworte die Fragen der KI selbst.
+. Lass das Ergebnis in `plan.md` zusammenfassen. Der Plan enthält mindestens:
+** *Signatur:* `vergleiche_staedte(zeilen_a, zeilen_b)`
+** *Rückgabe:* ein Dictionary mit den Schlüsseln `stadt_a`, `stadt_b`, `tmax_differenz`, `naessere_stadt`
+** *Definition von «nässer»:* deine eigene Entscheidung (Gesamtniederschlag in mm oder Zahl der Regentage)
+** *Mindestens einen Randfall* (zum Beispiel leere Liste, Gleichstand)
++
+[TIP]
+====
+Die KI schlägt gern *mehr* vor, als du bestellt hast, zum Beispiel einen zusätzlichen Schlüssel `waermere_stadt`, eine Anbindung an `main` oder Tests. Lehne ab, was nicht zum Plan gehört. Tests kommen in Lektion 2, sag das der KI.
+====
+. Wende den 3-Punkte-Check an: Läuft es (entfällt, es gibt keinen Code), passt es zu dem, was du wolltest, und hat die KI Code geändert? (`git status` zeigt es.) Prüfe auch *Beispielwerte* im Plan: Die KI erfindet gern Zahlen. Rechne ein Beispiel gegen die echte CSV nach, sonst steht ein falscher Wert in deiner Spec.
+
+=== Kür
+
+Schärfe die Annahmen nach, die noch fehlen, oder plane ein zweites Feature, zum Beispiel «die drei regenreichsten Tage».
+
+== Kontrolle
+
+Die Musterlösung wählt: «nässer» ist der grössere *Gesamtniederschlag in mm*, bei Gleichstand `naessere_stadt = None`, bei einer leeren Liste ein `ValueError`. Dein Plan darf anders entscheiden, wenn er es *begründet und eindeutig* festhält. Die folgenden Lektionen arbeiten mit der Musterlösung; wenn du abweichst, passe die Tests selbst an.
+
+Erst nach deinem Versuch ansehen: `05-beispiele/lektion-1/loesung/plan.md`.
