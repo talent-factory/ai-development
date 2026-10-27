@@ -1,38 +1,59 @@
 ---
 name: tdd
-description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
+description: Testgetriebene Entwicklung (TDD) mit Python und pytest. Verwenden, wenn Features oder Bugfixes test-first entstehen sollen, bei "Red-Green-Refactor", bei Characterization Tests für Legacy-Code oder wenn Integrationstests gewünscht sind.
 ---
 
-# Test-Driven Development
+# Testgetriebene Entwicklung (TDD)
 
-TDD is the red → green loop. This skill is the reference that makes that loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the rules of the loop. Every section applies on every cycle: consult them before and during the loop, not after.
+TDD ist der Zyklus Red → Green → Refactor. Dieser Skill ist die Referenz dafür, dass der Zyklus Tests hervorbringt, die sich zu behalten lohnen: was ein guter Test ist, wo Tests ansetzen, welche Anti-Patterns es gibt und welche Regeln der Zyklus hat. Jeder Abschnitt gilt in jedem Durchlauf: vor und während des Zyklus nachschlagen, nicht erst danach.
 
-When exploring the codebase, read `GLOSSARY.md` (if it exists) so test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.
+Standardsprache ist Python mit `pytest`. Details zu Werkzeugen und Mustern stehen in [python.md](python.md).
 
-## What a good test is
+Beim Erkunden des Codes zuerst `GLOSSARY.md` lesen (falls vorhanden), damit Testnamen und Schnittstellenvokabular zur Fachsprache des Projekts passen. ADRs im betroffenen Bereich respektieren. Testnamen, Docstrings und Kommentare folgen der Sprache des Projekts (im Kurs: Deutsch).
 
-Tests verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't. A good test reads like a specification: "user can checkout with valid cart" tells you exactly what capability exists, and it survives refactors because it doesn't care about internal structure.
+## Was einen guten Test ausmacht
 
-See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
+Tests prüfen Verhalten über öffentliche Schnittstellen, nicht Implementierungsdetails. Der Code darf sich komplett ändern, die Tests nicht. Ein guter Test liest sich wie eine Spezifikation: `test_checkout_mit_gueltigem_warenkorb_wird_bestaetigt` sagt genau, welche Fähigkeit existiert, und übersteht Refactorings, weil er die interne Struktur nicht kennt.
 
-## Seams: where tests go
+Beispiele in [tests.md](tests.md), Regeln zum Mocken in [mocking.md](mocking.md).
 
-A **seam** is the public boundary you test at: the interface where you observe behavior without reaching inside. Tests live at seams, never against internals.
+## Seams: Wo Tests ansetzen
 
-**Test only at pre-agreed seams.** Before writing any test, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything, so agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
+Ein **Seam** ist die öffentliche Grenze, an der getestet wird: die Schnittstelle, an der sich Verhalten beobachten lässt, ohne ins Innere zu greifen. Tests leben an Seams, nie an Interna.
 
-Ask: "What's the public interface, and which seams should we test?"
+**Seams vor dem ersten Test benennen.** Schreibe auf, an welchen Seams getestet wird, und schlage sie dem Nutzer vor. So landet der Testaufwand auf kritischen Pfaden und komplexer Logik statt auf jedem Randfall.
 
-When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
+- Ist der Seam offensichtlich (kleine Funktion, Bugfix an einer bestehenden öffentlichen Schnittstelle), nenne ihn kurz und fahre fort.
+- Ist er unklar oder berührt er mehrere Module, frage nach: «Was ist die öffentliche Schnittstelle, und an welchen Seams sollen wir testen?»
 
-## Anti-patterns
+Steht die Form der Schnittstelle selbst in Frage (Tiefe des Moduls, Lage des Seams, was die Schnittstelle offenlegt), rufe das Skill-Tool mit `codebase-design` auf. Es ist die gemeinsame Quelle für Begriffe wie Modul, Schnittstelle, Tiefe, Seam, Adapter, Leverage und Locality. Es ist ein Nachschlagewerk, keine Sitzung.
 
-- **Implementation-coupled**: mocks internal collaborators, tests private methods, or verifies through a side channel (querying the database instead of using the interface). The tell: the test breaks when you refactor but behavior hasn't changed.
-- **Tautological**: the assertion recomputes the expected value the way the code does (`expect(add(a, b)).toBe(a + b)`, a snapshot derived by hand the same way, a constant asserted equal to itself), so it passes by construction and can never disagree with the code. Expected values must come from an independent source of truth: a known-good literal, a worked example, the spec.
-- **Horizontal slicing**: writing all tests first, then all implementation. Bulk tests verify _imagined_ behavior: you test the _shape_ of things rather than user-facing behavior, the tests go insensitive to real changes, and you commit to test structure before understanding the implementation. Work in **vertical slices** instead: one test → one implementation → repeat, each test a **tracer bullet** that responds to what the last cycle taught you.
+## Anti-Patterns
 
-## Rules of the loop
+- **Implementierungsgekoppelt**: mockt interne Kollaborateure, testet private Methoden oder prüft über einen Nebenkanal (Datenbank abfragen statt die Schnittstelle zu nutzen). Erkennbar daran, dass der Test beim Refactoring bricht, obwohl das Verhalten gleich bleibt.
+- **Tautologisch**: Die Assertion berechnet den erwarteten Wert genauso wie der Code (`assert add(a, b) == a + b`, ein von Hand gleich hergeleiteter Snapshot, eine Konstante gegen sich selbst). Der Test besteht per Konstruktion und kann dem Code nie widersprechen. Erwartete Werte kommen aus einer unabhängigen Quelle: ein bekanntes Literal, ein durchgerechnetes Beispiel, die Spezifikation. Bei Parsern und Berechnungen helfen Eigenschaften (Property-Based Testing, siehe [python.md](python.md)).
+- **Horizontales Schneiden**: erst alle Tests, dann die ganze Implementierung. Vorratstests prüfen *vorgestelltes* Verhalten, nur die *Form* der Dinge, werden unempfindlich gegen echte Änderungen und legen die Teststruktur fest, bevor die Implementierung verstanden ist. Stattdessen in **vertikalen Slices** arbeiten: ein Test → eine Implementierung → wiederholen. Jeder Test ist ein **Tracer Bullet**, der auf das reagiert, was der letzte Durchlauf gezeigt hat.
+- **Falscher Grund für Rot**: Der Test scheitert an `ImportError`, `NameError` oder einem Tippfehler statt an der erwarteten Assertion. Dann ist «Rot» wertlos.
+- **Unkontrollierte Umgebung**: abhängig von Uhrzeit, Netzwerk, Zufall, Reihenfolge oder globalem Zustand. Solche Tests werden flaky.
 
-- **Red before green.** Write the failing test first, then only enough code to pass it. Don't anticipate future tests or add speculative features.
-- **One slice at a time.** One seam, one test, one minimal implementation per cycle.
-- **Refactoring is not part of the loop.** It belongs to the review stage (see the `code-review` skill), not the red → green implementation cycle.
+## Regeln des Zyklus
+
+1. **Red vor Green.** Zuerst den fehlschlagenden Test schreiben, dann nur so viel Code, dass er besteht. Keine kommenden Tests vorwegnehmen, keine spekulativen Features.
+2. **Rot verifizieren.** Den Test ausführen und prüfen, dass er an der erwarteten Assertion scheitert, mit sinnvoller Fehlermeldung. Nicht an Import- oder Syntaxfehlern.
+3. **Ein Slice nach dem anderen.** Ein Seam, ein Test, eine minimale Implementierung pro Durchlauf.
+4. **Refactor nur bei Grün.** Ist alles grün, Duplikate entfernen, Namen klären, Struktur vereinfachen. Verhalten bleibt gleich, die Tests laufen nach jedem Schritt. Keine neuen Features im Refactor-Schritt. Das umfassende Review bleibt Sache des `code-review`-Skills.
+5. **Gesamte Suite am Ende jedes Durchlaufs ausführen**, nicht nur den neuen Test.
+6. **Mindestens 90 % Testabdeckung (Zweigabdeckung)** je Projekt bzw. Übung. Das ist eine harte Untergrenze: Vor Abschluss einer Aufgabe mit `uv run pytest --cov` messen und fehlende Zeilen mit weiteren Tests schliessen. Weil im Zyklus jeder Code durch einen Test entsteht, sollte die Abdeckung ohnehin fast von selbst erreicht werden. Liegt sie darunter, ist das ein Hinweis auf Code ohne Test, nicht auf zu wenig Tests. Abdeckung ist nur ein Minimum und beweist keine Qualität: Nie Tests ohne Assertion oder tautologische Tests schreiben, nur um die Zahl zu erreichen. Details in [python.md](python.md).
+
+## Bugfix-Ablauf
+
+1. Den Bug über den öffentlichen Seam mit einem fehlschlagenden Test reproduzieren. Der Test benennt das erwartete Verhalten, nicht den Bug.
+2. Rot verifizieren: Der Test scheitert genau an dem gemeldeten Fehlverhalten.
+3. Minimal fixen, bis der Test grün ist.
+4. Der Test bleibt als Regressionstest in der Suite.
+
+Ist die Ursache unklar, zuerst den Skill `diagnosing-bugs` verwenden und erst mit bekannter Ursache den Test schreiben.
+
+## Legacy-Code ohne Tests
+
+Vor einer Änderung mit **Characterization Tests** das aktuelle Verhalten festhalten: Funktion mit repräsentativen Eingaben aufrufen und die tatsächliche Ausgabe als Erwartung eintragen. Diese Tests sind ein Sicherheitsnetz, keine Spezifikation. Erst danach ändern, im üblichen Red-Green-Refactor-Zyklus.
