@@ -9,11 +9,11 @@ import subprocess
 import sys
 
 
-def _ohne_docstrings(quelltext: str) -> str:
+def _ohne_docstrings(quelltext: bytes) -> str:
     """Parst den Quelltext und liefert den AST-Dump ohne Docstrings.
 
     Args:
-        quelltext: Python-Quelltext.
+        quelltext: Python-Quelltext als Bytes. So wendet der Parser selbst Kodierung und Coding-Cookie an.
 
     Returns:
         Textdarstellung des AST, in der Docstrings entfernt sind.
@@ -36,11 +36,11 @@ def _pruefe(pfad: str) -> str | None:
     Returns:
         Fehlermeldung oder `None`, wenn nur Dokumentation geändert wurde.
     """
-    alt = subprocess.run(["git", "show", f"HEAD:./{pfad}"], capture_output=True, text=True)
+    alt = subprocess.run(["git", "show", f"HEAD:./{pfad}"], capture_output=True)
     if alt.returncode != 0:
         return "nicht in HEAD vorhanden (neue Datei), kann nicht verglichen werden"
     try:
-        with open(pfad, encoding="utf-8") as datei:
+        with open(pfad, "rb") as datei:
             neu = datei.read()
         if _ohne_docstrings(alt.stdout) != _ohne_docstrings(neu):
             return "Code wurde verändert, nicht nur Dokumentation"

@@ -24,6 +24,7 @@ Dieser Skill ändert **ausschliesslich Dokumentation**: Docstrings und Kommentar
 - **`Raises` nur für Ausnahmen, die die Funktion selbst auslöst** oder die zum Vertrag gehören. Nicht jede mögliche Systemausnahme auflisten.
 - **Nichts erfinden:** Ist das Verhalten aus dem Code nicht eindeutig, den Docstring vorsichtig formulieren und die Stelle in der Zusammenfassung melden.
 - **Doctests nur, wenn sie wirklich laufen.** Keine ausgedachten Ausgaben.
+- **Direktiv-Kommentare nie anfassen:** `# noqa`, `# type:`, `# pragma`, `# pylint:`, `# fmt:`, `# nosec` und die Kodierungszeile (`# coding:`) bleiben unverändert. Sie steuern Linter, Typprüfer und Parser und werden von der Prüfung unten nicht erfasst. Das gilt auch für `>>>`-Beispiele in bestehenden Docstrings: nicht umschreiben, ausser sie sind nachweislich falsch.
 - **Wahrheit vor Schönheit:** Ein kurzer korrekter Docstring ist besser als ein langer, der den Code nur wiederholt.
 
 ## Prüfen
