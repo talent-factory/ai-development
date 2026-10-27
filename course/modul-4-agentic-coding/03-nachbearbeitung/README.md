@@ -12,11 +12,11 @@ Im Kurs haben wir den Durchlauf **Plan → Test → Code → Review → Doku** g
 
 Wähle **eines** der drei Features (oder schlage ein eigenes vor, das eine reine Funktion auf den CSV-Daten ist):
 
-| Feature | Beschreibung |
-| ------- | ------------ |
-| `finde_laengste_regenserie(zeilen)` | Längste Folge aufeinanderfolgender Regentage (`niederschlag_mm > 0`): Startdatum und Länge |
-| `berechne_wochenmittel(zeilen)` | Durchschnitt von `tmax` pro Kalenderwoche |
-| `zaehle_sommertage(zeilen, grenze=25.0)` | Anzahl Tage mit `tmax` mindestens `grenze` |
+| Feature | Beschreibung | Rückgabe |
+| ------- | ------------ | -------- |
+| `finde_laengste_regenserie(zeilen)` | Längste Folge aufeinanderfolgender Regentage (`niederschlag_mm > 0`). Bei Gleichstand gilt die erste Serie. | `{"start": "2026-10-07", "laenge": 4}` (Beispiel Zürich); ohne Regentag `{"start": None, "laenge": 0}`; leere Liste: `ValueError` |
+| `berechne_wochenmittel(zeilen)` | Durchschnitt von `tmax` pro ISO-Kalenderwoche, eine Dezimale | `{"2026-W38": 24.1, …}` (Beispiel Bern); leere Liste: `ValueError` |
+| `zaehle_sommertage(zeilen, grenze=25.0)` | Anzahl Tage mit `tmax` mindestens `grenze` | Ganzzahl; leere Liste: `0` |
 
 Die Funktion arbeitet nur mit den Zeilen aus `lese_stadt(...)`, nicht mit dem Live-Abruf, und lässt sich offline testen.
 
@@ -28,6 +28,15 @@ Die Funktion arbeitet nur mit den Zeilen aus `lese_stadt(...)`, nicht mit dem Li
 4. **`README.md`:** kurze Doku des Features (Zweck, Aufruf, Beispiel, Randfälle). Sie beschreibt nur, was der Code wirklich tut.
 5. **`review-notiz.md`:** ca. eine halbe Seite. Wende den **3-Punkte-Check** auf mindestens zwei KI-Schritte an (läuft es? passt es zu `plan.md`? wurde etwas Ungefragtes geändert?) und halte mindestens **einen Fall** fest, in dem die KI falsch lag oder etwas Unnötiges getan hat.
 6. **`reflexion.md`:** der ausgefüllte [Reflexionsbogen](./reflexionsbogen.md) (ca. 30 Min).
+
+**Kontrollwerte aus der CSV** (`lese_stadt(CSV_DATEI, …)`, nur für dein gewähltes Feature):
+
+| Stadt | Längste Regenserie | Wochen (Anzahl) | Ø `tmax` KW 38 / KW 39 | Sommertage (ab 25 °C) |
+| ----- | ------------------ | --------------- | ---------------------- | --------------------- |
+| Bern | ab 2026-10-07, 4 Tage | 6 | 24.1 / 23.2 | 3 |
+| Lugano | ab 2026-10-05, 6 Tage | 6 | 25.7 / 23.7 | 2 |
+
+Die erste und die letzte Woche sind unvollständig; das ist erwartet.
 
 **Kontrollwerte:** Rechne ein Beispiel von Hand oder mit einem separaten Skript nach und prüfe, dass dein Test denselben Wert erwartet. Ein Test, der nur das Ergebnis der KI abschreibt, zählt nicht als Beleg.
 

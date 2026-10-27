@@ -34,7 +34,7 @@ Zwei Arten von Doku, beide beschreiben **was ist**, nicht was geplant war:
 
 ```text
 Kontext: Funktion `vergleiche_staedte` in `wetter_bericht.py`.
-Aufgabe: Schreibe einen Docstring (Zweck, Parameter, Rückgabe, Randfälle) und einen Abschnitt in `README.md`. Beschreibe nur, was der Code wirklich tut, nichts Geplantes oder Erfundenes.
+Aufgabe: Schreibe einen Docstring (Zweck, Parameter, Rückgabe, Randfälle) und einen Abschnitt in `README.md` (lege die Datei an, falls sie fehlt). Beschreibe nur, was der Code wirklich tut, nichts Geplantes oder Erfundenes.
 Format: Docstring und Markdown-Abschnitt.
 Antworte auf Deutsch, Schweizer Rechtschreibung, ss statt ß.
 ```

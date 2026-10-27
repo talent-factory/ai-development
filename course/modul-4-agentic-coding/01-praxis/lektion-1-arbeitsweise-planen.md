@@ -40,10 +40,10 @@ In Lektion 4 führst du den ganzen Durchlauf selbst an einem kleinen Feature aus
 
 ## 2. Start-Check (2–3 Minuten)
 
-Kopiere den Startpunkt in dein Arbeitsverzeichnis (`05-beispiele/wetter_bericht/`) und prüfe dein Setup:
+Kopiere den Startpunkt in dein Arbeitsverzeichnis (`05-beispiele/wetter_bericht/`) und prüfe dein Setup vom Projektordner aus:
 
 ```bash
-uv run python 05-beispiele/check_setup.py
+uv run python course/modul-4-agentic-coding/05-beispiele/check_setup.py
 ```
 
 Heb die Hand, wenn eine Zeile `FEHLER` zeigt. Wir lösen das **nicht im Plenum**: Arbeite mit deiner Sitznachbarin oder deinem Sitznachbarn, wir klären es in der Pause.

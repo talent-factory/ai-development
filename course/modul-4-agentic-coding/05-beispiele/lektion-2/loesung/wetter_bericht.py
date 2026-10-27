@@ -1,6 +1,6 @@
 """Wetterbericht für eine Schweizer Stadt: CSV auswerten, Live-Wetter abrufen, Bericht als JSON speichern.
 
-Startpunkt für Modul 4 (Stand der Nachbearbeitung von Modul 3).
+Musterlösung Lektion 2 (Modul 4).
 Weather data by Open-Meteo.com (CC BY 4.0).
 """
 

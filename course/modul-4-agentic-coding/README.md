@@ -7,7 +7,7 @@
 
 ## 🎯 Lernziele
 
-Nach diesem Modul können Sie:
+Nach diesem Modul kannst du:
 
 1. ✅ Mit einem Coding-Agenten (OpenCode oder Claude Code) arbeiten und eine Änderung zuerst planen (`plan.md`).
 2. ✅ Funktionen test-first mit dem Agenten entwickeln (TDD).

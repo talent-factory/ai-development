@@ -16,7 +16,7 @@ Das Programm fragt nach einer Stadt (Zürich, Bern, Genf, Basel, Lugano) und sch
 uv run pytest
 ```
 
-Die Tests prüfen nur reine Funktionen auf den CSV-Daten, nie den Live-Abruf.
+Die Tests prüfen nur reine Funktionen mit kleinen Beispieldaten, nie die CSV-Datei und nie den Live-Abruf.
 
 ## Funktionen (Auswahl)
 
