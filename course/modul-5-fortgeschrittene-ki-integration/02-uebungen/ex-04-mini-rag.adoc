@@ -1,0 +1,65 @@
+= Übung 4: Suche und Modell verbinden, das Mini-RAG
+:icons: font
+
+Lektion 4, 15 Minuten Übung plus 5 Minuten Fallen-Frage.
+
+[IMPORTANT]
+====
+*Mindestziel:* `uv run python pruefe.py 4` meldet «Mindestziel erreicht».
+====
+
+== Startstand
+
+`start/` plus `rag.py` aus Lektion 3 (oder `05-beispiele/lektion-3/loesung/rag.py`).
+
+== Aufgabe
+
+=== Teil 1: `beantworte(frage)` (ca. 15 Min)
+
+Ergänze in `rag.py`:
+
+* das Feld `quelle: str | None = None` in der Klasse `Antwort`
+* eine Funktion `beantworte(frage: str, mit_regel: bool = True) -> Antwort`
+
+Die Funktion baut den Prompt so zusammen und schickt ihn an den Agenten (`output_type=Antwort`, gleiche `instructions` wie in `frage_llm`):
+
+[source,text]
+----
+<RAG_REGEL>
+
+Quellen:
+[02-freeze.md]
+<Text>
+
+[01-deployment.md]
+<Text>
+
+Frage: <die Frage>
+----
+
+`RAG_REGEL` kommt fertig aus `hilfen.py`. Die Quellen sind die Treffer von `suche(frage)`, jeweils mit Dateinamen in eckigen Klammern. Mit `mit_regel=False` fällt die erste Zeile weg.
+
+Prüfe mit `uv run python pruefe.py 4`.
+
+=== Teil 2: Die Fallen-Frage (ca. 5 Min)
+
+Stelle `beantworte(...)` die Frage aus `falle` in `testfragen.json`. Die Antwort steht nirgends in der Wiki.
+
+*Kontrollwert:* Mit Regel antwortet das Modell genau «Ich finde dazu nichts.»
+
+== Die Antwort prüfen (3-Punkte-Quellencheck)
+
+Die Antwort ist erst gut, wenn sie diese drei Fragen besteht:
+
+. Steht die Aussage im Treffertext?
+. Stimmt die genannte Quelle?
+. Wurde etwas hinzugefügt, das nirgends steht?
+
+Prüfe so die Antworten auf alle Testfragen. Achte besonders auf diese zwei Fälle:
+
+* «Wen rufe ich in der Nacht bei einem Ausfall an?»: Das Modell antwortet mit Regel «Ich finde dazu nichts», obwohl `04-bereitschaft.md` unter den Treffern liegt. Die Regel macht es hier *zu streng*. Prüfe: Ist die Antwort im Treffertext?
+* Bei mehreren Antworten ist das Feld `quelle` leer, obwohl die Quelle im Text genannt wird. Welcher der beiden Wege ist verlässlicher?
+
+== Kür
+
+Ergänze eine eigene Frage zur Wiki und eine Fallen-Frage in `testfragen.json`. Wie reagiert das Mini-RAG?

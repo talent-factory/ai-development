@@ -1,0 +1,57 @@
+= Übung 2: Texte in Zahlen verwandeln
+:icons: font
+
+Lektion 2, 25 Minuten.
+
+[IMPORTANT]
+====
+*Mindestziel:* `uv run python pruefe.py 2` meldet «Mindestziel erreicht».
+====
+
+== Startstand
+
+`start/` aus Lektion 1 plus deine `rag.py`. Fehlt sie, kopiere `05-beispiele/lektion-1/loesung/rag.py` in deinen Projektordner.
+
+== Aufgabe
+
+=== Teil 1: Einen Vektor ansehen (ca. 5 Min)
+
+[source,python]
+----
+from hilfen import embed
+
+vektoren = embed(["Deployments laufen donnerstags."])
+print(vektoren.shape)   # (1, 3072)
+print(vektoren[0][:5])  # die ersten fünf Zahlen
+----
+
+Der Satz ist jetzt eine Liste von 3072 Zahlen. Ihre Länge ist 1, deshalb ist die Ähnlichkeit zweier Texte einfach das *Skalarprodukt* (`np.dot`).
+
+=== Teil 2: `aehnlichkeit(a, b)` (ca. 10 Min)
+
+Ergänze in `rag.py` die Funktion `aehnlichkeit(a: str, b: str) -> float`. Sie berechnet beide Vektoren mit `embed([a, b])` und gibt `float(np.dot(vektor_a, vektor_b))` zurück.
+
+Prüfe mit `uv run python pruefe.py 2`.
+
+=== Teil 3: Drei Satzpaare vergleichen (ca. 10 Min)
+
+Die drei Paare stehen unter `satzpaare` in `testfragen.json`. Berechne ihre Ähnlichkeit.
+
+*Kontrollwerte (ungefähr):*
+
+|===
+| Paar | Ähnlichkeit
+
+| «Deployments laufen donnerstags.» / «Die Veröffentlichung findet am Donnerstag statt.» | 0.81
+| «Deployments sind erlaubt.» / «Deployments sind verboten.» | 0.93
+| «Deployments laufen donnerstags.» / «Die Kantine bietet mittwochs …» | 0.70
+|===
+
+Zwei Dinge fallen auf:
+
+. «erlaubt» und «verboten» sind *sehr ähnlich*, obwohl sie das Gegenteil bedeuten. Ähnlichkeit misst das Thema, nicht die Wahrheit.
+. Selbst zwei unverwandte Sätze erreichen 0.70. Die Werte liegen meist zwischen 0.6 und 0.9. Man liest sie *im Vergleich*, nicht als absolute Zahl.
+
+== Kür
+
+Setze `EMBEDDING_MODELL` in `hilfen.py` einmal auf ein lokales Modell (Anleitung der Dozentin / des Dozenten) und vergleiche die Werte.
