@@ -41,11 +41,11 @@ Vier Übungen mit Mindestziel und Kür, passend zu den Lektionen.
 
 ### [03-nachbearbeitung/](./03-nachbearbeitung/)
 
-Ein Mini-RAG über eigene Dokumente (Aufgabe folgt).
+Ein Mini-RAG über eigene Dokumente, mit Reflexionsbogen. Abgabe bis Modul 6.
 
 ### [04-materialien/](./04-materialien/)
 
-Handouts und Cheatsheets (folgen).
+Cheatsheet RAG sowie die Handouts «Weitere Werkzeuge» und «Wann Code, wann No-Code».
 
 ### [05-beispiele/](./05-beispiele/)
 

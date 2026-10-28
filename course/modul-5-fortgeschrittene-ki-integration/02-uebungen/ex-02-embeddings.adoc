@@ -54,4 +54,4 @@ Zwei Dinge fallen auf:
 
 == Kür
 
-Setze `EMBEDDING_MODELL` in `hilfen.py` einmal auf ein lokales Modell (Anleitung der Dozentin / des Dozenten) und vergleiche die Werte.
+Berechne die Ähnlichkeit zwischen einer eigenen Aussage und ihrem Gegenteil, zum Beispiel «Freigaben sind Pflicht» und «Freigaben sind freiwillig». Was fällt dir auf, und was heisst das für die Suche?

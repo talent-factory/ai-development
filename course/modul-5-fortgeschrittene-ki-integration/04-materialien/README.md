@@ -4,7 +4,9 @@ Handouts, Cheatsheets und weitere Ressourcen.
 
 ## 📁 Inhalt
 
-_Cheatsheet, Handouts «Weitere Werkzeuge» und «Wann Code, wann No-Code» folgen noch._
+- [cheatsheet-rag.adoc](./cheatsheet-rag.adoc): Begriffe, Ablauf, Quellencheck, typische Fehler
+- [weitere-werkzeuge.md](./weitere-werkzeuge.md): LangChain, FAISS, Chroma, Hugging Face, Ollama, Agents, No-Code in je einer Zeile
+- [wann-code-wann-no-code.md](./wann-code-wann-no-code.md): Entscheidungsfragen Code vs. No-Code
 
 ### Archiv
 

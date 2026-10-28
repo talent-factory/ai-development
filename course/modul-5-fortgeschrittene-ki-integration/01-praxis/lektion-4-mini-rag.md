@@ -66,7 +66,7 @@ Das ist der **3-Punkte-Quellencheck**:
 
 ## 4. Ausblick (10 Minuten)
 
-* **Tool Use (5 Min):** Statt dass wir die Suche vor dem Modell aufrufen, kann das Modell sie als *Werkzeug* selbst aufrufen («Suche in der Wiki»). Die Dozentin / der Dozent zeigt eine Demo mit Pydantic AI. Das ist ein Ausblick, nicht Stoff.
+* **Tool Use (5 Min):** Statt dass wir die Suche vor dem Modell aufrufen, kann das Modell sie als *Werkzeug* selbst aufrufen («Suche in der Wiki»). Die Dozentin / der Dozent zeigt die Demo `05-beispiele/lektion-4/demo_tool_use.py` (Pydantic AI): Das Modell wählt selbst Suchbegriffe und sucht bei Bedarf noch einmal. Das ist ein Ausblick, nicht Stoff.
 * **No-Code (5 Min):** Dasselbe Mini-RAG als Flow in Flowise oder Langflow. Die Dozentin / der Dozent zeigt die Demo; ihr installiert nichts.
 
 ---
