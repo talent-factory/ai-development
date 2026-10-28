@@ -1,7 +1,7 @@
 # Modul 5: Fortgeschrittene KI-Integration
 
-**Dauer:** 1 Tag (4 Lektionen à 50 Minuten)  
-**Voraussetzung:** Modul 4 abgeschlossen (Agentic Coding, Tool Use).
+**Dauer:** 1 Abend (4 Lektionen à 50 Minuten), Dienstag, 3. November 2026, 18:00–21:50  
+**Voraussetzung:** Modul 4 abgeschlossen (Agentic Coding).
 
 ---
 
@@ -9,12 +9,11 @@
 
 Nach diesem Modul können Sie:
 
-1. ✅ LLM-APIs (OpenAI, Anthropic) gezielt aus Python heraus nutzen.
-2. ✅ Embeddings erzeugen und deren Bedeutung erklären.
-3. ✅ Vektordatenbanken verstehen und für Ähnlichkeitssuchen einsetzen.
-4. ✅ Ein einfaches RAG-System bauen (Code und optional No-Code).
-5. ✅ Zwischen Code- und No-Code-Ansätzen (Flowise, Langflow) entscheiden.
-6. ✅ KI-Systeme testen, Fehler beheben und bewerten.
+1. ✅ Ein Sprachmodell aus Python über Pydantic AI ansprechen, mit eigenem Prompt und strukturierter Ausgabe.
+2. ✅ Erklären, was ein Embedding ist, und Texte per Ähnlichkeit vergleichen.
+3. ✅ Eine eigene Vektorsuche mit NumPy bauen und prüfen.
+4. ✅ Ein Mini-RAG aus Suche und Sprachmodell bauen und die Antworten gegen die Quelle kontrollieren.
+5. ✅ Einordnen, wann Tool Use, Agents oder No-Code sinnvoll sind (Ausblick).
 
 ---
 
@@ -22,65 +21,35 @@ Nach diesem Modul können Sie:
 
 ### [00-vorbereitung/](./00-vorbereitung/)
 
-**Zeitaufwand:** 2–3 Stunden
+**Zeitaufwand:** ca. 60 Minuten, vor dem Kurstag
 
-- Wiederholung Tool-Agents
-- API-Key-Setup (OpenAI / Anthropic)
-- Leseauftrag: Embeddings, Vektoren, RAG
+- Pflicht-Setup: Pydantic AI, Gemini-Schlüssel, Setup-Check
+- Begriffe: Embedding, Vektor, Ähnlichkeit, RAG
 
 ### [01-praxis/](./01-praxis/)
 
 **Präsenzunterricht:** 4 Lektionen à 50 Minuten
 
-- **Lektion 1:** LLM-APIs direkt ansprechen, Chat-Completions verstehen.
-- **Lektion 2:** Embeddings erzeugen und visualisieren.
-- **Lektion 3:** Vektordatenbanken und Ähnlichkeitssuche.
-- **Lektion 4:** RAG-Systeme bauen – Code vs. No-Code (Flowise / Langflow).
-
-> Vorhandenes Material: `01-praxis/03-langchain.adoc`, `01-praxis/04-vector-stores.adoc`, `01-praxis/05-embeddings.adoc`, `01-praxis/06-rag-praxis.adoc`, `01-praxis/rag.adoc`, `01-praxis/02-no-code.adoc`
+- **Lektion 1:** Ein Sprachmodell aus Python befragen.
+- **Lektion 2:** Texte in Zahlen verwandeln (Embeddings).
+- **Lektion 3:** Die passende Textstelle finden (Vektorsuche).
+- **Lektion 4:** Suche und Modell verbinden (Mini-RAG), Ausblick Tool Use und No-Code.
 
 ### [02-uebungen/](./02-uebungen/)
 
-**Übungen während der Präsenz**
-
-- API-Aufruf mit Python
-- Embeddings-Vergleich
-- Vektorsuche implementieren
-- Mini-RAG aufbauen
-
-> Vorhandenes Material: `02-uebungen/vector-store-similarity-exercise.adoc`, `02-uebungen/aufgabe-3/`, `02-uebungen/aufgabe-4/`
+Vier Übungen mit Mindestziel und Kür, passend zu den Lektionen.
 
 ### [03-nachbearbeitung/](./03-nachbearbeitung/)
 
-**Hausaufgaben vor Modul 6**
-
-- Ein eigenes Mini-RAG mit eigenen Dokumenten
-- Vergleich Code vs. No-Code RAG
-- Ideen für das Abschlussprojekt sammeln
-
-> Vorhandenes Material: `05-beispiele/aufgabe-5/`
+Ein Mini-RAG über eigene Dokumente (Aufgabe folgt).
 
 ### [04-materialien/](./04-materialien/)
 
-**Handouts & Ressourcen**
-
-- Embeddings-Cheatsheet
-- RAG-Architektur-Übersicht
-- Vektordatenbank-Vergleich
-- Flowise/Langflow Kurzanleitung
-
-> Vorhandenes Material: `docs/faiss.adoc`, `docs/hugging-face.adoc`, `docs/slides/02 Erster Einsatz eigener von FlowiseAI.pptx`
+Handouts und Cheatsheets (folgen).
 
 ### [05-beispiele/](./05-beispiele/)
 
-**Code-Beispiele vom Dozenten**
-
-- LLM-API-Client
-- Embeddings-Visualisierung
-- Mini-RAG
-- Vektorbasierter Chatbot
-
-> Vorhandenes Material: `05-beispiele/embeddings-mit-word2vec.py`, `05-beispiele/rag-praxis/`, `05-beispiele/embeddings.py`, `05-beispiele/vector_chatbot.py`, `rag-system/`
+Startpunkt, Musterlösungen und Konserven vom Dozenten.
 
 ---
 
@@ -88,10 +57,10 @@ Nach diesem Modul können Sie:
 
 | Phase | Aktivität | Dauer |
 |-------|-----------|-------|
-| **Vor Tag 5** | API-Keys + Leseauftrag | 2–3 Std |
-| **Tag 5** | 4 Lektionen Präsenzunterricht | 4 × 50 Min |
-| **Tag 5** | Pausen | 30 Min |
-| **Nach Tag 5** | Mini-RAG + Projektidee | 4–6 Std |
+| **Vor dem Kurstag** | Vorbereitung (Setup und Begriffe) | ca. 60 Min |
+| **Kurstag** | 4 Lektionen Präsenzunterricht | 4 × 50 Min |
+| **Kurstag** | Pausen | 3 × 10 Min |
+| **Nach dem Kurstag** | Mini-RAG über eigene Dokumente | 2–3 Std |
 
 ---
 

@@ -71,7 +71,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"course/modul-5-fortgeschrittene-ki-integration/05-beispiele/aufgabe-5/test_simple.py" = ["F401"]
+"course/modul-5-fortgeschrittene-ki-integration/05-beispiele/archive/aufgabe-5/test_simple.py" = ["F401"]
 
 [tool.mypy]
 exclude = [

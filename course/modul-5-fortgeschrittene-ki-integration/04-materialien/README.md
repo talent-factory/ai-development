@@ -1,15 +1,14 @@
 # Materialien: Modul 5: Fortgeschrittene KI-Integration
 
-Handouts, Cheatsheets, Präsentationen und weitere Ressourcen.
+Handouts, Cheatsheets und weitere Ressourcen.
 
 ## 📁 Inhalt
 
-### Dokumente
+_Cheatsheet, Handouts «Weitere Werkzeuge» und «Wann Code, wann No-Code» folgen noch._
 
-- [02 Erster Einsatz eigener von FlowiseAI.pptx](./02 Erster Einsatz eigener von FlowiseAI.pptx)
-- [faiss.adoc](./faiss.adoc)
-- [hausaufgaben-woche-2-3-uebersicht.md](./hausaufgaben-woche-2-3-uebersicht.md)
-- [hugging-face.adoc](./hugging-face.adoc)
+### Archiv
+
+Frühere Materialien (FAISS, Hugging Face, Flowise-Folien, Hausaufgaben-Übersicht) liegen in [archive/](./archive/).
 
 ---
 

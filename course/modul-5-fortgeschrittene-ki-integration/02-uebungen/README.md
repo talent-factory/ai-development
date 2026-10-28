@@ -1,17 +1,17 @@
 # Übungen: Modul 5: Fortgeschrittene KI-Integration
 
-Übungen und Aufgaben zum selbstständigen Vertiefen.
+Vier Übungen während der Präsenz, jede mit Mindestziel, Startstand und Kür. Die Kontrolle läuft mit `uv run python pruefe.py <Lektionsnummer>`.
 
 ## 📁 Inhalt
 
-### Dokumente
+- [Übung 1: Ein Sprachmodell aus Python befragen](./ex-01-modell-befragen.adoc)
+- [Übung 2: Texte in Zahlen verwandeln](./ex-02-embeddings.adoc)
+- [Übung 3: Die passende Textstelle finden](./ex-03-vektorsuche.adoc)
+- [Übung 4: Suche und Modell verbinden, das Mini-RAG](./ex-04-mini-rag.adoc)
 
-- [vector-store-similarity-exercise.adoc](./vector-store-similarity-exercise.adoc)
+### Archiv
 
-### Sonstige
-
-- [aufgabe-3/](./aufgabe-3/)
-- [aufgabe-4/](./aufgabe-4/)
+Frühere Aufgaben liegen in [archive/](./archive/).
 
 ---
 
