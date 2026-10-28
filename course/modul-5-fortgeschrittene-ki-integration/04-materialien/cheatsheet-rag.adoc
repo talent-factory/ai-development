@@ -1,0 +1,68 @@
+= Cheatsheet: Embeddings und RAG
+:icons: font
+
+Zum Nachschlagen während der Übungen und danach.
+
+== Die Begriffe
+
+[cols="1,3"]
+|===
+| Begriff | Bedeutung
+
+| Embedding | Ein Text als Liste von Zahlen (bei uns 3072). Texte mit ähnlicher Bedeutung haben ähnliche Zahlen.
+| Vektor | Diese Liste von Zahlen.
+| Ähnlichkeit | Wie nah zwei Vektoren beieinander liegen. Bei Vektoren der Länge 1 ist das das Skalarprodukt (`np.dot`).
+| Top-k | Die `k` ähnlichsten Treffer, nicht nur der beste.
+| RAG | Erst suchen, dann antworten lassen: Das Modell bekommt Frage und Treffer und antwortet nur daraus.
+|===
+
+== Der Ablauf
+
+----
+Fragen  →  Suchen  →  Antworten  →  Prüfen
+----
+
+. *Fragen:* Die Frage wird in einen Vektor verwandelt (`embed([frage], ist_frage=True)`).
+. *Suchen:* `vektoren @ frage_vektor`, dann `np.argsort(-werte)[:k]` ergibt die besten Treffer.
+. *Antworten:* Frage und Treffer gehen an das Modell (`beantworte`).
+. *Prüfen:* Der 3-Punkte-Quellencheck.
+
+== Der 3-Punkte-Quellencheck
+
+. Steht die Aussage im Treffertext?
+. Stimmt die genannte Quelle?
+. Wurde etwas hinzugefügt, das nirgends steht?
+
+== Zahlen, die man kennen sollte
+
+* Ähnlichkeitswerte liegen meist zwischen 0.6 und 0.9. Man liest sie im Vergleich.
+* Ähnlichkeit misst das Thema, nicht die Wahrheit: «erlaubt» und «verboten» liegen bei etwa 0.93.
+* Der erste Treffer ist nicht immer der beste. Darum Top-3 und Treffer lesen.
+
+== Der RAG-Prompt
+
+----
+Beantworte die Frage nur aus den folgenden Quellen. Nenne den Dateinamen der Quelle.
+Steht die Antwort nicht in den Quellen, antworte genau: Ich finde dazu nichts.
+
+Quellen:
+[datei.md]
+<Text>
+
+Frage: <die Frage>
+----
+
+Lässt du die Regel weg, ist die Antwort nicht mehr auf die Quellen beschränkt. Ist sie zu streng, sagt das Modell «Ich finde dazu nichts», obwohl die Antwort da ist. Beides fällt nur beim Prüfen auf.
+
+== Typische Fehler
+
+[cols="1,2"]
+|===
+| Symptom | Ursache und Hilfe
+
+| `GOOGLE_API_KEY ist nicht gesetzt` | Terminal nach dem Setzen neu öffnen.
+| «rate limit» | Eine Minute warten oder `KONSERVE=1` setzen (nur Beispiele aus dem Kurs).
+| `Event loop is closed` | Nicht denselben `Embedder` über mehrere `asyncio.run`-Aufrufe verwenden. Nimm `embed()` aus `hilfen.py`.
+| `This event loop is already running` | `run_sync` geht nicht in Jupyter. Nutze Skripte oder `await agent.run(...)`.
+| Falscher erster Treffer | Treffer lesen, `k` erhöhen, Frage genauer stellen.
+|===

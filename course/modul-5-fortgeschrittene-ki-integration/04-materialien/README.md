@@ -1,15 +1,16 @@
 # Materialien: Modul 5: Fortgeschrittene KI-Integration
 
-Handouts, Cheatsheets, Präsentationen und weitere Ressourcen.
+Handouts, Cheatsheets und weitere Ressourcen.
 
 ## 📁 Inhalt
 
-### Dokumente
+- [cheatsheet-rag.adoc](./cheatsheet-rag.adoc): Begriffe, Ablauf, Quellencheck, typische Fehler
+- [weitere-werkzeuge.md](./weitere-werkzeuge.md): LangChain, FAISS, Chroma, Hugging Face, Ollama, Agents, No-Code in je einer Zeile
+- [wann-code-wann-no-code.md](./wann-code-wann-no-code.md): Entscheidungsfragen Code vs. No-Code
 
-- [02 Erster Einsatz eigener von FlowiseAI.pptx](./02 Erster Einsatz eigener von FlowiseAI.pptx)
-- [faiss.adoc](./faiss.adoc)
-- [hausaufgaben-woche-2-3-uebersicht.md](./hausaufgaben-woche-2-3-uebersicht.md)
-- [hugging-face.adoc](./hugging-face.adoc)
+### Archiv
+
+Frühere Materialien (FAISS, Hugging Face, Flowise-Folien, Hausaufgaben-Übersicht) liegen in [archive/](./archive/).
 
 ---
 

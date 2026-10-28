@@ -1,0 +1,53 @@
+= Übung 1: Ein Sprachmodell aus Python befragen
+:icons: font
+
+Lektion 1, 25 Minuten.
+
+[IMPORTANT]
+====
+*Mindestziel:* `uv run python pruefe.py 1` meldet «Mindestziel erreicht».
+====
+
+== Startstand
+
+Kopiere den Ordner `05-beispiele/lektion-1/start/` in deinen Projektordner (zum Beispiel nach `modul-5/`). Alle Befehle führst du in diesem Ordner aus.
+
+Kein Schlüssel oder kein Netz? Setze `KONSERVE=1` (macOS/Linux: `export KONSERVE=1`, PowerShell: `$env:KONSERVE = "1"`). Dann laufen die Beispiele aus dem Kurs mit aufgezeichneten Antworten.
+
+== Aufgabe
+
+=== Teil 1: Die Frage ohne Wissen (ca. 5 Min)
+
+Öffne `testfragen.json` und lies die `firmenfrage`. Stelle sie in der Konsole direkt dem Modell:
+
+[source,python]
+----
+from pydantic_ai import Agent
+from hilfen import MODELL
+
+print(Agent(MODELL).run_sync("Wann finden bei der Talwerk AG die Deployments statt?").output)
+----
+
+Was antwortet das Modell? Es kennt die Talwerk AG nicht, die Firma ist erfunden. Halte fest, wie es damit umgeht.
+
+=== Teil 2: `frage_llm` mit strukturierter Antwort (ca. 20 Min)
+
+Erstelle die Datei `rag.py` mit:
+
+* einer Klasse `Antwort` (Pydantic-Modell) mit den Feldern `text: str` und `sicherheit: float`
+* einer Funktion `frage_llm(frage: str) -> Antwort`, die einen `Agent` mit `output_type=Antwort` aufruft (`run_sync(...).output`)
+
+Gib dem Agenten die Anweisung mit (`instructions=...`):
+
+[source,text]
+----
+Antworte auf Deutsch, Schweizer Orthografie (ss statt ß). Gib an, wie sicher du dir bist (0 bis 1).
+----
+
+Prüfe mit `uv run python pruefe.py 1`.
+
+*Kontrollwert:* Bei der Firmenfrage meldet das Modell, dass es die Firma nicht kennt, und gibt eine `sicherheit` nahe 0 an. Der genaue Wortlaut darf abweichen.
+
+== Kür
+
+Ändere die Anweisung so, dass das Modell bei Unsicherheit nur «Weiss ich nicht» antwortet. Was ändert sich?

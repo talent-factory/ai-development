@@ -1,0 +1,49 @@
+= Übung 3: Die passende Textstelle finden
+:icons: font
+
+Lektion 3, 20 Minuten Übung plus 10 Minuten Prüfen.
+
+[IMPORTANT]
+====
+*Mindestziel:* `uv run python pruefe.py 3` meldet «Mindestziel erreicht»: Zu jeder Testfrage steht der richtige Text *unter den besten drei Treffern*.
+====
+
+== Startstand
+
+`start/` plus `rag.py` aus Lektion 2 (oder `05-beispiele/lektion-2/loesung/rag.py`).
+
+== Aufgabe
+
+=== Teil 1: `suche(frage, k=3)` (ca. 20 Min)
+
+Ergänze in `rag.py` eine Funktion `suche(frage: str, k: int = 3) -> list[tuple[Dokument, float]]`:
+
+. `lade_wiki()` liefert die 10 Texte, `embed([...])` ihre Vektoren. Berechne sie einmal und merke sie dir (zum Beispiel mit `functools.cache` in einer Hilfsfunktion).
+. Verwandle die Frage mit `embed([frage], ist_frage=True)` in einen Vektor.
+. Die Ähnlichkeit zu allen Texten auf einmal: `vektoren @ frage_vektor`.
+. Die `k` besten holst du mit `np.argsort(-werte)[:k]`.
+. Gib die Texte mit ihren Werten zurück, den besten zuerst.
+
+Prüfe mit `uv run python pruefe.py 3`.
+
+=== Teil 2: Treffer ansehen und prüfen (ca. 10 Min)
+
+Stelle die fünf Testfragen aus `testfragen.json` und sieh dir jeweils die drei Treffer *und* ihre Texte an. Das ist der Handgriff, den wir ab jetzt bei jeder Suche machen: *Treffer lesen, nicht blind übernehmen.*
+
+*Kontrollwerte (Treffer 1):*
+
+|===
+| Frage | Treffer 1
+
+| Wann ist der Deployment-Freeze? | `02-freeze.md`
+| Wie viele Freigaben braucht ein Code-Review? | `03-code-review.md`
+| Wen rufe ich in der Nacht bei einem Ausfall an? | `06-incident.md` (0.68), knapp vor `04-bereitschaft.md` (0.67)
+| Wie benenne ich meinen Branch? | `05-branches.md`
+| Wie lange habe ich Zeit, meine Spesen einzureichen? | `09-spesen.md`
+|===
+
+Bei der dritten Frage liegt der *falsche Text knapp vorn*. Deshalb gilt das Mindestziel für die besten drei. Probiere auch die mehrdeutige Frage «Wann darf ich veröffentlichen?»: Der Freeze liegt vor dem Deployment. Welcher Text beantwortet sie besser?
+
+== Kür
+
+Führe eine Mindest-Ähnlichkeit ein: Treffer unter einem Schwellenwert werden nicht zurückgegeben. Welcher Wert funktioniert für alle fünf Testfragen? (Denke an die Spanne 0.6 bis 0.9.)
