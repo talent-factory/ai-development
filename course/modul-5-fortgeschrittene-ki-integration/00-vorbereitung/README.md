@@ -1,6 +1,6 @@
 # Vorbereitung: Modul 5 – Fortgeschrittene KI-Integration
 
-**Zeitaufwand:** ca. 60 Minuten, vor dem Unterricht (Modul 5: 4. November 2026, 18:00–21:50)  
+**Zeitaufwand:** ca. 60 Minuten, vor dem Unterricht (Modul 5: 3. November 2026, 18:00–21:50)  
 **Ziel:** Alle Werkzeuge laufen und die wichtigsten Begriffe sind geklärt, bevor wir starten. Am Kurstag installieren wir nichts mehr, sondern bauen.
 
 Plane die Vorbereitung **nicht erst für den Abend vorher** ein. Die Kontoeinrichtung kann Zeit brauchen, und bei Problemen sollst du noch Hilfe bekommen.
