@@ -18,6 +18,7 @@ dependencies = [
     "matplotlib>=3.11.2",
     "numpy>=2.5.4",
     "pandas>=3.0.6",
+    "pydantic-ai-slim[google]==2.63.0",
     "pypdf>=6.21.1",
     "pypdf2>=3.0.1",
     "python-dotenv>=1.2.4",
