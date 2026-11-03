@@ -19,6 +19,9 @@ from pydantic_ai import Embedder
 from pydantic_ai.messages import ModelMessage, ModelResponse, TextPart, ToolCallPart, UserPromptPart
 from pydantic_ai.models.function import AgentInfo, FunctionModel
 
+# Ohne diese Einstellung druckt Pydantic AI bei jedem Start ein mehrzeiliges Banner.
+os.environ.setdefault("PYDANTIC_AI_NO_BANNER", "1")
+
 ORDNER = Path(__file__).parent
 KONSERVE = os.environ.get("KONSERVE") == "1"
 
