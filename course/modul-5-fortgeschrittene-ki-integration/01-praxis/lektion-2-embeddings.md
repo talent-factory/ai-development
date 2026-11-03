@@ -19,7 +19,7 @@
 
 ## 1. Rückblick (5 Minuten)
 
-Gleiches Muster in jeder Lektion: «Was lief, was hakt?» Kein Stoff, keine Aufgabe. Wer `pruefe.py 1` nicht grün hat, nimmt `lektion-1/loesung/rag.py` als Startstand.
+Gleiches Muster in jeder Lektion: «Was lief, was hakt?» Kein Stoff, keine Aufgabe. Wer `pruefe.py 1` nicht grün hat, nimmt das Gerüst `lektion-2/start/rag.py` (Lösung von Lektion 1, dazu die TODOs dieser Lektion) als Startstand.
 
 ---
 

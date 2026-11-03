@@ -28,7 +28,7 @@ Wir bauen heute Schritt für Schritt ein kleines System, das Fragen zur **Wiki e
 | 3 | Vektorsuche, Top-k | `suche()` |
 | 4 | RAG, Quellenangabe | `beantworte()` |
 
-Am Ende jeder Lektion läuft dein Code. Wer den Anschluss verliert, steigt bei der Musterlösung der letzten Lektion (`05-beispiele/lektion-N/loesung/rag.py`) wieder ein. Der rote Faden für alles: **Fragen → Suchen → Antworten → Prüfen.**
+Am Ende jeder Lektion läuft dein Code. Wer den Anschluss verliert, steigt beim Gerüst der nächsten Lektion (`05-beispiele/lektion-N/start/rag.py`) wieder ein: Es enthält die fertige Lösung der Vorlektion, nur der neue Teil ist als `TODO` offen. Der rote Faden für alles: **Fragen → Suchen → Antworten → Prüfen.**
 
 ---
 
@@ -44,7 +44,7 @@ Heb die Hand, wenn eine Zeile `FEHLER` zeigt. Wir lösen das **nicht im Plenum**
 
 ## 3. Einstieg: Das Modell kennt unsere Firma nicht (10 Minuten)
 
-Kopiere `05-beispiele/lektion-1/start/` in deinen Projektordner. Dort liegen die Wiki (`wiki/`), `testfragen.json` und `hilfen.py`.
+Kopiere `05-beispiele/lektion-1/start/` in deinen Projektordner. Dort liegen die Wiki (`wiki/`), `testfragen.json`, `hilfen.py` und ein Gerüst `rag.py` mit `TODO`-Markierungen, das du in der Übung ausfüllst.
 
 **KI-Moment:** Wir stellen dem Modell die Firmenfrage («Wann finden bei der Talwerk AG die Deployments statt?»):
 

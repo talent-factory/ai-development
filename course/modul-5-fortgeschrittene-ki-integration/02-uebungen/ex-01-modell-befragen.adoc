@@ -32,7 +32,7 @@ Was antwortet das Modell? Es kennt die Talwerk AG nicht, die Firma ist erfunden.
 
 === Teil 2: `frage_llm` mit strukturierter Antwort (ca. 20 Min)
 
-Erstelle die Datei `rag.py` mit:
+Öffne die Datei `rag.py` im Startordner. Sie ist ein Gerüst mit `TODO`-Markierungen. Ergänze:
 
 * einer Klasse `Antwort` (Pydantic-Modell) mit den Feldern `text: str` und `sicherheit: float`
 * einer Funktion `frage_llm(frage: str) -> Antwort`, die einen `Agent` mit `output_type=Antwort` aufruft (`run_sync(...).output`)

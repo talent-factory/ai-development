@@ -10,7 +10,7 @@ Lektion 4, 15 Minuten Übung plus 5 Minuten Fallen-Frage.
 
 == Startstand
 
-`start/` plus `rag.py` aus Lektion 3 (oder `05-beispiele/lektion-3/loesung/rag.py`).
+`start/` plus deine `rag.py` aus Lektion 3. Fehlt sie oder hakt sie, kopiere das Gerüst `05-beispiele/lektion-4/start/rag.py` (die Lösung von Lektion 3, `beantworte` ist als `TODO` offen).
 
 == Aufgabe
 

@@ -10,7 +10,7 @@ Lektion 3, 20 Minuten Übung plus 10 Minuten Prüfen.
 
 == Startstand
 
-`start/` plus `rag.py` aus Lektion 2 (oder `05-beispiele/lektion-2/loesung/rag.py`).
+`start/` plus deine `rag.py` aus Lektion 2. Fehlt sie oder hakt sie, kopiere das Gerüst `05-beispiele/lektion-3/start/rag.py` (die Lösung von Lektion 2, `suche` ist als `TODO` offen).
 
 == Aufgabe
 

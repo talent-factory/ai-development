@@ -10,7 +10,7 @@ Lektion 2, 25 Minuten.
 
 == Startstand
 
-`start/` aus Lektion 1 plus deine `rag.py`. Fehlt sie, kopiere `05-beispiele/lektion-1/loesung/rag.py` in deinen Projektordner.
+`start/` aus Lektion 1 plus deine `rag.py`. Fehlt sie oder hakt sie, kopiere das Gerüst `05-beispiele/lektion-2/start/rag.py` in deinen Projektordner (die Lösung von Lektion 1, `aehnlichkeit` ist als `TODO` offen).
 
 == Aufgabe
 
