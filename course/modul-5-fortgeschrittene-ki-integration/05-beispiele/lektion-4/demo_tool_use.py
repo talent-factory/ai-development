@@ -1,14 +1,23 @@
 """Demo für den Ausblick in Lektion 4: Das Modell ruft die Suche selbst als Werkzeug auf.
 
-Nur für die Dozentin / den Dozenten. Läuft im Ordner mit `hilfen.py`, `rag.py` (Lektion 4) und der Wiki:
-    uv run python demo_tool_use.py
+Nur für die Dozentin / den Dozenten. Läuft direkt aus dem Kurs-Repo, denn das Skript findet
+`hilfen.py` (mit der Wiki) in `lektion-1/start/` und `rag.py` in `lektion-4/loesung/` selbst:
+    uv run python course/modul-5-fortgeschrittene-ki-integration/05-beispiele/lektion-4/demo_tool_use.py
 Braucht den Schlüssel (kein `KONSERVE=1`).
 """
 
-from hilfen import MODELL
-from pydantic_ai import Agent
+# pyright: reportMissingImports=false
+# (hilfen und rag liegen in anderen Ordnern, der Pfad wird erst zur Laufzeit gesetzt)
+import sys
+from pathlib import Path
 
-from rag import suche
+HIER = Path(__file__).parent
+sys.path[:0] = [str(HIER / "loesung"), str(HIER.parent / "lektion-1" / "start")]
+
+from hilfen import MODELL  # noqa: E402
+from pydantic_ai import Agent  # noqa: E402
+
+from rag import suche  # noqa: E402
 
 agent = Agent(
     MODELL,
