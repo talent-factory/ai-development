@@ -28,7 +28,8 @@ KONSERVE = os.environ.get("KONSERVE") == "1"
 CHAT_MODELL = "google:gemini-3.5-flash-lite"
 EMBEDDING_MODELL = "google:gemini-embedding-2"
 
-# Die Regel für das RAG aus Lektion 4. Lässt du sie im Prompt weg, erfindet das Modell Antworten.
+# Die Regel für das RAG aus Lektion 4. Sie bindet die Antwort an die Quellen und gibt ein festes Format vor.
+# Ohne sie antwortet das Modell bei unserer Fallen-Frage ebenfalls ehrlich, aber in freiem Wortlaut.
 RAG_REGEL = (
     "Beantworte die Frage nur aus den folgenden Quellen. Nenne den Dateinamen der Quelle. "
     "Steht die Antwort nicht in den Quellen, antworte genau: Ich finde dazu nichts."

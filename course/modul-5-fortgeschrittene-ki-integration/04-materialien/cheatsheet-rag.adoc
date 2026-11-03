@@ -52,7 +52,7 @@ Quellen:
 Frage: <die Frage>
 ----
 
-Lässt du die Regel weg, ist die Antwort nicht mehr auf die Quellen beschränkt. Ist sie zu streng, sagt das Modell «Ich finde dazu nichts», obwohl die Antwort da ist. Beides fällt nur beim Prüfen auf.
+Lässt du die Regel weg, ist die Antwort nicht mehr verlässlich auf die Quellen beschränkt und hat kein festes Format. Bei unserer Fallen-Frage antwortet das Modell auch ohne Regel ehrlich, aber in freiem Wortlaut. Ist die Regel zu streng, sagt das Modell «Ich finde dazu nichts», obwohl die Antwort da ist. Beides fällt nur beim Prüfen auf.
 
 == Typische Fehler
 
