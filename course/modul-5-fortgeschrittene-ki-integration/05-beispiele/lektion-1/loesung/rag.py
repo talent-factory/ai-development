@@ -1,5 +1,7 @@
 """Lektion 1: Ein Sprachmodell aus Python befragen."""
 
+# pyright: reportMissingImports=false
+# (hilfen und rag liegen in anderen Ordnern, der Pfad wird erst zur Laufzeit gesetzt)
 from hilfen import MODELL
 from pydantic import BaseModel
 from pydantic_ai import Agent

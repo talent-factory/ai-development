@@ -1,5 +1,7 @@
 """Lektion 2: Texte in Vektoren verwandeln und Ähnlichkeit messen (baut auf Lektion 1 auf)."""
 
+# pyright: reportMissingImports=false
+# (hilfen und rag liegen in anderen Ordnern, der Pfad wird erst zur Laufzeit gesetzt)
 import numpy as np
 from hilfen import MODELL, embed
 from pydantic import BaseModel

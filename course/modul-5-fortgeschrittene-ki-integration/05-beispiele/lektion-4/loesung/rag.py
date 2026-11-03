@@ -2,6 +2,8 @@
 
 from functools import cache
 
+# pyright: reportMissingImports=false
+# (hilfen und rag liegen in anderen Ordnern, der Pfad wird erst zur Laufzeit gesetzt)
 import numpy as np
 from hilfen import MODELL, RAG_REGEL, Dokument, embed, lade_wiki
 from pydantic import BaseModel
