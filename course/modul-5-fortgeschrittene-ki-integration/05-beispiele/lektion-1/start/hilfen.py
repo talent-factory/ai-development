@@ -22,6 +22,11 @@ from pydantic_ai.models.function import AgentInfo, FunctionModel
 # Ohne diese Einstellung druckt Pydantic AI bei jedem Start ein mehrzeiliges Banner.
 os.environ.setdefault("PYDANTIC_AI_NO_BANNER", "1")
 
+# Sind GOOGLE_API_KEY und GEMINI_API_KEY beide gesetzt, meldet die Google-Bibliothek das bei jedem Aufruf.
+# Wir nutzen GOOGLE_API_KEY und entfernen die zweite Variable nur für dieses Programm.
+if os.environ.get("GOOGLE_API_KEY"):
+    os.environ.pop("GEMINI_API_KEY", None)
+
 ORDNER = Path(__file__).parent
 KONSERVE = os.environ.get("KONSERVE") == "1"
 
