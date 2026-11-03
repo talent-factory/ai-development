@@ -5,6 +5,7 @@ Handouts, Cheatsheets und weitere Ressourcen.
 ## 📁 Inhalt
 
 - [cheatsheet-rag.adoc](./cheatsheet-rag.adoc): Begriffe, Ablauf, Quellencheck, typische Fehler
+- [rag-ablauf.svg](./rag-ablauf.svg): Abbildung: vom Prompt über die Vektorsuche bis zur geprüften Antwort
 - [weitere-werkzeuge.md](./weitere-werkzeuge.md): LangChain, FAISS, Chroma, Hugging Face, Ollama, Agents, No-Code in je einer Zeile
 - [wann-code-wann-no-code.md](./wann-code-wann-no-code.md): Entscheidungsfragen Code vs. No-Code
 

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 800" width="1180" height="800" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+
+  <rect width="1180" height="800" fill="#ffffff"/>
+
+  <text x="40" y="38" font-size="26" font-weight="700" fill="#1a202c">RAG: Vom Prompt zur Antwort</text>
+  <text x="40" y="62" font-size="15" fill="#4a5568">Beispiel Modul 5: Mini-RAG über die Wiki der Talwerk AG (suche() und beantworte())</text>
+
+  <!-- Band A -->
+  <rect x="20" y="80" width="1140" height="156" rx="12" fill="#f4f6fa"/>
+  <text x="36" y="102" font-size="15" font-weight="700" fill="#2d3748">A  Vorbereitung (einmal pro Start)</text>
+
+  <!-- Band B -->
+  <rect x="20" y="252" width="1140" height="156" rx="12" fill="#f4f6fa"/>
+  <text x="36" y="274" font-size="15" font-weight="700" fill="#2d3748">B  Suchen: passende Texte finden (Retrieval)</text>
+
+  <!-- Band C -->
+  <rect x="20" y="424" width="1140" height="156" rx="12" fill="#f4f6fa"/>
+  <text x="36" y="446" font-size="15" font-weight="700" fill="#2d3748">C  Antworten: Das Modell antwortet aus den Treffern (Generation)</text>
+
+  <!-- Pfeile A -->
+  <g stroke="#4a5568" stroke-width="2.5" fill="none" marker-end="url(#pfeil)">
+    <path d="M270,168 H328"/>
+    <path d="M560,168 H618"/>
+    <!-- Vektoren -> Ähnlichkeit -->
+    <path d="M850,168 H1025 V288"/>
+    <!-- Pfeile B -->
+    <path d="M270,340 H328"/>
+    <path d="M560,340 H618"/>
+    <path d="M850,340 H908"/>
+    <!-- B -> C -->
+    <path d="M1025,390 V460"/>
+    <!-- Pfeile C (nach links) -->
+    <path d="M910,512 H852"/>
+    <path d="M620,512 H562"/>
+    <path d="M330,512 H272"/>
+  </g>
+  <text x="1035" y="196" font-size="13" fill="#b7791f" font-weight="600">gespeicherte</text>
+  <text x="1035" y="213" font-size="13" fill="#b7791f" font-weight="600">Text-Vektoren</text>
+
+  <!-- ===== A ===== -->
+  <!-- 1 Wiki -->
+  <rect x="40" y="118" width="230" height="100" rx="10" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.5"/>
+  <circle cx="56" cy="134" r="11" fill="#4a5568"/><text x="56" y="138.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="155" y="156" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Wiki-Texte</text>
+  <text x="155" y="180" font-size="14" fill="#4a5568" text-anchor="middle">10 Dateien (.md)</text>
+  <text x="155" y="201" font-size="13" fill="#4a5568" text-anchor="middle" font-family="Menlo, Consolas, monospace">lade_wiki()</text>
+
+  <!-- 2 Embedding-Modell -->
+  <rect x="330" y="118" width="230" height="100" rx="10" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.5"/>
+  <circle cx="346" cy="134" r="11" fill="#2b6cb0"/><text x="346" y="138.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="445" y="156" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Embedding-Modell</text>
+  <text x="445" y="180" font-size="14" fill="#4a5568" text-anchor="middle">gemini-embedding-2</text>
+  <text x="445" y="201" font-size="13" fill="#4a5568" text-anchor="middle">Text wird zu 3072 Zahlen</text>
+
+  <!-- 3 Text-Vektoren -->
+  <rect x="620" y="118" width="230" height="100" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2.5"/>
+  <circle cx="636" cy="134" r="11" fill="#c05621"/><text x="636" y="138.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="735" y="156" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Text-Vektoren</text>
+  <text x="735" y="180" font-size="14" fill="#4a5568" text-anchor="middle">Tabelle 10 × 3072</text>
+  <text x="735" y="201" font-size="13" fill="#4a5568" text-anchor="middle">einmal berechnet, gemerkt</text>
+
+  <!-- ===== B ===== -->
+  <!-- 4 Frage -->
+  <rect x="40" y="290" width="230" height="100" rx="10" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.5"/>
+  <circle cx="56" cy="306" r="11" fill="#4a5568"/><text x="56" y="310.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+  <text x="155" y="328" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Deine Frage</text>
+  <text x="155" y="352" font-size="13" fill="#4a5568" text-anchor="middle">«Wann ist der</text>
+  <text x="155" y="371" font-size="13" fill="#4a5568" text-anchor="middle">Deployment-Freeze?»</text>
+
+  <!-- 5 Embedding-Modell -->
+  <rect x="330" y="290" width="230" height="100" rx="10" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.5"/>
+  <circle cx="346" cy="306" r="11" fill="#2b6cb0"/><text x="346" y="310.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+  <text x="445" y="328" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Embedding-Modell</text>
+  <text x="445" y="352" font-size="14" fill="#4a5568" text-anchor="middle">dasselbe Modell wie in 2</text>
+  <text x="445" y="373" font-size="13" fill="#4a5568" text-anchor="middle" font-family="Menlo, Consolas, monospace">ist_frage=True</text>
+
+  <!-- 6 Frage-Vektor -->
+  <rect x="620" y="290" width="230" height="100" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2.5"/>
+  <circle cx="636" cy="306" r="11" fill="#c05621"/><text x="636" y="310.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+  <text x="735" y="328" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Frage-Vektor</text>
+  <text x="735" y="352" font-size="14" fill="#4a5568" text-anchor="middle">1 × 3072 Zahlen</text>
+  <text x="735" y="373" font-size="13" fill="#4a5568" text-anchor="middle">gleiche «Sprache» wie 3</text>
+
+  <!-- 7 Ähnlichkeit + Top-3 -->
+  <rect x="910" y="290" width="230" height="100" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2.5"/>
+  <circle cx="926" cy="306" r="11" fill="#c05621"/><text x="926" y="310.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">7</text>
+  <text x="1025" y="328" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Ähnlichkeit + Top-3</text>
+  <text x="1025" y="352" font-size="13" fill="#4a5568" text-anchor="middle" font-family="Menlo, Consolas, monospace">vektoren @ frage_vektor</text>
+  <text x="1025" y="373" font-size="13" fill="#4a5568" text-anchor="middle">die 3 ähnlichsten Texte</text>
+
+  <!-- ===== C ===== -->
+  <!-- 8 Prompt -->
+  <rect x="910" y="462" width="230" height="100" rx="10" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.5"/>
+  <circle cx="926" cy="478" r="11" fill="#4a5568"/><text x="926" y="482.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">8</text>
+  <text x="1025" y="500" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Prompt bauen</text>
+  <text x="1025" y="524" font-size="14" fill="#4a5568" text-anchor="middle">Regel + 3 Quellen + Frage</text>
+  <text x="1025" y="545" font-size="13" fill="#4a5568" text-anchor="middle">Quellen mit Dateinamen</text>
+
+  <!-- 9 LLM -->
+  <rect x="620" y="462" width="230" height="100" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+  <circle cx="636" cy="478" r="11" fill="#6b46c1"/><text x="636" y="482.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">9</text>
+  <text x="735" y="500" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Sprachmodell (LLM)</text>
+  <text x="735" y="524" font-size="14" fill="#4a5568" text-anchor="middle">gemini-3.5-flash-lite</text>
+  <text x="735" y="545" font-size="13" fill="#4a5568" text-anchor="middle">antwortet nur aus den Quellen</text>
+
+  <!-- 10 Antwort -->
+  <rect x="330" y="462" width="230" height="100" rx="10" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.5"/>
+  <circle cx="346" cy="478" r="11" fill="#4a5568"/><text x="346" y="482.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">10</text>
+  <text x="445" y="500" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Antwort</text>
+  <text x="445" y="524" font-size="13" fill="#4a5568" text-anchor="middle" font-family="Menlo, Consolas, monospace">text, sicherheit, quelle</text>
+  <text x="445" y="545" font-size="13" fill="#4a5568" text-anchor="middle">als Pydantic-Modell</text>
+
+  <!-- 11 Prüfen -->
+  <rect x="40" y="462" width="230" height="100" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <circle cx="56" cy="478" r="11" fill="#2f855a"/><text x="56" y="482.5" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">11</text>
+  <text x="155" y="500" font-size="17" font-weight="700" fill="#1a202c" text-anchor="middle">Du prüfst</text>
+  <text x="155" y="524" font-size="14" fill="#4a5568" text-anchor="middle">3-Punkte-Quellencheck</text>
+  <text x="155" y="545" font-size="13" fill="#4a5568" text-anchor="middle">Quelle lesen, nicht blind glauben</text>
+
+  <!-- Legende -->
+  <g font-size="14" fill="#2d3748">
+    <rect x="40" y="604" width="18" height="18" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="66" y="619">Hier kommen die Vektoren ins Spiel</text>
+    <rect x="360" y="604" width="18" height="18" rx="4" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.5"/>
+    <text x="386" y="619">Embedding-Modell</text>
+    <rect x="560" y="604" width="18" height="18" rx="4" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+    <text x="586" y="619">Sprachmodell</text>
+    <rect x="730" y="604" width="18" height="18" rx="4" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+    <text x="756" y="619">Deine Prüfung</text>
+    <rect x="900" y="604" width="18" height="18" rx="4" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.5"/>
+    <text x="926" y="619">Text / Daten</text>
+  </g>
+
+  <!-- Merksatz -->
+  <rect x="20" y="650" width="1140" height="130" rx="12" fill="#fff" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="40" y="680" font-size="16" font-weight="700" fill="#1a202c">RAG = Retrieval-Augmented Generation: erst suchen (Vektoren), dann antworten (LLM).</text>
+  <text x="40" y="708" font-size="14" fill="#2d3748">Die Vektorsuche (5 bis 7) findet ähnliche Texte, also das Thema, nicht die Wahrheit. Das LLM sieht nur diese Treffer.</text>
+  <text x="40" y="732" font-size="14" fill="#2d3748">Fehlerquellen: falscher Top-1 (7), zu strenge oder fehlende Regel (8), erfundene oder leere Quelle (10).</text>
+  <text x="40" y="756" font-size="14" fill="#2d3748">Schritt 11 fängt sie ab: Aussage im Treffertext? Quelle stimmt? Etwas hinzugefügt, das nirgends steht?</text>
+</svg>
