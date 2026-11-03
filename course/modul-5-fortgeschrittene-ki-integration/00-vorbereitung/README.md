@@ -79,6 +79,8 @@ Wir legen den Schlüssel in der Variable `GOOGLE_API_KEY` ab. Pydantic AI liest 
 uv run python course/modul-5-fortgeschrittene-ki-integration/05-beispiele/check_setup.py
 ```
 
+Der Pfad beginnt bei `course/`. Führe den Befehl deshalb im **Hauptordner des Kurs-Repositories** aus (dort, wo der Ordner `course/` liegt). Liegt dein Projekt woanders, wechsle vorher mit `cd` in diesen Ordner oder gib den vollständigen Pfad zu `check_setup.py` an.
+
 Erwartet (Beispiel):
 
 ```text
