@@ -1,17 +1,17 @@
 # Praxis: Modul 5: Fortgeschrittene KI-Integration
 
-Präsenzunterricht mit Theorie, Live-Coding und ersten Übungen.
+Präsenzunterricht mit Live-Coding und Übungen, 4 Lektionen à 50 Minuten.
 
 ## 📁 Inhalt
 
-### Dokumente
+- [Lektion 1: Ein Sprachmodell aus Python befragen](./lektion-1-modell-befragen.md)
+- [Lektion 2: Texte in Zahlen verwandeln](./lektion-2-embeddings.md)
+- [Lektion 3: Die passende Textstelle finden](./lektion-3-vektorsuche.md)
+- [Lektion 4: Suche und Modell verbinden](./lektion-4-mini-rag.md)
 
-- [02-no-code.adoc](./02-no-code.adoc)
-- [03-langchain.adoc](./03-langchain.adoc)
-- [04-vector-stores.adoc](./04-vector-stores.adoc)
-- [05-embeddings.adoc](./05-embeddings.adoc)
-- [06-rag-praxis.adoc](./06-rag-praxis.adoc)
-- [rag.adoc](./rag.adoc)
+### Archiv
+
+Das Material des früheren Programms (LangChain, Vector Stores, RAG-Praxis, No-Code) liegt in [archive/](./archive/). Es nutzt teils veraltete Modelle und Importe.
 
 ---
 

@@ -17,7 +17,7 @@
 
 - Python script: `uv run python <path>`
 - Streamlit app: `uv run streamlit run course/modul-X/05-beispiele/<app>.py` (port 8501)
-- Some modules have their own `requirements.txt` inside the module folders (e.g., `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/rag-praxis/requirements.txt`). The root `uv` env usually covers them, but if a script fails on a missing package, install that folder's requirements.
+- Some modules have their own `requirements.txt` inside the module folders (e.g., `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/archive/rag-praxis/requirements.txt`). The root `uv` env usually covers them, but if a script fails on a missing package, install that folder's requirements.
 
 ## Package / import layout
 
@@ -37,8 +37,9 @@
 
 ## Tests & linting
 
-- There is **no root test suite**. `uv run pytest` is not configured; do not treat it as a green check.
-- `ruff` is available on PATH but is **not a pinned project dependency** and has no project config. Use it only if you add project-level config and dev dependencies.
+- `uv run pytest` is configured in `pyproject.toml` (`testpaths = ["tests"]`, `--ignore=course --ignore=replicate --ignore=LangChain`). The root suite is small (`tests/`); it does **not** cover `course/`, so a green run says nothing about the course examples.
+- Course examples with their own tests are run by path, e.g. `uv run pytest course/modul-4-agentic-coding/05-beispiele/wetter_bericht`. Run each example folder on its own, never `uv run pytest course/modul-4-agentic-coding` as a whole: several folders (`lektion-*/loesung`, `wetter_bericht`) contain a `test_wetter_bericht.py` with the same basename and no `__init__.py`, so a combined run aborts with "import file mismatch" and executes no tests. For coverage add `--cov=<pfad>`; the project threshold is 90 % (`[tool.coverage.report] fail_under`, branch coverage on).
+- `ruff`, `mypy`, `pytest` and `pytest-cov` are pinned dev dependencies (`uv sync` installs them). Ruff is configured in `pyproject.toml` (line length 120, rules E/F/I/W/UP/C4/SIM): `uv run ruff check <pfad>` and `uv run ruff format --check <pfad>`. `mypy` excludes `course/`.
 
 ## Taskmaster / AI workflow
 
@@ -48,7 +49,7 @@
 
 ## Subprojects
 
-- `rag-system/` is a self-contained project with its own `pyproject.toml`, `.venv`, `AGENTS.md`, and Taskmaster setup. Use its instructions and commands there, not the root ones. It is symlinked from `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/rag-system/`.
+- `rag-system/` is a self-contained project with its own `pyproject.toml`, `.venv`, `AGENTS.md`, and Taskmaster setup. Use its instructions and commands there, not the root ones. It is symlinked from `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/archive/rag-system/`.
 - `replicate/` contains model-deployment examples and is symlinked from `course/modul-6-eigenes-projekt-abschluss/05-beispiele/replicate/`.
 - The modular course content lives in `course/`. Each module has its own examples, exercises and materials.
 

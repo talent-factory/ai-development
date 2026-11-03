@@ -1,77 +1,112 @@
-# Good and Bad Tests
+# Gute und schlechte Tests
 
-## Good Tests
+## Gute Tests
 
-**Integration-style**: Test through real interfaces, not mocks of internal parts.
+**Integrationsnah**: Über echte Schnittstellen testen, nicht über Mocks interner Teile.
 
-```typescript
-// GOOD: Tests observable behavior
-test("user can checkout with valid cart", async () => {
-  const cart = createCart();
-  cart.add(product);
-  const result = await checkout(cart, paymentMethod);
-  expect(result.status).toBe("confirmed");
-});
+```python
+# GUT: prüft beobachtbares Verhalten
+def test_checkout_mit_gueltigem_warenkorb_wird_bestaetigt(zahlungs_fake):
+    warenkorb = Warenkorb()
+    warenkorb.hinzufuegen(BUCH)
+
+    ergebnis = checkout(warenkorb, zahlungs_fake)
+
+    assert ergebnis.status == "bestaetigt"
 ```
 
-Characteristics:
+Merkmale:
 
-- Tests behavior users/callers care about
-- Uses public API only
-- Survives internal refactors
-- Describes WHAT, not HOW
-- One logical assertion per test
+- Prüft Verhalten, das Aufrufer interessiert
+- Nutzt nur die öffentliche API
+- Übersteht interne Refactorings
+- Beschreibt WAS, nicht WIE
+- Ein Verhalten pro Test (mehrere `assert`s auf demselben Ergebnisobjekt sind in Ordnung)
+- Klare Struktur: Arrange, Act, Assert, getrennt durch Leerzeilen
+- Name als Satz über das Verhalten, z. B. `test_leerer_warenkorb_kann_nicht_bezahlt_werden`
 
-## Bad Tests
+## Schlechte Tests
 
-**Implementation-detail tests**: Coupled to internal structure.
+**Implementierungsdetail-Tests**: Gekoppelt an die interne Struktur.
 
-```typescript
-// BAD: Tests implementation details
-test("checkout calls paymentService.process", async () => {
-  const mockPayment = jest.mock(paymentService);
-  await checkout(cart, payment);
-  expect(mockPayment.process).toHaveBeenCalledWith(cart.total);
-});
+```python
+# SCHLECHT: prüft, wie intern gearbeitet wird
+def test_checkout_ruft_zahlungsdienst_belasten_auf(mocker):
+    dienst = mocker.Mock()
+    checkout(warenkorb, dienst)
+    dienst.belasten.assert_called_once_with(warenkorb.summe)
 ```
 
-Red flags:
+Warnsignale:
 
-- Mocking internal collaborators
-- Testing private methods
-- Asserting on call counts/order
-- Test breaks when refactoring without behavior change
-- Test name describes HOW not WHAT
-- Verifying through external means instead of interface
+- Interne Kollaborateure werden gemockt
+- Private Methoden (`_name`) werden getestet
+- Assertions auf Aufrufanzahl oder -reihenfolge (`assert_called_once`, `call_args_list`)
+- Test bricht beim Refactoring ohne Verhaltensänderung
+- Testname beschreibt WIE statt WAS
+- Prüfung über Umwege statt über die Schnittstelle
 
-```typescript
-// BAD: Bypasses interface to verify
-test("createUser saves to database", async () => {
-  await createUser({ name: "Alice" });
-  const row = await db.query("SELECT * FROM users WHERE name = ?", ["Alice"]);
-  expect(row).toBeDefined();
-});
+```python
+# SCHLECHT: umgeht die Schnittstelle zur Prüfung
+def test_benutzer_anlegen_speichert_in_datenbank(db):
+    benutzer_anlegen(db, name="Alice")
+    zeile = db.execute("SELECT * FROM benutzer WHERE name = ?", ("Alice",)).fetchone()
+    assert zeile is not None
 
-// GOOD: Verifies through interface
-test("createUser makes user retrievable", async () => {
-  const user = await createUser({ name: "Alice" });
-  const retrieved = await getUser(user.id);
-  expect(retrieved.name).toBe("Alice");
-});
+
+# GUT: prüft über die Schnittstelle
+def test_angelegter_benutzer_ist_abrufbar(db):
+    benutzer = benutzer_anlegen(db, name="Alice")
+
+    abgerufen = benutzer_holen(db, benutzer.id)
+
+    assert abgerufen.name == "Alice"
 ```
 
-**Tautological tests**: Expected value restates the implementation, so the test passes by construction.
+**Tautologische Tests**: Der erwartete Wert wiederholt die Implementierung, der Test besteht per Konstruktion.
 
-```typescript
-// BAD: Expected value is recomputed the way the code computes it
-test("calculateTotal sums line items", () => {
-  const items = [{ price: 10 }, { price: 5 }];
-  const expected = items.reduce((sum, i) => sum + i.price, 0);
-  expect(calculateTotal(items)).toBe(expected);
-});
+```python
+# SCHLECHT: erwarteter Wert wird so berechnet wie im Code
+def test_gesamtsumme_addiert_positionen():
+    positionen = [Position(preis=10), Position(preis=5)]
+    erwartet = sum(p.preis for p in positionen)
+    assert gesamtsumme(positionen) == erwartet
 
-// GOOD: Expected value is an independent, known literal
-test("calculateTotal sums line items", () => {
-  expect(calculateTotal([{ price: 10 }, { price: 5 }])).toBe(15);
-});
+
+# GUT: erwarteter Wert ist ein unabhängiges, bekanntes Literal
+def test_gesamtsumme_addiert_positionen():
+    assert gesamtsumme([Position(preis=10), Position(preis=5)]) == 15
 ```
+
+## Tabellentests statt Kopien
+
+Mehrere Beispiele für dasselbe Verhalten gehören in `parametrize`, nicht in kopierte Tests. Die erwarteten Werte bleiben unabhängige Literale (Kontrollwerte).
+
+```python
+@pytest.mark.parametrize(
+    ("celsius", "fahrenheit"),
+    [(0, 32), (100, 212), (-40, -40)],
+    ids=["gefrierpunkt", "siedepunkt", "gleichstand"],
+)
+def test_celsius_in_fahrenheit(celsius, fahrenheit):
+    assert celsius_zu_fahrenheit(celsius) == fahrenheit
+```
+
+## Fehlerfälle
+
+```python
+def test_negative_menge_wird_abgelehnt():
+    with pytest.raises(ValueError, match="Menge muss positiv sein"):
+        Position(preis=10, menge=-1)
+```
+
+`match=` ist Pflicht: Ohne es besteht der Test bei jedem beliebigen `ValueError`.
+
+## Gleitkommazahlen
+
+```python
+def test_mehrwertsteuer():
+    assert mehrwertsteuer(19.99) == pytest.approx(1.54, abs=0.005)
+```
+
+Niemals `==` auf Floats. Für Geldbeträge besser `Decimal`.
