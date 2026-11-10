@@ -50,7 +50,7 @@
 ## Subprojects
 
 - `rag-system/` is a self-contained project with its own `pyproject.toml`, `.venv`, `AGENTS.md`, and Taskmaster setup. Use its instructions and commands there, not the root ones. It is symlinked from `course/modul-5-fortgeschrittene-ki-integration/05-beispiele/archive/rag-system/`.
-- `replicate/` contains model-deployment examples and is symlinked from `course/modul-6-eigenes-projekt-abschluss/05-beispiele/replicate/`.
+- `replicate/` contains model-deployment examples and is symlinked from `course/modul-6-eigenes-projekt-abschluss/05-beispiele/archive/replicate/`.
 - The modular course content lives in `course/`. Each module has its own examples, exercises and materials.
 
 ## Commits

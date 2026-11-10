@@ -80,7 +80,7 @@ $ streamlit run hello-world.py
 .hello-world.py
 [source,python]
 ----
-include::../../modul-1-programmier-mindset-ki-tools-setup/05-beispiele/hello-world.py[]
+include::../../../modul-1-programmier-mindset-ki-tools-setup/05-beispiele/hello-world.py[]
 ----
 
 

@@ -8,12 +8,12 @@ Handouts und Ressourcen zum Modul.
 
 - [projekt-spec-vorlage.md](./projekt-spec-vorlage.md): Grilling-Prompt, Gliederung der `SPEC.md`, Beispiel Too Good To Go (Rechte und AGB), Peer-Review-Kriterien
 
-### Altmaterial (nicht Teil des Abends)
+### Altmaterial (archiviert)
 
-- [ai-course-assistant-readme-template.md](./ai-course-assistant-readme-template.md)
-- [ai-news-summary.md](./ai-news-summary.md)
-- [streamlit-apps-readme.md](./streamlit-apps-readme.md)
-- [streamlit-requirements.txt](./streamlit-requirements.txt)
+- [archive/ai-course-assistant-readme-template.md](./archive/ai-course-assistant-readme-template.md)
+- [archive/ai-news-summary.md](./archive/ai-news-summary.md)
+- [archive/streamlit-apps-readme.md](./archive/streamlit-apps-readme.md)
+- [archive/streamlit-requirements.txt](./archive/streamlit-requirements.txt)
 
 ---
 

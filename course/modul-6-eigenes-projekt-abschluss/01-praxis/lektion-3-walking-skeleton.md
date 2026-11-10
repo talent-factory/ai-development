@@ -18,9 +18,9 @@
 
 ## 1. Streamlit in 10 Minuten
 
-Kein neues Thema, sondern das Werkzeug für die Oberfläche. Grundlage ist [streamlit.adoc](./streamlit.adoc) und der Anschluss an die `Antwort` aus Modul 5 (`text`, `sicherheit`, `quelle`).
+Kein neues Thema, sondern das Werkzeug für die Oberfläche. Grundlage ist [streamlit.adoc](./archive/streamlit.adoc) und der Anschluss an die `Antwort` aus Modul 5 (`text`, `sicherheit`, `quelle`).
 
-> TODO Dozent: kleines Live-Beispiel wählen, das zu den drei Archetypen passt. `05-beispiele/chatbot.py` ist veraltet (LangChain, OpenAI) und taugt nicht als Vorlage.
+> TODO Dozent: kleines Live-Beispiel wählen, das zu den drei Archetypen passt. `05-beispiele/archive/chatbot.py` ist veraltet (LangChain, OpenAI) und taugt nicht als Vorlage.
 
 ## 2. Meilenstein 1 (30 Minuten)
 

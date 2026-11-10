@@ -4,11 +4,11 @@
 :revnumber: 1.0
 :revdate: {localdate}
 :doctype: book
-include::../../../docs/locale/attributes-de.adoc[]
+include::../../../../docs/locale/attributes-de.adoc[]
 :toc: left
 :sectnums:
 :sectnumlevels: 3
-ifndef::imagesdir[:imagesdir: ../../../docs/images]
+ifndef::imagesdir[:imagesdir: ../../../../docs/images]
 :source-highlighter: highlight.js
 :icons: font
 

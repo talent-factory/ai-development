@@ -15,10 +15,10 @@ Präsenzunterricht: vier Lektionen vom Ein-Satz-Pitch zur geprüften Spec.
 
 Alle Lektionen arbeiten mit der [Projekt-Spec-Vorlage](../04-materialien/projekt-spec-vorlage.md).
 
-### Altmaterial (nicht Teil des Abends)
+### Altmaterial (archiviert)
 
-- [streamlit.adoc](./streamlit.adoc): Hintergrund zu Streamlit
-- [ai-course-assistant-deployment.adoc](./ai-course-assistant-deployment.adoc)
+- [archive/streamlit.adoc](./archive/streamlit.adoc): Hintergrund zu Streamlit
+- [archive/ai-course-assistant-deployment.adoc](./archive/ai-course-assistant-deployment.adoc)
 
 ---
 

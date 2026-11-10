@@ -1,5 +1,5 @@
 === Aufgabe: Vergleich von AI-Plattformen
-:imagesdir: ../../../docs/images/
+:imagesdir: ../../../../docs/images/
 
 ==== Lernziele
 * Sie können verschiedene AI-Plattformen praktisch vergleichen

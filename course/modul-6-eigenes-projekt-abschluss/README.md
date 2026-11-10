@@ -35,13 +35,13 @@ Keine Pflichtvorbereitung. Bring eine Projektidee mit (die Ideen der Teilnehmend
 - **[Lektion 3: Walking Skeleton](./01-praxis/lektion-3-walking-skeleton.md):** Streamlit in 10 Minuten, Meilenstein 1 test-first.
 - **[Lektion 4: Peer-Review und Abschluss](./01-praxis/lektion-4-peer-review-abschluss.md):** Pitch zu zweit, Roadmap, Kursabschluss.
 
-> Altmaterial (nicht Teil des Abends, noch nicht archiviert): `01-praxis/streamlit.adoc` (Hintergrund zu Streamlit), `01-praxis/ai-course-assistant-deployment.adoc`
+> Altmaterial (archiviert): `01-praxis/archive/` (`streamlit.adoc` als Hintergrund zu Streamlit, `ai-course-assistant-deployment.adoc`)
 
 ### [02-uebungen/](./02-uebungen/)
 
 Die Übungen des Abends stehen in den Lektionen und in der [Projekt-Spec-Vorlage](./04-materialien/projekt-spec-vorlage.md). Eigene Übungsblätter gibt es nicht.
 
-> Altmaterial (nicht Teil des Abends, noch nicht archiviert): `replicate-exercise.adoc`, `replicate-exercise-advanced.adoc`, `platform-comparison-exercise.adoc`, `req.md`
+> Altmaterial (archiviert): `02-uebungen/archive/` (`replicate-exercise.adoc`, `replicate-exercise-advanced.adoc`, `platform-comparison-exercise.adoc`, `req.md`)
 
 ### [03-nachbearbeitung/](./03-nachbearbeitung/)
 
@@ -57,13 +57,13 @@ Die Übungen des Abends stehen in den Lektionen und in der [Projekt-Spec-Vorlage
 
 - [projekt-spec-vorlage.md](./04-materialien/projekt-spec-vorlage.md): Grilling-Prompt, Gliederung der `SPEC.md`, Beispiel Too Good To Go, Peer-Review-Kriterien
 
-> Altmaterial (nicht Teil des Abends): `ai-course-assistant-readme-template.md`, `ai-news-summary.md`, `streamlit-apps-readme.md`, `streamlit-requirements.txt`
+> Altmaterial (archiviert): `04-materialien/archive/` (`ai-course-assistant-readme-template.md`, `ai-news-summary.md`, `streamlit-apps-readme.md`, `streamlit-requirements.txt`)
 
 ### [05-beispiele/](./05-beispiele/)
 
 **Code-Beispiele vom Dozenten**
 
-> Hinweis: `chatbot.py` und `translator.py` verwenden LangChain und OpenAI und passen nicht zum Stack aus Modul 5 (Pydantic AI, Gemini). Sie sind keine Vorlage für den Abend.
+> Altmaterial (archiviert): `05-beispiele/archive/` (`chatbot.py`, `translator.py`, `replicate/`). Die Beispiele verwenden LangChain und OpenAI und passen nicht zum Stack aus Modul 5 (Pydantic AI, Gemini).
 
 ---
 
