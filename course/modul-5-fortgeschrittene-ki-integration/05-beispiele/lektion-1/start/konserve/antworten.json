@@ -1,0 +1,107 @@
+[
+ {
+  "frage": "Wann finden bei der Talwerk AG die Deployments statt?",
+  "mit_regel": false,
+  "text": "Es liegen mir keine Informationen über die Talwerk AG oder deren Deployment-Zeiten vor. Bitte stelle mir Kontext oder Dokumente zur Verfügung, die diese Information enthalten.",
+  "sicherheit": 0.0,
+  "quelle": null
+ },
+ {
+  "frage": "Wann ist der Deployment-Freeze?",
+  "mit_regel": true,
+  "text": "Der Deployment-Freeze gilt vom 15. Dezember bis zum 6. Januar sowie über Ostern (Karfreitag bis Ostermontag) (Quelle: 02-freeze.md).",
+  "sicherheit": 1.0,
+  "quelle": "02-freeze.md"
+ },
+ {
+  "frage": "Wann ist der Deployment-Freeze?",
+  "mit_regel": false,
+  "text": "Der Deployment-Freeze gilt vom 15. Dezember bis zum 6. Januar sowie über Ostern (Karfreitag bis Ostermontag).",
+  "sicherheit": 1.0,
+  "quelle": "02-freeze.md"
+ },
+ {
+  "frage": "Wie viele Freigaben braucht ein Code-Review?",
+  "mit_regel": true,
+  "text": "Ein Code-Review braucht zwei Freigaben (Quelle: 03-code-review.md).",
+  "sicherheit": 1.0,
+  "quelle": "03-code-review.md"
+ },
+ {
+  "frage": "Wie viele Freigaben braucht ein Code-Review?",
+  "mit_regel": false,
+  "text": "Jeder Pull Request braucht zwei Freigaben, davon mindestens eine aus einem anderen Team.",
+  "sicherheit": 1.0,
+  "quelle": "03-code-review.md"
+ },
+ {
+  "frage": "Wen rufe ich in der Nacht bei einem Ausfall an?",
+  "mit_regel": true,
+  "text": "Ich finde dazu nichts.",
+  "sicherheit": 1.0,
+  "quelle": null
+ },
+ {
+  "frage": "Wen rufe ich in der Nacht bei einem Ausfall an?",
+  "mit_regel": false,
+  "text": "Bei einem Ausfall in der Nacht (oder generell bei Störungen) erreichst du den zuständigen Bereitschaftsdienst unter der internen Nummer der Leitstelle: **4711**.",
+  "sicherheit": 1.0,
+  "quelle": null
+ },
+ {
+  "frage": "Wie benenne ich meinen Branch?",
+  "mit_regel": true,
+  "text": "Branches heissen nach dem Muster `team/ticket/kurzbeschreibung` (Quelle: 05-branches.md).",
+  "sicherheit": 1.0,
+  "quelle": null
+ },
+ {
+  "frage": "Wie benenne ich meinen Branch?",
+  "mit_regel": false,
+  "text": "Dein Branch muss nach dem Muster `team/ticket/kurzbeschreibung` benannt werden, zum Beispiel `pay/PAY-212/rabatt`.",
+  "sicherheit": 1.0,
+  "quelle": "05-branches.md"
+ },
+ {
+  "frage": "Wie lange habe ich Zeit, meine Spesen einzureichen?",
+  "mit_regel": true,
+  "text": "Du hast 30 Tage Zeit, um deine Spesen einzureichen (Quelle: 09-spesen.md).",
+  "sicherheit": 1.0,
+  "quelle": null
+ },
+ {
+  "frage": "Wie lange habe ich Zeit, meine Spesen einzureichen?",
+  "mit_regel": false,
+  "text": "Spesen müssen innerhalb von 30 Tagen eingereicht werden.",
+  "sicherheit": 1.0,
+  "quelle": "09-spesen.md"
+ },
+ {
+  "frage": "Wann darf ich veröffentlichen?",
+  "mit_regel": true,
+  "text": "Produktive Deployments dürfen donnerstags um 14:30 Uhr durchgeführt werden (Quelle: 01-deployment.md). Ausgenommen davon sind die Freeze-Zeiten vom 15. Dezember bis zum 6. Januar sowie über Ostern (Karfreitag bis Ostermontag), in denen keine Deployments stattfinden, es sei denn, es handelt sich um Hotfixes mit schriftlicher Freigabe der Technikleitung (Quelle: 02-freeze.md).",
+  "sicherheit": 1.0,
+  "quelle": "01-deployment.md und 02-freeze.md"
+ },
+ {
+  "frage": "Wann darf ich veröffentlichen?",
+  "mit_regel": false,
+  "text": "Produktive Deployments finden grundsätzlich **donnerstags um 14:30 Uhr** statt (das Deployment-Fenster dauert 45 Minuten) und erfordern die Freigabe der Release-Verantwortlichen (aktuell Nina Ammann). \n\nEs gibt jedoch **Ausnahmen (Freeze-Zeiten)**, in denen keine Deployments durchgeführt werden:\n* Vom **15. Dezember bis zum 6. Januar**\n* Über **Ostern** (Karfreitag bis Ostermontag)\n\nAußerhalb dieser Freeze-Zeiten dürfen Sie veröffentlichen, sofern es sich um den regulären Termin am Donnerstag handelt oder um einen schriftlich von der Technikleitung freigegebenen Hotfix.",
+  "sicherheit": 1.0,
+  "quelle": "01-deployment.md und 02-freeze.md"
+ },
+ {
+  "frage": "Wie viele Ferientage habe ich pro Jahr?",
+  "mit_regel": true,
+  "text": "Ich finde dazu nichts.",
+  "sicherheit": 1.0,
+  "quelle": null
+ },
+ {
+  "frage": "Wie viele Ferientage habe ich pro Jahr?",
+  "mit_regel": false,
+  "text": "Basierend auf den zur Verfügung gestellten Quellen gibt es keine Informationen darüber, wie viele Ferientage Sie pro Jahr haben.",
+  "sicherheit": 1.0,
+  "quelle": null
+ }
+]

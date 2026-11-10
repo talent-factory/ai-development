@@ -268,7 +268,7 @@ Verstehen Sie, wie Vektordatenbanken funktionieren und warum sie für AI wichtig
 **Lesen Sie:**
 
 - "What are Vector Databases?" - Pinecone Blog
-- Unser Kurs-Material: `../../modul-5-fortgeschrittene-ki-integration/01-praxis/04-vector-stores.adoc`
+- Unser Kurs-Material: `../../modul-5-fortgeschrittene-ki-integration/01-praxis/archive/04-vector-stores.adoc`
 
 **Verstehen Sie:**
 

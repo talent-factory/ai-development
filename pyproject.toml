@@ -18,6 +18,7 @@ dependencies = [
     "matplotlib>=3.11.2",
     "numpy>=2.5.4",
     "pandas>=3.0.6",
+    "pydantic-ai-slim[google]==2.63.0",
     "pypdf>=6.21.1",
     "pypdf2>=3.0.1",
     "python-dotenv>=1.2.4",
@@ -36,6 +37,7 @@ dependencies = [
 dev = [
     "mypy>=2.4.0",
     "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
     "ruff>=0.16.10",
 ]
 
@@ -70,7 +72,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"course/modul-5-fortgeschrittene-ki-integration/05-beispiele/aufgabe-5/test_simple.py" = ["F401"]
+"course/modul-5-fortgeschrittene-ki-integration/05-beispiele/archive/aufgabe-5/test_simple.py" = ["F401"]
 
 [tool.mypy]
 exclude = [
@@ -87,3 +89,10 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
 addopts = "--ignore=course --ignore=replicate --ignore=LangChain"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true

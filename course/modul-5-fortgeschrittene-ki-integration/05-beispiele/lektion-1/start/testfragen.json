@@ -1,0 +1,17 @@
+{
+  "firmenfrage": "Wann finden bei der Talwerk AG die Deployments statt?",
+  "fragen": [
+    {"frage": "Wann ist der Deployment-Freeze?", "quelle": "02-freeze.md"},
+    {"frage": "Wie viele Freigaben braucht ein Code-Review?", "quelle": "03-code-review.md"},
+    {"frage": "Wen rufe ich in der Nacht bei einem Ausfall an?", "quelle": "04-bereitschaft.md"},
+    {"frage": "Wie benenne ich meinen Branch?", "quelle": "05-branches.md"},
+    {"frage": "Wie lange habe ich Zeit, meine Spesen einzureichen?", "quelle": "09-spesen.md"}
+  ],
+  "mehrdeutig": {"frage": "Wann darf ich veröffentlichen?", "quelle": "01-deployment.md"},
+  "falle": "Wie viele Ferientage habe ich pro Jahr?",
+  "satzpaare": [
+    ["Deployments laufen donnerstags.", "Die Veröffentlichung findet am Donnerstag statt."],
+    ["Deployments sind erlaubt.", "Deployments sind verboten."],
+    ["Deployments laufen donnerstags.", "Die Kantine bietet mittwochs ein vegetarisches Menü an."]
+  ]
+}
